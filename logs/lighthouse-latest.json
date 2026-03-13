@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-01-30T00:44:53.554Z",
+  "url": "https://seaready-website.vercel.app",
+  "scores": {
+    "performance": 64,
+    "accessibility": 89,
+    "bestPractices": 92,
+    "seo": 91
+  },
+  "metrics": {
+    "lcp": "4.02",
+    "fcp": "2.57",
+    "cls": "0.000",
+    "tbt": "0"
+  }
+}

@@ -1,0 +1,137 @@
+version: 1
+allow_top_level:
+  - app
+  - components
+  - content
+  - lib
+  - ops
+  - public
+  - styles
+  - scripts
+  - .github
+  - src
+  - WEB_ANCHOR_MODE.md
+  - SECURITY.md
+  - GO_LIVE_CHECKLIST.md
+  - package.json
+  - package-lock.json
+  - .env.example
+  - .gitignore
+  - README.md
+  - tsconfig.json
+  - next.config.js
+  - next.config.mjs
+  - next.config.ts
+  - tailwind.config.ts
+  - postcss.config.js
+  - postcss.config.mjs
+
+must_exist:
+  - WEB_ANCHOR_MODE.md
+  - tailwind.config.ts
+  - src/content/strings.ts
+  - src/lib/flags.ts
+  - src/lib/entitlements.ts
+  - src/lib/services/billing.ts
+  - src/lib/actions/createCheckout.ts
+  - src/lib/actions/createPortal.ts
+  - src/components/primitives/index.ts
+
+must_update_on_feature:
+  # If any file matching any "triggers" changes,
+  # these "targets" must be included in the same PR.
+  - name: copy-and-ui
+    triggers:
+      - "src/components/**/*"
+      - "src/app/(marketing)/**/*"
+      - "src/app/pricing/**/*"
+    targets:
+      - "src/content/strings.ts"
+      - "src/components/primitives/index.ts"
+
+  - name: forms-and-io
+    triggers:
+      - "src/components/**/*Form*.tsx"
+      - "src/app/**/page.tsx"
+    targets:
+      - "src/lib/actions/index.ts"
+      - "src/lib/services/index.ts"
+      - "WEB_ANCHOR_MODE.md"
+
+  - name: tokens-and-design
+    triggers:
+      - "src/styles/**/*"
+      - "tailwind.config.ts"
+    targets:
+      - "WEB_ANCHOR_MODE.md"
+
+  - name: pricing-billing
+    triggers:
+      - "src/app/**/pricing/**"
+      - "src/app/**/account/billing/**"
+      - "src/lib/services/billing.ts"
+      - "src/lib/entitlements.ts"
+    targets:
+      - "src/lib/entitlements.ts"
+      - "WEB_ANCHOR_MODE.md"
+
+  - name: webhook-security
+    triggers:
+      - "src/app/api/webhooks/**"
+    targets:
+      - "src/lib/services/billing.ts"
+      - "WEB_ANCHOR_MODE.md"
+
+forbid_raw_patterns:
+  - pattern: "#[0-9a-fA-F]{6}"   # raw hex colors
+    ignore:
+      - "styles/gradients.css"    # Decorative gradients exception
+      - "tailwind.config.ts"      # Color definitions
+  - pattern: "bg-\\[#[0-9a-fA-F]+\\]"  # Tailwind arbitrary hex values
+    ignore:
+      - "styles/gradients.css"
+  - pattern: "text-\\[#[0-9a-fA-F]+\\]"  # Tailwind arbitrary text colors
+    ignore:
+      - "styles/gradients.css"
+  - "console\\.log\\("  # No console.logs (no exceptions)
+  
+  # Security patterns - detect potential secrets
+  - pattern: "sk_live_[a-zA-Z0-9]{24,}"  # Stripe live secret key
+    message: "CRITICAL: Stripe live secret key detected! Remove immediately!"
+  - pattern: "sk_test_[a-zA-Z0-9]{24,}"  # Stripe test secret key  
+    message: "WARNING: Stripe test key should not be in code"
+  - pattern: "whsec_[a-zA-Z0-9]{32,}"    # Stripe webhook secret
+    message: "CRITICAL: Stripe webhook secret detected! Use environment variables!"
+  - pattern: "AKIA[0-9A-Z]{16}"          # AWS access key
+    message: "CRITICAL: AWS access key detected! Remove immediately!"
+  - pattern: "AIza[0-9A-Za-z\\-_]{35}"   # Google API key
+    message: "WARNING: Google API key detected. Use environment variables!"
+  - pattern: "ghp_[a-zA-Z0-9]{36}"       # GitHub personal access token
+    message: "CRITICAL: GitHub token detected! Remove immediately!"
+  - pattern: "ghs_[a-zA-Z0-9]{36}"       # GitHub secret
+    message: "CRITICAL: GitHub secret detected! Remove immediately!"
+  - pattern: "-----BEGIN (RSA |EC |DSA |OPENSSH )?PRIVATE KEY"  # Private keys
+    message: "CRITICAL: Private key detected! Never commit private keys!"
+  - pattern: "Bearer [a-zA-Z0-9\\-\\._~\\+\\/]+=*"  # Bearer tokens
+    ignore:
+      - "*.md"  # Allow in documentation examples
+    message: "WARNING: Bearer token detected. Use environment variables!"
+
+require_barrel_exports:
+  - dir: "src/components/primitives"
+    barrel: "src/components/primitives/index.ts"
+  - dir: "src/lib/services"
+    barrel: "src/lib/services/index.ts"
+  - dir: "src/lib/actions"
+    barrel: "src/lib/actions/index.ts"
+
+max_file_lines:
+  components: 200
+  pages: 300
+  services: 400
+
+required_env_vars:
+  - STRIPE_SECRET_KEY
+  - STRIPE_WEBHOOK_SECRET
+  - NEXT_PUBLIC_SITE_URL
+  - ENABLE_BILLING

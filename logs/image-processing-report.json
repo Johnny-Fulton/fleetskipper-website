@@ -1,0 +1,395 @@
+{
+  "timestamp": "2025-12-04T22:09:46.179Z",
+  "images": [
+    {
+      "original": "c1b5135f-08d1-4cc8-8a83-c7cb9522ed18.JPG",
+      "baseName": "workboat-01",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-01-hero.jpg",
+          "sizeKB": 330
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-01-large.jpg",
+          "sizeKB": 157
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-01-card.jpg",
+          "sizeKB": 70
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-01-thumb.jpg",
+          "sizeKB": 17
+        }
+      ]
+    },
+    {
+      "original": "768cb2c5-2153-483d-8577-af4278a92d97.JPG",
+      "baseName": "workboat-02",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-02-hero.jpg",
+          "sizeKB": 565
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-02-large.jpg",
+          "sizeKB": 273
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-02-card.jpg",
+          "sizeKB": 118
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-02-thumb.jpg",
+          "sizeKB": 26
+        }
+      ]
+    },
+    {
+      "original": "a2f36527-92ad-4eca-b4c2-40e7ae3d2270.JPG",
+      "baseName": "workboat-03",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-03-hero.jpg",
+          "sizeKB": 491
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-03-large.jpg",
+          "sizeKB": 243
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-03-card.jpg",
+          "sizeKB": 104
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-03-thumb.jpg",
+          "sizeKB": 23
+        }
+      ]
+    },
+    {
+      "original": "91675872-7291-4fff-893e-06199cca24f9.JPG",
+      "baseName": "workboat-04",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-04-hero.jpg",
+          "sizeKB": 401
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-04-large.jpg",
+          "sizeKB": 195
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-04-card.jpg",
+          "sizeKB": 85
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-04-thumb.jpg",
+          "sizeKB": 21
+        }
+      ]
+    },
+    {
+      "original": "c1407034-7948-4830-88ee-0b4965478894.jpg",
+      "baseName": "workboat-05",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-05-hero.jpg",
+          "sizeKB": 315
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-05-large.jpg",
+          "sizeKB": 155
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-05-card.jpg",
+          "sizeKB": 70
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-05-thumb.jpg",
+          "sizeKB": 17
+        }
+      ]
+    },
+    {
+      "original": "dd6ece00-dab3-4313-939a-f4bbe505dfcf.jpg",
+      "baseName": "workboat-06",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-06-hero.jpg",
+          "sizeKB": 357
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-06-large.jpg",
+          "sizeKB": 186
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-06-card.jpg",
+          "sizeKB": 85
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-06-thumb.jpg",
+          "sizeKB": 21
+        }
+      ]
+    },
+    {
+      "original": "150eace2-2fd4-455c-bc39-37f06b7ef480.jpg",
+      "baseName": "workboat-07",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-07-hero.jpg",
+          "sizeKB": 341
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-07-large.jpg",
+          "sizeKB": 166
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-07-card.jpg",
+          "sizeKB": 74
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-07-thumb.jpg",
+          "sizeKB": 19
+        }
+      ]
+    },
+    {
+      "original": "fffe6fc9-25c2-4aa2-aabc-1e1e307e97b0.jpg",
+      "baseName": "workboat-08",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-08-hero.jpg",
+          "sizeKB": 372
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-08-large.jpg",
+          "sizeKB": 194
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-08-card.jpg",
+          "sizeKB": 91
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-08-thumb.jpg",
+          "sizeKB": 22
+        }
+      ]
+    },
+    {
+      "original": "015601b7-3a2e-4482-95af-3032d089dc8d.jpg",
+      "baseName": "workboat-09",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-09-hero.jpg",
+          "sizeKB": 347
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-09-large.jpg",
+          "sizeKB": 170
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-09-card.jpg",
+          "sizeKB": 73
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-09-thumb.jpg",
+          "sizeKB": 17
+        }
+      ]
+    },
+    {
+      "original": "f6e3af85-e93a-45ba-8f24-513917e24430.JPG",
+      "baseName": "workboat-10",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-10-hero.jpg",
+          "sizeKB": 416
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-10-large.jpg",
+          "sizeKB": 209
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-10-card.jpg",
+          "sizeKB": 97
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-10-thumb.jpg",
+          "sizeKB": 24
+        }
+      ]
+    },
+    {
+      "original": "45124968-44ac-4bdb-bdbb-f8043e6b3694.JPG",
+      "baseName": "workboat-11",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-11-hero.jpg",
+          "sizeKB": 331
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-11-large.jpg",
+          "sizeKB": 159
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-11-card.jpg",
+          "sizeKB": 68
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-11-thumb.jpg",
+          "sizeKB": 16
+        }
+      ]
+    },
+    {
+      "original": "3a8d33f6-4e41-48d5-8b9a-3f917a9884bd.JPG",
+      "baseName": "workboat-12",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-12-hero.jpg",
+          "sizeKB": 210
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-12-large.jpg",
+          "sizeKB": 113
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-12-card.jpg",
+          "sizeKB": 55
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-12-thumb.jpg",
+          "sizeKB": 14
+        }
+      ]
+    },
+    {
+      "original": "84ba383e-f7a1-45ba-8680-4bf3e7d74bfc.jpg",
+      "baseName": "workboat-13",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-13-hero.jpg",
+          "sizeKB": 274
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-13-large.jpg",
+          "sizeKB": 132
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-13-card.jpg",
+          "sizeKB": 59
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-13-thumb.jpg",
+          "sizeKB": 14
+        }
+      ]
+    },
+    {
+      "original": "4286b234-6efc-422d-9c32-83689b21555a.jpg",
+      "baseName": "workboat-14",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-14-hero.jpg",
+          "sizeKB": 276
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-14-large.jpg",
+          "sizeKB": 137
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-14-card.jpg",
+          "sizeKB": 62
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-14-thumb.jpg",
+          "sizeKB": 16
+        }
+      ]
+    },
+    {
+      "original": "f994ff93-99c0-4573-b7ed-9868e633dd8e.JPG",
+      "baseName": "workboat-15",
+      "outputs": [
+        {
+          "size": "hero",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-15-hero.jpg",
+          "sizeKB": 208
+        },
+        {
+          "size": "large",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-15-large.jpg",
+          "sizeKB": 108
+        },
+        {
+          "size": "card",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-15-card.jpg",
+          "sizeKB": 51
+        },
+        {
+          "size": "thumb",
+          "path": "/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/public/images/workboats/workboat-15-thumb.jpg",
+          "sizeKB": 13
+        }
+      ]
+    }
+  ]
+}

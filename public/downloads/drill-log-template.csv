@@ -1,0 +1,12 @@
+Date,Vessel,Drill Type,Location,Crew Present,Scenario,Duration (mins),Outcome,Issues Found,Corrective Actions,Next Drill Date,Master Sign-off,Notes
+2024-01-15,Example Vessel,Fire - Engine Room,Port,All hands,Engine room fire simulation,45,Satisfactory,Response time slow,Additional training scheduled,2024-02-15,J. Smith,Example entry
+2024-01-15,Example Vessel,Man Overboard,At Sea,All hands,MOB port side,30,Good,None,None required,2024-02-15,J. Smith,Example entry
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+"Instructions: Delete example rows and add your drill records. Save as .xlsx in Excel for best compatibility.",,,,,,,,,,,,

@@ -1,0 +1,466 @@
+{
+  "url": "https://seaready-website.vercel.app",
+  "timestamp": "2026-01-30T01-18-01-640Z",
+  "networkRequests": [
+    {
+      "url": "https://seaready-website.vercel.app/",
+      "method": "GET",
+      "resourceType": "document",
+      "startTime": 1769735881960,
+      "status": 200,
+      "endTime": 1769735882193,
+      "duration": 233,
+      "size": 0,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/image?url=%2Fimages%2Fhome-hero-ship.jpg&w=1080&q=75",
+      "method": "GET",
+      "resourceType": "image",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882358,
+      "duration": 159,
+      "size": 14472,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/image?url=%2Fseaready-logo-white.png&w=256&q=75",
+      "method": "GET",
+      "resourceType": "image",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882274,
+      "duration": 75,
+      "size": 4436,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/image?url=%2Fimages%2Fempx%2Ftablet-mockup.png&w=828&q=75",
+      "method": "GET",
+      "resourceType": "image",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882286,
+      "duration": 87,
+      "size": 26684,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/images/blog/empx-card.jpg",
+      "method": "GET",
+      "resourceType": "image",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882238,
+      "duration": 39,
+      "size": 72968,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/images/workboats/workboat-29-card.jpg",
+      "method": "GET",
+      "resourceType": "image",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882275,
+      "duration": 76,
+      "size": 60243,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/css/a5e3bcc8a7fbf776.css",
+      "method": "GET",
+      "resourceType": "stylesheet",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882231,
+      "duration": 32,
+      "size": 16945,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/webpack-deed822ffab6429a.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882306,
+      "duration": 107,
+      "size": 1997,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/4bd1b696-602635ee57868870.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882315,
+      "duration": 116,
+      "size": 55417,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/5964-b987d86022244b4a.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882306,
+      "duration": 107,
+      "size": 44044,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/main-app-b6051349a61871d8.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882305,
+      "duration": 106,
+      "size": 560,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/app/layout-425bff1005a5b264.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882306,
+      "duration": 107,
+      "size": 2614,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/c16f53c3-31f85ba67893b5cb.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882310,
+      "duration": 111,
+      "size": 2689,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/6874-849548aed8b83b7c.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882305,
+      "duration": 106,
+      "size": 3517,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/4314-828d9c89f5283497.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882331,
+      "duration": 132,
+      "size": 42603,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/6617-785c0e2b16e684f0.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882331,
+      "duration": 132,
+      "size": 29495,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/8671-93f7a840f4a53eb5.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882314,
+      "duration": 115,
+      "size": 2575,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/app/page-574a911f0445cf6a.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882314,
+      "duration": 115,
+      "size": 149,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&display=swap",
+      "method": "GET",
+      "resourceType": "stylesheet",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882388,
+      "duration": 189,
+      "size": 2340,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/BLNB4FAQFNK56DWWNF7PMGTCOTZHOEII/ST3WKSSDMBK2MIQQO3MAVYWLF4FTOLFV/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.woff2",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882391
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/BLNB4FAQFNK56DWWNF7PMGTCOTZHOEII/ST3WKSSDMBK2MIQQO3MAVYWLF4FTOLFV/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.woff",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/BLNB4FAQFNK56DWWNF7PMGTCOTZHOEII/ST3WKSSDMBK2MIQQO3MAVYWLF4FTOLFV/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.ttf",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/OYB4CXKJQXKTNSLJMTDQOIVUL2V5EL7S/WYO2P7DQVV5RNXGMCUO2HL4RJP4VFUAS/6XPIMU23OJVRY676OG5YVJMWEHWICATX.woff2",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/OYB4CXKJQXKTNSLJMTDQOIVUL2V5EL7S/WYO2P7DQVV5RNXGMCUO2HL4RJP4VFUAS/6XPIMU23OJVRY676OG5YVJMWEHWICATX.woff",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/OYB4CXKJQXKTNSLJMTDQOIVUL2V5EL7S/WYO2P7DQVV5RNXGMCUO2HL4RJP4VFUAS/6XPIMU23OJVRY676OG5YVJMWEHWICATX.ttf",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/5SZVFDB7V52TI6ULVC6J3WQZQCIZVDV5/ODYPSTCUDMKSTYIPTV4CLQ7URIK7XYBJ/YS3VPNVO4B3TOJMEXDGFZQ4TLZGGSRZC.woff2",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/5SZVFDB7V52TI6ULVC6J3WQZQCIZVDV5/ODYPSTCUDMKSTYIPTV4CLQ7URIK7XYBJ/YS3VPNVO4B3TOJMEXDGFZQ4TLZGGSRZC.woff",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/5SZVFDB7V52TI6ULVC6J3WQZQCIZVDV5/ODYPSTCUDMKSTYIPTV4CLQ7URIK7XYBJ/YS3VPNVO4B3TOJMEXDGFZQ4TLZGGSRZC.ttf",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/HBNTRIISA5MEXGL5WPYI7CV2HIWTDV3Q/YDPDINVT673XLXNSTMLG4JNCZZMVVNPN/Y7SCNZJOT2MW5ADSGOFLDGH4TNL4JCQY.woff2",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/HBNTRIISA5MEXGL5WPYI7CV2HIWTDV3Q/YDPDINVT673XLXNSTMLG4JNCZZMVVNPN/Y7SCNZJOT2MW5ADSGOFLDGH4TNL4JCQY.woff",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882392
+    },
+    {
+      "url": "https://cdn.fontshare.com/wf/HBNTRIISA5MEXGL5WPYI7CV2HIWTDV3Q/YDPDINVT673XLXNSTMLG4JNCZZMVVNPN/Y7SCNZJOT2MW5ADSGOFLDGH4TNL4JCQY.ttf",
+      "method": "GET",
+      "resourceType": "font",
+      "startTime": 1769735882413
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-KZDGG8PS36",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882437,
+      "status": 200,
+      "endTime": 1769735882688,
+      "duration": 251,
+      "size": 147793,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/about?_rsc=3lb4g",
+      "method": "GET",
+      "resourceType": "fetch",
+      "startTime": 1769735882442,
+      "status": 200,
+      "endTime": 1769735882483,
+      "duration": 41,
+      "size": 0,
+      "contentType": "text/x-component"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/contact?_rsc=3lb4g",
+      "method": "GET",
+      "resourceType": "fetch",
+      "startTime": 1769735882442,
+      "status": 200,
+      "endTime": 1769735882638,
+      "duration": 196,
+      "size": 0,
+      "contentType": "text/x-component"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/app/about/page-7a66e0a6593e1a42.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882487,
+      "status": 200,
+      "endTime": 1769735882529,
+      "duration": 42,
+      "size": 149,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/app/contact/page-7f3933534d855f7e.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882639,
+      "status": 200,
+      "endTime": 1769735882674,
+      "duration": 35,
+      "size": 2511,
+      "contentType": "application/javascript; charset=utf-8"
+    }
+  ],
+  "performanceMetrics": {
+    "domContentLoaded": 0.40000009536743164,
+    "loadComplete": 0,
+    "domInteractive": 458.89999997615814,
+    "ttfb": 41.89999997615814,
+    "fp": 468,
+    "fcp": 468
+  },
+  "screenshots": {
+    "loaded": "logs/performance-audits/screenshots/loaded-2026-01-30T01-18-01-640Z.jpg"
+  },
+  "blockingResources": [
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-KZDGG8PS36",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882437,
+      "status": 200,
+      "endTime": 1769735882688,
+      "duration": 251,
+      "size": 147793,
+      "contentType": "application/javascript; charset=UTF-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/",
+      "method": "GET",
+      "resourceType": "document",
+      "startTime": 1769735881960,
+      "status": 200,
+      "endTime": 1769735882193,
+      "duration": 233,
+      "size": 0,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/contact?_rsc=3lb4g",
+      "method": "GET",
+      "resourceType": "fetch",
+      "startTime": 1769735882442,
+      "status": 200,
+      "endTime": 1769735882638,
+      "duration": 196,
+      "size": 0,
+      "contentType": "text/x-component"
+    },
+    {
+      "url": "https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&display=swap",
+      "method": "GET",
+      "resourceType": "stylesheet",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882388,
+      "duration": 189,
+      "size": 2340,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/image?url=%2Fimages%2Fhome-hero-ship.jpg&w=1080&q=75",
+      "method": "GET",
+      "resourceType": "image",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882358,
+      "duration": 159,
+      "size": 14472,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/4314-828d9c89f5283497.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882331,
+      "duration": 132,
+      "size": 42603,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/6617-785c0e2b16e684f0.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882331,
+      "duration": 132,
+      "size": 29495,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/4bd1b696-602635ee57868870.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882315,
+      "duration": 116,
+      "size": 55417,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/8671-93f7a840f4a53eb5.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882314,
+      "duration": 115,
+      "size": 2575,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://seaready-website.vercel.app/_next/static/chunks/app/page-574a911f0445cf6a.js",
+      "method": "GET",
+      "resourceType": "script",
+      "startTime": 1769735882199,
+      "status": 200,
+      "endTime": 1769735882314,
+      "duration": 115,
+      "size": 149,
+      "contentType": "application/javascript; charset=utf-8"
+    }
+  ],
+  "recommendations": []
+}

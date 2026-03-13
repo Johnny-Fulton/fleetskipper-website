@@ -1,0 +1,41 @@
+{
+  "path": "/*",
+  "resourceSizes": [
+    {
+      "resourceType": "script",
+      "budget": 200
+    },
+    {
+      "resourceType": "image",
+      "budget": 300
+    },
+    {
+      "resourceType": "total",
+      "budget": 500
+    }
+  ],
+  "resourceCounts": [
+    {
+      "resourceType": "third-party",
+      "budget": 10
+    }
+  ],
+  "audits": [
+    {
+      "audit": "performance",
+      "minScore": 0.9
+    },
+    {
+      "audit": "accessibility",
+      "minScore": 0.95
+    },
+    {
+      "audit": "best-practices",
+      "minScore": 0.9
+    },
+    {
+      "audit": "seo",
+      "minScore": 0.95
+    }
+  ]
+}

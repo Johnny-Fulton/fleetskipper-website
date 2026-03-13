@@ -1,0 +1,77 @@
+
+> seaready-website@1.0.0 build
+> next build
+
+   ▲ Next.js 15.4.8
+   - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 3.0s
+   Linting and checking validity of types ...
+
+./src/app/(account)/account/billing/page.tsx
+41:9  Warning: 'hasAccess' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/downloads/route.ts
+20:11  Warning: 'company' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+66:12  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/api/webhooks/stripe/route.ts
+37:12  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
+77:15  Warning: 'subscription' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+83:15  Warning: 'invoice' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+89:15  Warning: 'invoice' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+107:12  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/contact/page.tsx
+4:10  Warning: 'SiteFooter' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/design/page.tsx
+5:10  Warning: 'copy' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/privacy/page.tsx
+2:8  Warning: 'Link' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/training/page.tsx
+15:3  Warning: 'EnvelopeIcon' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/blog/BlogAuthor.tsx
+12:8  Warning: 'Link' is defined but never used.  @typescript-eslint/no-unused-vars
+13:26  Warning: 'User' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/blog/BlogPost.tsx
+142:16  Warning: 'err' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/navbar-light.tsx
+9:7  Warning: 'navigation' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/primitives/feature-grid.tsx
+26:7  Warning: 'getFeatureIcon' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/primitives/resource-cards.tsx
+8:10  Warning: 'SectionHeader' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/primitives/site-footer.tsx
+18:66  Warning: 'copyright' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/lib/services/billing.ts
+280:45  Warning: '_orgId' is defined but never used.  @typescript-eslint/no-unused-vars
+294:45  Warning: '_orgId' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/41) ...
+ ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/solutions/workboats". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at g (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/.next/server/chunks/6077.js:3:14813)
+    at l (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/.next/server/chunks/6077.js:7:55420)
+    at g (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/.next/server/app/waitlist/page.js:2:10116)
+    at n4 (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:81697)
+    at n8 (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:83467)
+    at n8 (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:100435)
+    at n9 (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:103676)
+    at n5 (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:101094)
+    at ii (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:107046)
+    at n7 (/Users/jonathanfulton/REGULATION APP/SeaReady/assistants/website/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:2:105708)
+Error occurred prerendering page "/solutions/workboats". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /solutions/workboats/page: /solutions/workboats, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null

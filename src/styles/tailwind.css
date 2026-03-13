@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@layer base {
+  body { 
+    @apply text-ink antialiased; 
+  }
+  /* remove any blanket opacity on sections */
+  .section { 
+    @apply opacity-100; 
+  }
+}
+
+@theme {
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-display: Inter, system-ui, sans-serif;
+
+  --radius-4xl: 2rem;
+  
+  /* SeaReady Design System - Web Anchor Mode v1.0 */
+  /* Primary Colors */
+  --color-ink: 11 19 43; /* #0B132B */
+  --color-navy: 14 26 43; /* #0E1A2B */
+  --color-navy-light: 19 38 63; /* #13263F */
+  
+  /* Accent Colors */
+  --color-sea-teal: 8 145 178; /* #0891B2 */
+  --color-brand-orange: 249 115 22; /* #F97316 */
+  
+  /* Status Colors */
+  --color-success: 16 185 129; /* #10B981 */
+  --color-warning: 245 158 11; /* #F59E0B */
+  --color-danger: 239 68 68; /* #EF4444 */
+  
+  /* Custom shadows */
+  --shadow-card: 0 8px 24px rgba(2, 6, 23, 0.06);
+  --shadow-card-sm: 0 6px 18px rgba(2, 6, 23, 0.05);
+}
+
+@keyframes move-x {
+  0% {
+    transform: translateX(var(--move-x-from));
+  }
+  100% {
+    transform: translateX(var(--move-x-to));
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-12-04T21:42:33.716Z",
+  "images": {
+    "sunset-workboat": {
+      "description": "Stunning golden hour sunset view from workboat bow with navigation lights",
+      "type": "hero",
+      "files": {
+        "thumbnail": "/images/workboats/sunset-workboat-thumb.jpg",
+        "large": "/images/workboats/sunset-workboat-large.jpg",
+        "card": "/images/workboats/sunset-workboat-card.jpg"
+      }
+    },
+    "crew-operations": {
+      "description": "Blue workboat crew operating crane with coastal UK backdrop",
+      "type": "hero",
+      "files": {
+        "thumbnail": "/images/workboats/crew-operations-thumb.jpg",
+        "large": "/images/workboats/crew-operations-large.jpg",
+        "card": "/images/workboats/crew-operations-card.jpg"
+      }
+    },
+    "sunset-helm": {
+      "description": "Vessel helm at sunset with beautiful maritime lighting",
+      "type": "hero",
+      "files": {
+        "thumbnail": "/images/workboats/sunset-helm-thumb.jpg",
+        "large": "/images/workboats/sunset-helm-large.jpg",
+        "card": "/images/workboats/sunset-helm-card.jpg"
+      }
+    },
+    "navigation-sunrise": {
+      "description": "Workboat at sunrise showing navigation display and construction work",
+      "type": "feature",
+      "files": {
+        "large": "/images/workboats/navigation-sunrise-large.jpg",
+        "card": "/images/workboats/navigation-sunrise-card.jpg",
+        "thumbnail": "/images/workboats/navigation-sunrise-thumb.jpg"
+      }
+    },
+    "crew-safety": {
+      "description": "Crew member in full hi-vis PPE operating at construction site",
+      "type": "feature",
+      "files": {
+        "large": "/images/workboats/crew-safety-large.jpg",
+        "card": "/images/workboats/crew-safety-card.jpg",
+        "thumbnail": "/images/workboats/crew-safety-thumb.jpg"
+      }
+    },
+    "ribs-glasgow": {
+      "description": "Orange Humber RIBs at Glasgow waterfront",
+      "type": "feature",
+      "files": {
+        "large": "/images/workboats/ribs-glasgow-large.jpg",
+        "card": "/images/workboats/ribs-glasgow-card.jpg",
+        "thumbnail": "/images/workboats/ribs-glasgow-thumb.jpg"
+      }
+    },
+    "rib-construction": {
+      "description": "View from RIB of Glasgow construction with cranes",
+      "type": "feature",
+      "files": {
+        "large": "/images/workboats/rib-construction-large.jpg",
+        "card": "/images/workboats/rib-construction-card.jpg",
+        "thumbnail": "/images/workboats/rib-construction-thumb.jpg"
+      }
+    }
+  }
+}

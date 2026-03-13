@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance Audit - 2026-01-30T01-24-45-161Z</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; padding: 2rem; background: #f5f5f5; }
+    .container { max-width: 1200px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #0891B2; margin-bottom: 0.5rem; }
+    .meta { color: #6b7280; margin-bottom: 2rem; }
+    .section { margin-bottom: 2rem; }
+    .section h2 { color: #374151; margin-bottom: 1rem; border-bottom: 2px solid #0891B2; padding-bottom: 0.5rem; }
+    .metric { display: flex; justify-content: space-between; padding: 0.75rem; background: #f9fafb; margin-bottom: 0.5rem; border-radius: 4px; }
+    .metric-label { font-weight: 500; color: #374151; }
+    .metric-value { font-weight: 600; color: #0891B2; }
+    .good { color: #10b981; }
+    .warning { color: #f59e0b; }
+    .bad { color: #ef4444; }
+    .resource { padding: 0.5rem; margin-bottom: 0.5rem; background: #f9fafb; border-left: 3px solid #0891B2; font-size: 0.9rem; }
+    .recommendation { padding: 1rem; margin-bottom: 0.75rem; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 4px; }
+    .waterfall { font-family: 'Courier New', monospace; font-size: 0.85rem; }
+    .screenshot { max-width: 100%; border: 1px solid #e5e7eb; border-radius: 4px; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Performance Audit Report</h1>
+    <p class="meta">URL: https://seaready-website.vercel.app<br>Timestamp: 2026-01-30T01-24-45-161Z</p>
+
+    <div class="section">
+      <h2>Core Web Vitals</h2>
+      <div class="metric">
+        <span class="metric-label">LCP (Largest Contentful Paint)</span>
+        <span class="metric-value good">
+          NaNs
+        </span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">FCP (First Contentful Paint)</span>
+        <span class="metric-value good">
+          0.94s
+        </span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">TTFB (Time to First Byte)</span>
+        <span class="metric-value good">
+          44ms
+        </span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">LCP Element</span>
+        <span class="metric-value">undefined</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Top 10 Slowest Resources</h2>
+      
+        <div class="resource">
+          <strong>#1</strong> [548ms] script<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/_next/static/chunks/app/contact/page-7f3933534d855f7e.js</span>
+        </div>
+      
+        <div class="resource">
+          <strong>#2</strong> [544ms] document<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/</span>
+        </div>
+      
+        <div class="resource">
+          <strong>#3</strong> [473ms] script<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/_next/static/chunks/app/about/page-7a66e0a6593e1a42.js</span>
+        </div>
+      
+        <div class="resource">
+          <strong>#4</strong> [390ms] script<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/_next/static/chunks/5964-b987d86022244b4a.js</span>
+        </div>
+      
+        <div class="resource">
+          <strong>#5</strong> [387ms] script<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/_next/static/chunks/app/layout-425bff1005a5b264.js</span>
+        </div>
+      
+        <div class="resource">
+          <strong>#6</strong> [365ms] script<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/_next/static/chunks/main-app-b6051349a61871d8.js</span>
+        </div>
+      
+        <div class="resource">
+          <strong>#7</strong> [364ms] image<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/images/blog/empx-card.jpg</span>
+        </div>
+      
+        <div class="resource">
+          <strong>#8</strong> [363ms] image<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/_next/image?url=%2Fimages%2Fempx%2Ftablet-mockup.png&w=828&q=75</span>
+        </div>
+      
+        <div class="resource">
+          <strong>#9</strong> [361ms] stylesheet<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/_next/static/css/a5e3bcc8a7fbf776.css</span>
+        </div>
+      
+        <div class="resource">
+          <strong>#10</strong> [361ms] script<br>
+          <span style="color: #6b7280; font-size: 0.85em;">https://seaready-website.vercel.app/_next/static/chunks/webpack-deed822ffab6429a.js</span>
+        </div>
+      
+    </div>
+
+    <div class="section">
+      <h2>Recommendations</h2>
+      <div class="recommendation">🔴 2 blocking CSS file(s) - Consider critical CSS extraction</div>
+    </div>
+
+    <div class="section">
+      <h2>Page Weight</h2>
+      <div class="metric">
+        <span class="metric-label">Total Requests</span>
+        <span class="metric-value">36</span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">Total Size</span>
+        <span class="metric-value">
+          521.68 KB
+        </span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Screenshot</h2>
+      <img src="screenshots/loaded-2026-01-30T01-24-45-161Z.jpg" alt="Page loaded" class="screenshot">
+    </div>
+  </div>
+</body>
+</html>

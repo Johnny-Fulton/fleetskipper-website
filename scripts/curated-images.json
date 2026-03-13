@@ -1,0 +1,69 @@
+{
+  "hero_images": [
+    {
+      "filename": "c1407034-7948-4830-88ee-0b4965478894.jpg",
+      "name": "sunset-workboat",
+      "description": "Stunning golden hour sunset view from workboat bow with navigation lights",
+      "use": "Primary hero image - evokes UK maritime operations",
+      "priority": 1
+    },
+    {
+      "filename": "IMG_3209.jpg",
+      "name": "crew-operations",
+      "description": "Blue workboat crew operating crane with coastal UK backdrop",
+      "use": "Hero alternative - shows real work being done",
+      "priority": 2
+    },
+    {
+      "filename": "4286b234-6efc-422d-9c32-83689b21555a.jpg",
+      "name": "sunset-helm",
+      "description": "Vessel helm at sunset with beautiful maritime lighting",
+      "use": "Hero alternative - professional maritime atmosphere",
+      "priority": 3
+    }
+  ],
+  "feature_images": [
+    {
+      "filename": "84ba383e-f7a1-45ba-8680-4bf3e7d74bfc.jpg",
+      "name": "navigation-sunrise",
+      "description": "Workboat at sunrise showing navigation display and construction work",
+      "use": "Technology/navigation features section",
+      "priority": 1
+    },
+    {
+      "filename": "6ffc61c2-be58-4498-8c72-a89f7f3c68ad.jpg",
+      "name": "crew-safety",
+      "description": "Crew member in full hi-vis PPE operating at construction site",
+      "use": "Safety/compliance features, crew management",
+      "priority": 2
+    },
+    {
+      "filename": "015601b7-3a2e-4482-95af-3032d089dc8d.jpg",
+      "name": "ribs-glasgow",
+      "description": "Orange Humber RIBs at Glasgow waterfront",
+      "use": "UK operations, vessel diversity",
+      "priority": 3
+    },
+    {
+      "filename": "45124968-44ac-4bdb-bdbb-f8043e6b3694.JPG",
+      "name": "rib-construction",
+      "description": "View from RIB of Glasgow construction with cranes",
+      "use": "Operations context, UK workboat environment",
+      "priority": 4
+    }
+  ],
+  "excluded": [
+    {
+      "filename": "c1b5135f-08d1-4cc8-8a83-c7cb9522ed18.JPG",
+      "reason": "Monaco superyachts - wrong market/vessel type"
+    },
+    {
+      "filename": "9bd6d199-bc1d-485e-a813-1fa5e4c32385.JPG",
+      "reason": "Sailing yacht - not workboats"
+    },
+    {
+      "filename": "150eace2-2fd4-455c-bc39-37f06b7ef480.jpg",
+      "reason": "Superyacht interior - wrong vessel type"
+    }
+  ]
+}
