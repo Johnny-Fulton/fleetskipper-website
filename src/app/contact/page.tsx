@@ -68,7 +68,8 @@ export default function ContactPage() {
                     <Calendar size={48} className="text-teal mx-auto mb-4" />
                     <p className="text-body-text font-semibold mb-2">Calendly Widget Goes Here</p>
                     <p className="text-sm text-gray-500">
-                      <!-- Calendly inline widget will be embedded here -->
+                      {/* Calendly inline widget will be embedded here */}
+                      Calendly inline widget will be embedded here
                     </p>
                   </div>
                 </div>
