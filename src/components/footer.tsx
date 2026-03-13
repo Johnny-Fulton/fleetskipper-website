@@ -1,189 +1,70 @@
-import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/plus-grid'
-import { Button, SectionHeader } from './primitives'
-import { Container } from './container'
-import { Gradient } from './gradient'
-import { Link } from './link'
-import { Logo } from './logo'
-
-function CallToAction() {
-  return (
-    <div className="relative pt-20 pb-16 text-center sm:py-24">
-      <SectionHeader
-        eyebrow="Get Started"
-        title="Ready to simplify compliance? Set up your fleet today."
-        subtitle="Join UK operators already using SeaReady. Get your SMS configured in under 30 minutes."
-      />
-      <div className="mt-8 text-center">
-        <p className="text-lg font-semibold text-sea-teal mb-6">
-          Made in the UK. Built for the sea.
-        </p>
-        <Button className="w-full sm:w-auto" href="/demo">
-          Request demo
-        </Button>
-      </div>
-    </div>
-  )
-}
-
-function SitemapHeading({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-sm/6 font-medium text-slate-700">{children}</h3>
-}
-
-function SitemapLinks({ children }: { children: React.ReactNode }) {
-  return <ul className="mt-6 space-y-4 text-sm/6">{children}</ul>
-}
-
-function SitemapLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
-  return (
-    <li>
-      <Link
-        {...props}
-        className="font-medium text-slate-900 data-hover:text-slate-700"
-      />
-    </li>
-  )
-}
-
-function Sitemap() {
-  return (
-    <>
-      <div>
-        <SitemapHeading>Product</SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/features">Features</SitemapLink>
-          <SitemapLink href="/pricing">Pricing</SitemapLink>
-          <SitemapLink href="/compliance">Compliance</SitemapLink>
-        </SitemapLinks>
-      </div>
-      <div>
-        <SitemapHeading>Resources</SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/resources/wbc3-guide">WBC3 Guide</SitemapLink>
-          <SitemapLink href="/docs">Documentation</SitemapLink>
-          <SitemapLink href="/support">Support</SitemapLink>
-        </SitemapLinks>
-      </div>
-      <div>
-        <SitemapHeading>Company</SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/about">About</SitemapLink>
-          <SitemapLink href="/contact">Contact</SitemapLink>
-          <SitemapLink href="/news">News</SitemapLink>
-        </SitemapLinks>
-      </div>
-      <div>
-        <SitemapHeading>Legal</SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/terms">Terms of service</SitemapLink>
-          <SitemapLink href="/privacy">Privacy policy</SitemapLink>
-        </SitemapLinks>
-      </div>
-    </>
-  )
-}
-
-function SocialIconX(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
-      <path d="M12.6 0h2.454l-5.36 6.778L16 16h-4.937l-3.867-5.594L2.771 16H.316l5.733-7.25L0 0h5.063l3.495 5.114L12.6 0zm-.86 14.376h1.36L4.323 1.539H2.865l8.875 12.837z" />
-    </svg>
-  )
-}
-
-function SocialIconFacebook(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M16 8.05C16 3.603 12.418 0 8 0S0 3.604 0 8.05c0 4.016 2.926 7.346 6.75 7.95v-5.624H4.718V8.05H6.75V6.276c0-2.017 1.194-3.131 3.022-3.131.875 0 1.79.157 1.79.157v1.98h-1.008c-.994 0-1.304.62-1.304 1.257v1.51h2.219l-.355 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.95z"
-      />
-    </svg>
-  )
-}
-
-function SocialIconLinkedIn(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
-      <path d="M14.82 0H1.18A1.169 1.169 0 000 1.154v13.694A1.168 1.168 0 001.18 16h13.64A1.17 1.17 0 0016 14.845V1.15A1.171 1.171 0 0014.82 0zM4.744 13.64H2.369V5.996h2.375v7.644zm-1.18-8.684a1.377 1.377 0 11.52-.106 1.377 1.377 0 01-.527.103l.007.003zm10.075 8.683h-2.375V9.921c0-.885-.015-2.025-1.234-2.025-1.218 0-1.425.966-1.425 1.968v3.775H6.233V5.997H8.51v1.05h.032c.317-.601 1.09-1.235 2.246-1.235 2.405-.005 2.851 1.578 2.851 3.63v4.197z" />
-    </svg>
-  )
-}
-
-function SocialLinks() {
-  return (
-    <>
-      <Link
-        href="https://facebook.com"
-        target="_blank"
-        aria-label="Visit us on Facebook"
-        className="text-slate-700 data-hover:text-slate-500"
-      >
-        <SocialIconFacebook className="size-4" />
-      </Link>
-      <Link
-        href="https://x.com"
-        target="_blank"
-        aria-label="Visit us on X"
-        className="text-slate-700 data-hover:text-slate-500"
-      >
-        <SocialIconX className="size-4" />
-      </Link>
-      <Link
-        href="https://www.linkedin.com/company/seaready-ltd/"
-        target="_blank"
-        aria-label="Visit us on LinkedIn"
-        className="text-slate-700 data-hover:text-slate-500"
-      >
-        <SocialIconLinkedIn className="size-4" />
-      </Link>
-    </>
-  )
-}
-
-function Copyright() {
-  return (
-    <div className="text-sm/6 text-slate-700">
-      &copy; {new Date().getFullYear()} SeaReady. All rights reserved.
-    </div>
-  )
-}
+import Link from 'next/link';
+import { Mail, Phone } from 'lucide-react';
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer>
-      <Gradient className="relative">
-        <div className="absolute inset-2 rounded-4xl bg-white" />
-        <Container>
-          <CallToAction />
-          <PlusGrid className="pb-16">
-            <PlusGridRow>
-              <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
-                <div className="col-span-2 lg:col-span-2 flex">
-                  <PlusGridItem className="pt-6 lg:pb-6">
-                    <Logo className="h-9" />
-                  </PlusGridItem>
-                </div>
-                <div className="col-span-2 grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-8 sm:gap-y-10 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
-                  <Sitemap />
-                </div>
-              </div>
-            </PlusGridRow>
-            <PlusGridRow className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
-              <div>
-                <PlusGridItem className="py-3">
-                  <Copyright />
-                </PlusGridItem>
-              </div>
-              <div className="flex">
-                <PlusGridItem className="flex items-center gap-6 sm:gap-8 py-3">
-                  <SocialLinks />
-                </PlusGridItem>
-              </div>
-            </PlusGridRow>
-          </PlusGrid>
-        </Container>
-      </Gradient>
+    <footer className="bg-navy text-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Company Info */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">FleetSkipper</h3>
+            <p className="text-gray-300 mb-4">
+              WBC3 Compliance Made Simple for Workboat Operators
+            </p>
+            <p className="text-sm text-gray-400">
+              Based in Northern Ireland, serving UK operators
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/services" className="text-gray-300 hover:text-teal transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-300 hover:text-teal transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-300 hover:text-teal transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-semibold mb-4">Get in Touch</h4>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-2 text-gray-300">
+                <Mail size={18} className="text-teal" />
+                <a href="mailto:jonathan@fleetskipper.com" className="hover:text-teal transition-colors">
+                  jonathan@fleetskipper.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-gray-300">
+                <Phone size={18} className="text-teal" />
+                <a href="tel:+447446858414" className="hover:text-teal transition-colors">
+                  +44 7446 858414
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-navy-light mt-8 pt-8 text-center text-sm text-gray-400">
+          <p>&copy; {currentYear} FleetSkipper Ltd. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
-  )
+  );
 }

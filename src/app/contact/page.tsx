@@ -1,241 +1,274 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import Link from 'next/link'
-import NavbarTransparent from '@/components/navbar-transparent'
-import { SiteFooter } from '@/components/primitives'
-import { ClipboardList, Smartphone } from 'lucide-react'
+import { Navigation } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
+import { useState } from 'react';
+import { Mail, Phone, MapPin, Send, Calendar } from 'lucide-react';
 
 export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null
-    message: string
-  }>({ type: null, message: '' })
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    vesselType: '',
+    servicesNeeded: '',
+    message: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus({ type: null, message: '' })
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Form submission will be implemented later with backend
+    console.log('Form data:', formData);
+    setSubmitted(true);
+  };
 
-    console.log('Form submission started') // Debug log
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-    // Save form reference before async operation (currentTarget becomes null after async)
-    const form = e.currentTarget
-    const formData = new FormData(form)
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        body: formData,
-      })
-
-      console.log('Response status:', response.status)
-      console.log('Response ok:', response.ok)
-
-      // Check if response is OK first
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`)
-      }
-
-      const result = await response.json()
-      console.log('Parsed result:', result)
-
-      if (result.success) {
-        // Redirect to thank-you page
-        window.location.href = '/thank-you'
-      } else {
-        setSubmitStatus({
-          type: 'error',
-          message: result.message || 'Failed to send message. Please try again.',
-        })
-      }
-    } catch (error) {
-      console.error('Form submission error:', error)
-      setSubmitStatus({
-        type: 'error',
-        message: 'Failed to send message. Please email support@seaready.co.uk directly.',
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
   return (
-    <div className="bg-white">
-      {/* Navbar */}
-      <NavbarTransparent />
+    <>
+      <Navigation />
 
-      {/* Hero Section with Sea Background */}
-      <div className="relative overflow-hidden">
-        <img
-          src="/images/workboats/sunset-workboat.jpg"
-          alt="Professional maritime operations at sunset"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
-        <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:py-36 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Get In Touch
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-navy to-navy-dark text-white py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              Get in Touch
             </h1>
-            <p className="mt-6 text-xl leading-8 text-white/90">
-              We&apos;re here to help with your maritime software and compliance needs
+            <p className="text-xl text-white/90">
+              Book a free consultation or send us a message
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="mx-auto max-w-2xl">
-          {/* Quick Options */}
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            <Link
-              href="/consultancy"
-              className="block rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200 hover:shadow-md transition"
-            >
-              <div className="mb-3">
-                <ClipboardList className="h-10 w-10" style={{ color: '#0891B2' }} />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">SMS Consultancy</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                Request a quote for bespoke SMS build
-              </p>
-              <p className="mt-4 text-sm font-semibold text-sea-teal">
-                Request Quote →
-              </p>
-            </Link>
+      {/* Contact Content */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-            <Link
-              href="/waitlist"
-              className="block rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200 hover:shadow-md transition"
-            >
-              <div className="mb-3">
-                <Smartphone className="h-10 w-10" style={{ color: '#0891B2' }} />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900">Join App Waitlist</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                Get early access to the digital platform
-              </p>
-              <p className="mt-4 text-sm font-semibold text-sea-teal">
-                Join Waitlist →
-              </p>
-            </Link>
-          </div>
-
-          {/* General Contact Form */}
-          <div className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900">General Inquiries</h2>
-            <p className="mt-2 text-sm text-gray-600">
-              For other questions or support
-            </p>
-
-            <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-              {/* Status Messages */}
-              {submitStatus.type && (
-                <div
-                  className={`rounded-lg p-4 ${
-                    submitStatus.type === 'success'
-                      ? 'bg-green-50 border border-green-200'
-                      : 'bg-red-50 border border-red-200'
-                  }`}
-                >
-                  <p
-                    className={`text-sm font-medium ${
-                      submitStatus.type === 'success' ? 'text-green-800' : 'text-red-800'
-                    }`}
-                  >
-                    {submitStatus.message}
+              {/* Left Column - Contact Info & Calendly */}
+              <div>
+                <div id="book-consultation" className="mb-12">
+                  <h2 className="text-3xl font-bold text-navy mb-6">Book Free Consultation</h2>
+                  <p className="text-lg text-body-text mb-6">
+                    Schedule a 15-minute call to discuss your vessel and compliance needs. 
+                    No pressure, just practical advice.
                   </p>
+                  
+                  {/* Calendly Placeholder */}
+                  <div className="bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl p-12 text-center">
+                    <Calendar size={48} className="text-teal mx-auto mb-4" />
+                    <p className="text-body-text font-semibold mb-2">Calendly Widget Goes Here</p>
+                    <p className="text-sm text-gray-500">
+                      <!-- Calendly inline widget will be embedded here -->
+                    </p>
+                  </div>
                 </div>
-              )}
 
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-900">
-                  Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  required
-                  className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-sea-teal focus:ring-sea-teal sm:text-sm px-4 py-3 border"
-                />
+                {/* Direct Contact Info */}
+                <div className="bg-gradient-to-br from-navy to-navy-light text-white rounded-2xl p-8">
+                  <h3 className="text-2xl font-bold mb-6">Contact Directly</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-teal/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Mail size={24} className="text-teal" />
+                      </div>
+                      <div>
+                        <p className="font-semibold mb-1">Email</p>
+                        <a 
+                          href="mailto:jonathan@fleetskipper.com" 
+                          className="text-teal hover:text-teal-light transition-colors"
+                        >
+                          jonathan@fleetskipper.com
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="bg-teal/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Phone size={24} className="text-teal" />
+                      </div>
+                      <div>
+                        <p className="font-semibold mb-1">Phone</p>
+                        <a 
+                          href="tel:+447446858414" 
+                          className="text-teal hover:text-teal-light transition-colors"
+                        >
+                          +44 7446 858414
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="bg-teal/20 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <MapPin size={24} className="text-teal" />
+                      </div>
+                      <div>
+                        <p className="font-semibold mb-1">Location</p>
+                        <p className="text-white/90">
+                          Based in Northern Ireland<br />
+                          Serving UK workboat operators
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
+              {/* Right Column - Contact Form */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-900">
-                  Email <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-sea-teal focus:ring-sea-teal sm:text-sm px-4 py-3 border"
-                />
+                <h2 className="text-3xl font-bold text-navy mb-6">Send a Message</h2>
+                <p className="text-lg text-body-text mb-6">
+                  Fill out the form below and we'll get back to you within 24 hours.
+                </p>
+
+                {submitted ? (
+                  <div className="bg-teal/10 border-2 border-teal rounded-xl p-8 text-center">
+                    <div className="bg-teal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Send size={32} className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-navy mb-2">Message Sent!</h3>
+                    <p className="text-body-text">
+                      Thanks for getting in touch. We'll respond within 24 hours.
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2">
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent"
+                        placeholder="Your full name"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-navy mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-semibold text-navy mb-2">
+                        Phone
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent"
+                        placeholder="+44 7XXX XXXXXX"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="vesselType" className="block text-sm font-semibold text-navy mb-2">
+                        Vessel Type
+                      </label>
+                      <select
+                        id="vesselType"
+                        name="vesselType"
+                        value={formData.vesselType}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent"
+                      >
+                        <option value="">Select vessel type</option>
+                        <option value="tug">Tug</option>
+                        <option value="pilot-boat">Pilot Boat</option>
+                        <option value="crew-transfer">Crew Transfer Vessel</option>
+                        <option value="survey">Survey Vessel</option>
+                        <option value="workboat-other">Workboat (Other)</option>
+                        <option value="multiple">Multiple Vessels</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="servicesNeeded" className="block text-sm font-semibold text-navy mb-2">
+                        Services Needed
+                      </label>
+                      <select
+                        id="servicesNeeded"
+                        name="servicesNeeded"
+                        value={formData.servicesNeeded}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent"
+                      >
+                        <option value="">Select service</option>
+                        <option value="sms-build">SMS Documentation Build</option>
+                        <option value="sms-audit">SMS Audit & Gap Analysis</option>
+                        <option value="ongoing-support">Ongoing SMS Support</option>
+                        <option value="app-demo">FleetSkipper App Demo</option>
+                        <option value="general-inquiry">General Inquiry</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-semibold text-navy mb-2">
+                        Message *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={6}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent"
+                        placeholder="Tell us about your compliance needs..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full bg-orange hover:bg-orange-dark text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg flex items-center justify-center gap-2"
+                    >
+                      <Send size={20} />
+                      Send Message
+                    </button>
+
+                    <p className="text-sm text-gray-500 text-center">
+                      * Required fields
+                    </p>
+                  </form>
+                )}
               </div>
 
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-900">
-                  Subject <span className="text-red-500">*</span>
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  required
-                  className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-sea-teal focus:ring-sea-teal sm:text-sm px-4 py-3 border"
-                >
-                  <option value="SeaReady eMPX™ Quote">SeaReady eMPX™ Quote</option>
-                  <option value="SMS Consultancy Quote">SMS Consultancy Quote</option>
-                  <option value="SMS Suite Information Request">SMS Suite Information Request</option>
-                  <option value="General Question">General Question</option>
-                  <option value="Partnership Inquiry">Partnership Inquiry</option>
-                  <option value="Press / Media">Press / Media</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-900">
-                  Message <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  required
-                  className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-sea-teal focus:ring-sea-teal sm:text-sm px-4 py-3 border"
-                  placeholder="How can we help?"
-                />
-              </div>
-
-              <div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="rounded-full px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-brand-orange/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  style={{ backgroundColor: '#c65d00' }}
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </button>
-              </div>
-            </form>
-          </div>
-
-          {/* Direct Contact */}
-          <div className="mt-16 border-t border-gray-200 pt-8">
-            <h3 className="text-lg font-semibold text-gray-900">Email Us Directly</h3>
-            <p className="mt-2 text-gray-600">
-              <a href="mailto:support@seaready.co.uk" className="font-semibold text-sea-teal hover:underline">
-                support@seaready.co.uk
-              </a>
-            </p>
-            <p className="mt-2 text-sm text-gray-600">
-              We typically respond within 24 hours
-            </p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  )
+      </section>
+
+      <Footer />
+    </>
+  );
 }

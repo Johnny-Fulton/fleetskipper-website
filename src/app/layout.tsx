@@ -5,10 +5,10 @@ import { CookieConsentBanner } from '@/components/CookieConsent'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - SeaReady SMS',
-    default: 'SeaReady SMS - UK Workboat Compliance Platform',
+    template: '%s - FleetSkipper',
+    default: 'FleetSkipper - WBC3 Compliance Made Simple for Workboat Operators',
   },
-  description: 'Ready-to-use Safety Management System for UK workboats. WBC3 and IWC compliant.',
+  description: 'Expert SMS documentation and digital tools for UK workboat operators. Built by a Master Mariner for working skippers. WBC3 compliance made simple.',
 }
 
 export default function RootLayout({
@@ -22,9 +22,6 @@ export default function RootLayout({
         {/* Using system fonts for instant loading - no external requests */}
       </head>
       <body className="text-gray-950 antialiased">
-        {/* DEPLOYMENT VERIFICATION: v1.0.0 - Commit d3edd8e - Dec 10 2025 */}
-        <CookieConsentBanner />
-        <GoogleAnalytics />
         {children}
       </body>
     </html>

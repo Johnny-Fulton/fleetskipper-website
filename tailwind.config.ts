@@ -11,22 +11,21 @@ export default <Partial<Config>>{
     },
     extend: {
       colors: {
-        ink: "#0B132B",
-        navy: "#0E1A2B",
-        "navy-900": "#0E1A2B",
-        navy2: "#001F3F",
-        "navy-light": "#13263F",
-        "sea-teal": "#0891B2",
-        "primary-cyan": "#0891B2",
-        "brand-orange": "#F97316",
-        "cta-orange": "#c65d00",
-        "body-text": "#4B535D",
+        // FleetSkipper Brand Colors
+        navy: "#1e3a5f",           // Primary Navy Blue
+        "navy-dark": "#142a45",     // Darker navy for depth
+        "navy-light": "#2a4a6f",    // Lighter navy for hover states
+        teal: "#00a8cc",            // Secondary Teal/Cyan
+        "teal-dark": "#008fb3",     // Darker teal
+        "teal-light": "#33b8d6",    // Lighter teal
+        orange: "#ff6b35",          // Accent Safety Orange for CTAs
+        "orange-dark": "#e65a2e",   // Darker orange for hover
+        "orange-light": "#ff8557",  // Lighter orange
+        "body-text": "#4B535D",     // Body text gray
+        ink: "#0B132B",             // Very dark text
         success: "#10B981",
         warning: "#F59E0B",
         danger: "#EF4444",
-        // Legacy colors to replace
-        "legacy-blue": "#4a5f7a",
-        "legacy-blue-light": "#5a7a8a",
       },
       boxShadow: {
         card: "0 8px 24px rgba(2,6,23,0.06)",
@@ -55,12 +54,12 @@ export default <Partial<Config>>{
     },
   },
   safelist: [
-    // brand tokens
-    { pattern: /(bg|text|fill|stroke|ring|border)-(navy2?|navy-900|sea-teal|primary-cyan|brand-orange|cta-orange|ink|body-text)/ },
+    // FleetSkipper brand tokens
+    { pattern: /(bg|text|fill|stroke|ring|border)-(navy|teal|orange|ink|body-text)(-dark|-light)?/ },
     // neutral helpers we use on cards/sections
-    { pattern: /(bg|text|ring|border)-(gray|slate|cyan)-(50|100|200|300|400|500|600|700|800|900)/ },
+    { pattern: /(bg|text|ring|border)-(gray|slate)-(50|100|200|300|400|500|600|700|800|900)/ },
     // gradients/overlays
-    { pattern: /(from|via|to)-(navy2?|sea-teal|primary-cyan|white|black)/ },
+    { pattern: /(from|via|to)-(navy|teal|orange|white|black)/ },
     'shadow-sm','shadow-md','shadow-lg','ring-1','ring-2','rounded-xl','rounded-2xl','rounded-full'
   ],
   plugins: [typography],
