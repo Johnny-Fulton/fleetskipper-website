@@ -371,7 +371,7 @@ export default function SMSPortalPage() {
           </div>
 
           <p className="mt-8 text-center text-sm" style={{ color: '#6B7280' }}>
-            Questions? Email us at <a href="mailto:support@seaready.co.uk" className="font-semibold" style={{ color: '#0891B2' }}>support@seaready.co.uk</a>
+            Questions? Email us at <a href="mailto:info@fleetskipper.com" className="font-semibold" style={{ color: '#0891B2' }}>info@fleetskipper.com</a>
           </p>
         </div>
       </section>

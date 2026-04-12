@@ -79,7 +79,7 @@ ACTION: Add to waitlist email campaign
     return NextResponse.json(
       {
         success: false,
-        message: 'Sorry, there was an error. Please email support@seaready.co.uk',
+        message: 'Sorry, there was an error. Please email info@fleetskipper.com',
       },
       { status: 500 }
     )

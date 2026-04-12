@@ -71,7 +71,7 @@ export default function WorkboatSMSPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:py-36 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-20 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6">
               <span className="inline-flex items-center rounded-full bg-[#c65d00] px-4 py-2 text-sm font-semibold text-white">

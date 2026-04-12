@@ -251,8 +251,8 @@ export default async function BillingPage() {
             <div className="mt-2 text-sm text-gray-500">
               <p>
                 For billing questions, contact our support team at{' '}
-                <a href="mailto:support@seaready.co.uk" className="text-indigo-600 hover:text-indigo-500">
-                  support@seaready.co.uk
+                <a href="mailto:info@fleetskipper.com" className="text-indigo-600 hover:text-indigo-500">
+                  info@fleetskipper.com
                 </a>
               </p>
             </div>

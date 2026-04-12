@@ -286,7 +286,7 @@ export default function CookiePolicyPage() {
                   If you have questions about our use of cookies, contact us at:
                 </p>
                 <p style={{ color: '#4B535D' }}>
-                  <a href="mailto:support@seaready.co.uk" className="text-cyan-600 hover:underline">support@seaready.co.uk</a>
+                  <a href="mailto:info@fleetskipper.com" className="text-cyan-600 hover:underline">info@fleetskipper.com</a>
                 </p>
               </div>
             </div>

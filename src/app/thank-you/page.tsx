@@ -105,10 +105,10 @@ export default function ThankYouPage() {
             </p>
             <p className="mt-2">
               <a
-                href="mailto:support@seaready.co.uk"
+                href="mailto:info@fleetskipper.com"
                 className="text-cyan-600 hover:text-cyan-700 font-semibold"
               >
-                support@seaready.co.uk
+                info@fleetskipper.com
               </a>
             </p>
           </div>

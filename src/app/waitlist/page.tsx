@@ -37,7 +37,7 @@ export default function WaitlistPage() {
       }
     } catch (error) {
       console.error('Form submission error:', error)
-      alert('Failed to join waitlist. Please email support@seaready.co.uk directly.')
+      alert('Failed to join waitlist. Please email info@fleetskipper.com directly.')
       setIsSubmitting(false)
     }
   }

@@ -9,13 +9,13 @@ interface SectionHeaderProps {
   className?: string
 }
 
-export function SectionHeader({ 
-  eyebrow, 
-  title, 
-  subtitle, 
+export function SectionHeader({
+  eyebrow,
+  title,
+  subtitle,
   dark = false,
   centered = true,
-  className 
+  className
 }: SectionHeaderProps) {
   return (
     <div className={clsx(
@@ -23,26 +23,25 @@ export function SectionHeader({
       className
     )}>
       {eyebrow && (
-        <div 
+        <div
           className={clsx(
-            'text-xs md:text-sm font-semibold uppercase tracking-widest',
-            dark ? 'text-sea-teal' : 'text-sea-teal'
+            'text-xs md:text-sm font-semibold uppercase tracking-widest mb-3'
           )}
-          style={{ color: dark ? '#0891B2' : '#0891B2' }}
+          style={{ color: dark ? '#33b8d6' : '#00a8cc' }}
         >
           {eyebrow}
         </div>
       )}
       <h2 className={clsx(
-        'font-display text-3xl md:text-5xl font-bold tracking-tight mt-2',
+        'font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight',
         dark ? 'text-white' : 'text-ink'
       )}>
         {title}
       </h2>
       {subtitle && (
         <p className={clsx(
-          'text-base md:text-lg mt-4 leading-relaxed',
-          dark ? 'text-slate-300' : 'text-slate-600'
+          'text-base md:text-lg lg:text-xl mt-4 leading-relaxed',
+          dark ? 'text-slate-300' : 'text-body-text'
         )}>
           {subtitle}
         </p>

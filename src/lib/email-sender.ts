@@ -1,10 +1,10 @@
 import nodemailer from 'nodemailer'
 
 /**
- * Email sender using Google Workspace (support@seaready.co.uk)
+ * Email sender using Google Workspace (info@fleetskipper.com)
  *
  * Requires environment variables:
- * - EMAIL_FROM: support@seaready.co.uk
+ * - EMAIL_FROM: info@fleetskipper.com
  * - EMAIL_PASSWORD: Google App Password
  */
 
@@ -25,19 +25,23 @@ const transporter = nodemailer.createTransport({
 export async function sendContactEmail(data: {
   name: string
   email: string
-  subject: string
+  phone?: string
+  vesselType?: string
+  servicesNeeded?: string
   message: string
   submitted_at: string
 }) {
   const emailBody = `
-NEW GENERAL CONTACT REQUEST
+NEW CONTACT REQUEST - FleetSkipper
 
 ===================================
 CONTACT INFORMATION
 ===================================
 Name: ${data.name}
 Email: ${data.email}
-Subject: ${data.subject}
+Phone: ${data.phone || 'Not provided'}
+Vessel Type: ${data.vesselType || 'Not specified'}
+Services Needed: ${data.servicesNeeded || 'Not specified'}
 
 ===================================
 MESSAGE
@@ -47,7 +51,7 @@ ${data.message}
 ===================================
 NEXT STEPS
 ===================================
-1. Review inquiry type: ${data.subject}
+1. Review services needed: ${data.servicesNeeded || 'General inquiry'}
 2. Respond to: ${data.email}
 3. Response deadline: Within 24 hours
 
@@ -55,7 +59,7 @@ Submitted: ${data.submitted_at}
   `.trim()
 
   const mailOptions = {
-    from: `"SeaReady Contact Form" <${process.env.EMAIL_FROM}>`,
+    from: `"FleetSkipper Contact Form" <${process.env.EMAIL_FROM}>`,
     to: process.env.EMAIL_FROM, // Send to yourself
     replyTo: data.email, // Allow easy reply to the person who submitted
     subject: `Contact Form: ${data.subject} - ${data.name}`,
@@ -93,7 +97,7 @@ Submitted: ${data.submitted_at}
             timeStyle: 'short',
             timeZone: 'Europe/London'
           })}</p>
-          <p>Via SeaReady Website Contact Form</p>
+          <p>Via FleetSkipper Website Contact Form</p>
         </div>
       </div>
     `,

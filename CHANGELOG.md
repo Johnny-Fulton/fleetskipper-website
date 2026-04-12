@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-03-14
+
+- Add crew certification checker API endpoint at /api/crew/check
+- Integrate WBC3 crew checker engine for master qualifications and training requirements
+- Add API documentation and test script for crew certification endpoint
+
 ## 2025-07-29
 
 - Add Sanity real-time content

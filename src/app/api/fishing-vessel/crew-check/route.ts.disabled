@@ -1,0 +1,83 @@
+import { NextResponse } from 'next/server';
+
+// Import the FV checker engine
+// @ts-ignore - JavaScript module
+import { checkVesselRequirements } from '../../../../../../../SeaReady/products/fv-requirements-checker/src/index.js';
+
+/**
+ * POST /api/fishing-vessel/crew-check
+ *
+ * Check crew requirements for fishing vessels (MSN 1871/1872/1873).
+ * Returns ONLY crew-related items (filtered from full engine output).
+ */
+export async function POST(request: Request) {
+  try {
+    const vesselInput = await request.json();
+
+    // Run the full checker
+    const result = checkVesselRequirements(vesselInput);
+
+    if (!result.success) {
+      return NextResponse.json(result, { status: 400 });
+    }
+
+    // FILTER to crew requirements only (as per handoff doc)
+    const allClassified = [
+      ...result.data.documentation,
+      ...result.data.maintenance,
+    ].filter((item: any) => item.appliesTo);
+
+    // Personal certs and training only (exclude vessel-level items)
+    let crewItems = allClassified.filter((item: any) =>
+      ['all_crew', 'new_entrant', 'experienced_crew', 'skipper'].includes(item.appliesTo)
+    );
+
+    // BUGFIX: Exclude "Under 16.5m Skipper Certificate" items for vessels ≥16.5m
+    // The gate expressions in the engine don't include vessel size checks for skipper certs,
+    // so we need to filter them here based on lengthOverall
+    const loa = vesselInput.lengthOverall || 0;
+    if (loa >= 16.5) {
+      crewItems = crewItems.filter((item: any) => {
+        // Exclude skipper certificate items that are specifically for vessels under 16.5m
+        if (item.subcategory === 'skipper_certificate' &&
+            (item.id === 'fv.crew.doc.skipper.20mile' || item.id === 'fv.crew.doc.skipper.beyond20')) {
+          return false;
+        }
+        return true;
+      });
+    }
+
+    // Return filtered result
+    return NextResponse.json({
+      success: true,
+      data: {
+        crewRequirements: crewItems,
+        _meta: result.data._meta,
+        summary: {
+          totalCrewRequirements: crewItems.length,
+          byAppliesTo: crewItems.reduce((acc: any, item: any) => {
+            const key = item.appliesTo;
+            if (!acc[key]) acc[key] = { label: item.appliesToLabel, count: 0 };
+            acc[key].count++;
+            return acc;
+          }, {}),
+          bySubcategory: crewItems.reduce((acc: any, item: any) => {
+            const key = item.subcategory;
+            if (!acc[key]) acc[key] = { label: item.subcategoryLabel, count: 0 };
+            acc[key].count++;
+            return acc;
+          }, {}),
+        }
+      }
+    });
+  } catch (error) {
+    console.error('FV Crew Check Error:', error);
+    return NextResponse.json(
+      {
+        success: false,
+        errors: [{ message: 'Internal server error processing crew requirements' }]
+      },
+      { status: 500 }
+    );
+  }
+}

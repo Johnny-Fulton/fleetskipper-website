@@ -217,7 +217,7 @@ export default function SLAPage() {
                     </thead>
                     <tbody className="divide-y divide-gray-200 bg-white">
                       <tr>
-                        <td className="px-4 py-3 text-sm font-semibold text-gray-900 border-r border-gray-300">Email (support@seaready.co.uk)</td>
+                        <td className="px-4 py-3 text-sm font-semibold text-gray-900 border-r border-gray-300">Email (info@fleetskipper.com)</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-r border-gray-300">24/7 (monitored 09:00-17:00 Mon-Fri)</td>
                         <td className="px-4 py-3 text-sm text-gray-700">See Section 3.2</td>
                       </tr>
@@ -311,8 +311,8 @@ export default function SLAPage() {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">3.3 Escalation</h3>
                 <p className="text-gray-700 mb-3">If you are not satisfied with support response:</p>
                 <ol className="list-decimal pl-6 space-y-2 text-gray-700">
-                  <li><strong>First Escalation:</strong> Email <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
-                  <li><strong>Executive Escalation:</strong> Email Jonathan Fulton directly (<a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>)</li>
+                  <li><strong>First Escalation:</strong> Email <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
+                  <li><strong>Executive Escalation:</strong> Email Jonathan Fulton directly (<a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>)</li>
                   <li><strong>Response:</strong> Escalations acknowledged within 2 hours during business hours</li>
                 </ol>
               </div>
@@ -475,7 +475,7 @@ export default function SLAPage() {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">6.2 How to Claim Credits</h3>
                 <ol className="list-decimal pl-6 space-y-2 text-gray-700">
                   <li>Customer must request credit within 30 days of end of month</li>
-                  <li>Email: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a> with &quot;SLA Credit Request&quot; subject</li>
+                  <li>Email: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a> with &quot;SLA Credit Request&quot; subject</li>
                   <li>Include: Month, account details, description of downtime experienced</li>
                   <li>SeaReady reviews monitoring logs and approves/denies within 10 business days</li>
                   <li>Credits applied to next invoice (or refunded if customer cancels)</li>
@@ -622,7 +622,7 @@ export default function SLAPage() {
                 <div>
                   <p className="font-semibold text-gray-900 mb-3">General Support:</p>
                   <ul className="space-y-2 text-gray-700">
-                    <li>Email: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                    <li>Email: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                     <li>Phone: [To be added]</li>
                     <li>Help Center: help.seaready.co.uk (to be implemented)</li>
                   </ul>
@@ -630,13 +630,13 @@ export default function SLAPage() {
                 <div>
                   <p className="font-semibold text-gray-900 mb-3">Billing Queries:</p>
                   <ul className="space-y-2 text-gray-700">
-                    <li>Email: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                    <li>Email: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                   </ul>
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 mb-3">Security Issues:</p>
                   <ul className="space-y-2 text-gray-700">
-                    <li>Email: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                    <li>Email: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                     <li>Emergency: [Phone - to be added]</li>
                   </ul>
                 </div>

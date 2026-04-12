@@ -169,7 +169,7 @@ Submitted: ${data.submitted_at}
     return NextResponse.json(
       {
         success: false,
-        message: 'Sorry, there was an error submitting your request. Please email support@seaready.co.uk directly.',
+        message: 'Sorry, there was an error submitting your request. Please email info@fleetskipper.com directly.',
       },
       { status: 500 }
     )

@@ -1,5 +1,5 @@
 import NavBarSolid from '@/components/navbar-solid'
-import { Footer } from '@/components/footer'
+import { Footer } from '@/components/Footer'
 import { trainingContent } from '@/content/training-strings'
 import {
   FireIcon,

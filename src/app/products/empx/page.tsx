@@ -1437,10 +1437,10 @@ export default function eMPXPage() {
           <p className="mt-10 text-gray-400">
             Questions? Email{' '}
             <a
-              href="mailto:support@seaready.co.uk"
+              href="mailto:info@fleetskipper.com"
               className="font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
             >
-              support@seaready.co.uk
+              info@fleetskipper.com
             </a>
           </p>
         </div>

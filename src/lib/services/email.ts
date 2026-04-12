@@ -42,7 +42,7 @@ export async function sendContactNotification(data: {
   `;
   
   return sendMail({
-    to: process.env.SUPPORT_EMAIL || "support@seaready.co.uk",
+    to: process.env.SUPPORT_EMAIL || "info@fleetskipper.com",
     subject: `New contact from ${data.name}`,
     html,
   });

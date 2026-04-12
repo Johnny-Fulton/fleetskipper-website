@@ -162,7 +162,7 @@ export default function TermsOfServicePage() {
                   <li>Use a strong, unique password</li>
                   <li>Enable multi-factor authentication (MFA) if available</li>
                   <li>Not share login credentials</li>
-                  <li>Notify us immediately of unauthorized access: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                  <li>Notify us immediately of unauthorized access: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                 </ul>
               </div>
 
@@ -385,7 +385,7 @@ export default function TermsOfServicePage() {
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">9.3 Support</h3>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Email support: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                  <li>Email support: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                   <li>Response times: See SLA</li>
                   <li>P1 (critical): 1-hour response, 4-hour resolution target</li>
                   <li>P4 (low): 24-hour response, best effort resolution</li>
@@ -417,7 +417,7 @@ export default function TermsOfServicePage() {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">10.2 Termination by You</h3>
                 <p className="text-gray-700 mb-3">You may cancel your subscription anytime:</p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li><strong>Notice:</strong> 30 days written notice to <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                  <li><strong>Notice:</strong> 30 days written notice to <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                   <li><strong>Effective:</strong> End of current billing period (or 30 days, whichever is later)</li>
                   <li><strong>Data:</strong> 30 days to export your data after cancellation, then securely deleted</li>
                 </ul>
@@ -598,7 +598,7 @@ export default function TermsOfServicePage() {
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">15.3 Dispute Resolution</h3>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li><strong>First:</strong> Contact us to resolve informally (<a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>)</li>
+                  <li><strong>First:</strong> Contact us to resolve informally (<a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>)</li>
                   <li><strong>Second:</strong> Mediation (if both parties agree)</li>
                   <li><strong>Third:</strong> Courts of Northern Ireland (or England/Wales) have exclusive jurisdiction</li>
                 </ul>
@@ -645,7 +645,7 @@ export default function TermsOfServicePage() {
                 <p className="text-gray-700 mb-3">Legal notices to:</p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700">
                   <li><strong>You:</strong> Email on file + registered address (if provided)</li>
-                  <li><strong>Us:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a> or SeaReady Ltd, Office 1581, 92 Castle Street, Belfast, BT1 1HE</li>
+                  <li><strong>Us:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a> or SeaReady Ltd, Office 1581, 92 Castle Street, Belfast, BT1 1HE</li>
                 </ul>
               </div>
 
@@ -663,10 +663,10 @@ export default function TermsOfServicePage() {
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0891B2' }}>16. Contact</h2>
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
               <ul className="space-y-2 text-gray-700">
-                <li><strong>General Enquiries:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
-                <li><strong>Support:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
-                <li><strong>Billing:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
-                <li><strong>Legal/Disputes:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                <li><strong>General Enquiries:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
+                <li><strong>Support:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
+                <li><strong>Billing:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
+                <li><strong>Legal/Disputes:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                 <li><strong>Office:</strong> SeaReady Ltd, Office 1581, 92 Castle Street, Belfast, BT1 1HE</li>
               </ul>
             </div>
@@ -710,7 +710,7 @@ export default function TermsOfServicePage() {
                 </div>
               </div>
               <p className="mt-6">
-                <strong>Questions?</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>
+                <strong>Questions?</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>
               </p>
             </div>
           </div>

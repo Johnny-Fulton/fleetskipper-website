@@ -11,17 +11,19 @@ export async function POST(request: NextRequest) {
     const data = {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
-      subject: formData.get('subject') as string,
+      phone: formData.get('phone') as string,
+      vesselType: formData.get('vesselType') as string,
+      servicesNeeded: formData.get('servicesNeeded') as string,
       message: formData.get('message') as string,
       submitted_at: new Date().toISOString(),
     }
 
-    // Validate required fields
-    if (!data.name || !data.email || !data.subject || !data.message) {
+    // Validate required fields (only name, email, message required)
+    if (!data.name || !data.email || !data.message) {
       return NextResponse.json(
         {
           success: false,
-          message: 'All fields are required.',
+          message: 'Name, email, and message are required.',
         },
         { status: 400 }
       )
@@ -58,7 +60,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message: 'Sorry, there was an error sending your message. Please email support@seaready.co.uk directly.',
+        message: 'Sorry, there was an error sending your message. Please email info@fleetskipper.com directly.',
       },
       { status: 500 }
     )

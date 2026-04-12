@@ -53,8 +53,8 @@ export function SiteFooter({ product, company, resources, legal, copyright }: Si
             <div className="space-y-3 mb-6">
               <p className="text-sm" style={{ color: '#C4C4C4' }}>
                 <span className="font-semibold text-white">Email:</span>{' '}
-                <a href="mailto:info@safedeckmaritime.com" className="hover:text-sea-teal transition">
-                  info@safedeckmaritime.com
+                <a href="mailto:info@fleetskipper.com" className="hover:text-sea-teal transition">
+                  info@fleetskipper.com
                 </a>
               </p>
             </div>

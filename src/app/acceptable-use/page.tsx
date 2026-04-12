@@ -398,7 +398,7 @@ export default function AcceptableUsePolicyPage() {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">7.2 Reporting Abuse</h3>
                 <p className="text-gray-700 mb-3">If you suspect another user is violating this AUP:</p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                  <li>Email: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                  <li>Email: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                   <li>Provide: Details of the violation, evidence if available</li>
                   <li>We&apos;ll investigate confidentially</li>
                 </ul>
@@ -483,9 +483,9 @@ export default function AcceptableUsePolicyPage() {
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0891B2' }}>10. Reporting & Contact</h2>
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
               <ul className="space-y-2 text-gray-700">
-                <li><strong>Report AUP violations:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
-                <li><strong>Security concerns:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
-                <li><strong>General questions:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                <li><strong>Report AUP violations:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
+                <li><strong>Security concerns:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
+                <li><strong>General questions:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                 <li><strong>Office:</strong> SeaReady Ltd, Office 1581, 92 Castle Street, Belfast, BT1 1HE</li>
               </ul>
             </div>
@@ -539,7 +539,7 @@ export default function AcceptableUsePolicyPage() {
               </div>
             </div>
             <p className="text-gray-700 mt-6">
-              <strong>If you&apos;re unsure whether something is allowed, ask us first:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>
+              <strong>If you&apos;re unsure whether something is allowed, ask us first:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>
             </p>
             <p className="text-gray-700 mt-4 italic">
               Common sense applies: If it feels wrong, it probably is.

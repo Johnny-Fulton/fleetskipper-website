@@ -4,6 +4,143 @@
 
 ---
 
+## 2026-03-23 - BUGFIX: Vessel Size Filtering for Skipper Certificates 🐛✅
+
+**Session Goal:** Fix critical bug where "Under 16.5m Skipper Certificate" was appearing for large fishing vessels (18m+)
+
+### User Report
+
+User tested the Fishing Vessel Crew Checker and reported:
+> "I have just made a new entry and made the length over 16.5 m, but I'm still getting results for under 16.5 m."
+
+This was a **critical regulatory compliance issue** - showing incorrect skipper requirements could mislead vessel operators about their certification needs.
+
+### Investigation
+
+**Root Cause Discovery:**
+
+Checked the regulations engine data file `/SeaReady/products/fv-requirements-checker/src/data/shared/crew.js` and found:
+
+```javascript
+{
+  "id": "fv.crew.doc.skipper.20mile",
+  "docName": "Under 16.5m Skipper Certificate (up to 20 miles)",
+  "gate": "isFishing",  // ❌ BUG: Should be "isFishing & loaLT:16.5"
+  ...
+}
+```
+
+The gate expression was `"isFishing"` which applies to **ALL fishing vessels**, not just those under 16.5m.
+
+**Why This Happened:**
+
+The regulations engine uses gate expressions to determine when items apply. The skipper certificate items should have vessel size checks in their gates, but they don't. This is because:
+
+1. These items are in the "shared" domain (apply across all MSN tiers)
+2. The gate expressions were defined at the CSV level
+3. The CSV probably didn't include length checks for these items
+
+**Why Not Fix at Source:**
+
+- The data files are GENERATED from CSV databases
+- I don't have access to the CSV source files
+- Fixing at the CSV level would require regenerating data files
+- The product owner might need to fix this properly later
+
+### Solution
+
+**Added vessel size filtering at the API level:**
+
+File: `/src/app/api/fishing-vessel/crew-check/route.ts`
+
+```typescript
+// BUGFIX: Exclude "Under 16.5m Skipper Certificate" items for vessels ≥16.5m
+const loa = vesselInput.lengthOverall || 0;
+if (loa >= 16.5) {
+  crewItems = crewItems.filter((item: any) => {
+    if (item.subcategory === 'skipper_certificate' &&
+        (item.id === 'fv.crew.doc.skipper.20mile' ||
+         item.id === 'fv.crew.doc.skipper.beyond20')) {
+      return false;
+    }
+    return true;
+  });
+}
+```
+
+**Why This Approach:**
+
+1. ✅ Fixes the bug immediately without touching the regulations engine
+2. ✅ Explicit and easy to understand
+3. ✅ No risk of breaking other parts of the system
+4. ✅ Can be easily removed if/when the CSV data is fixed upstream
+5. ✅ Only affects the crew checker tool (which is the only consumer of this API)
+
+### Testing
+
+**Large Vessel (18m RL, 19.5m LOA):**
+```bash
+curl http://localhost:3002/api/fishing-vessel/crew-check -d @test_large_vessel.json
+# Result: skipperItems = [] ✅ CORRECT
+```
+
+**Small Vessel (10m RL, 12m LOA):**
+```bash
+curl http://localhost:3002/api/fishing-vessel/crew-check -d @test_small_vessel.json
+# Result: skipperItems = [
+#   "Under 16.5m Skipper Certificate (up to 20 miles)",
+#   "Under 16.5m Skipper Certificate (beyond 20 miles)"
+# ] ✅ CORRECT
+```
+
+### User Experience Improvement
+
+This bug fix completes the iterative improvement cycle for the FV Crew Checker:
+
+1. **UX Issue 1:** "Too much legislative detail" → Fixed with expandable sections
+2. **UX Issue 2:** "Doesn't specify voluntary" → Fixed with blue "Voluntary" badges
+3. **BUG Issue 3:** "Large vessel showing small vessel certs" → Fixed with size filtering ✅
+
+The tool now provides:
+- ✅ Clean, scannable certificate lists
+- ✅ Clear indication of voluntary vs mandatory items
+- ✅ Accurate results based on vessel size (no incorrect items)
+
+### Impact
+
+**Before Fix:**
+- Vessel operators with 18m+ fishing vessels would see skipper certificates intended for vessels under 16.5m
+- Could lead to confusion about regulatory requirements
+- Incorrect compliance information
+
+**After Fix:**
+- Large vessels no longer show "Under 16.5m" skipper certificates
+- Small vessels still correctly show these voluntary certifications
+- Accurate regulatory guidance for all vessel sizes
+
+### Technical Debt Note
+
+This is a **workaround** fix, not the ideal solution. The ideal fix would be:
+
+1. Update the CSV source data for crew certificates
+2. Add vessel size gates: `"isFishing & loaLT:16.5"` for both skipper certificate items
+3. Regenerate the data modules with `node tools/csv-to-js.js`
+4. Remove the workaround filtering from the API route
+
+**TODO for product owner:** Update CSV source files in `/fv-requirements-checker/` project with proper vessel size gates for skipper certificates.
+
+### Files Modified
+
+- `/src/app/api/fishing-vessel/crew-check/route.ts` - Added vessel size filtering logic (lines 30-42)
+
+### Files Analyzed
+
+- `/fv-requirements-checker/src/data/shared/crew.js` - Identified gate expression issue
+- `/fv-requirements-checker/src/engine/crewClassification.js` - Confirmed role-based classification
+- `/fv-requirements-checker/WEB-ORCHESTRATOR-HANDOFF.md` - Reviewed architecture and filtering patterns
+
+---
+
 ## 2026-01-29 - GA4 Analytics API Setup (Awaiting Permission) ⏳
 
 **Session Goal:** Enable automated analytics reporting so Jonathan can ask for website stats and get instant reports
@@ -2879,3 +3016,118 @@ This was the right call to mark as CRITICAL and fix immediately.
 **Current Branch:** `safedeck-rebrand`
 
 ---
+
+---
+
+## Session 2025-01-27: Fixed Content Security Policy Blocking Signup Flow
+
+### Problem Summary
+
+User reported "Failed to fetch" errors during the signup process on FleetSkipper website. The errors were appearing at two stages:
+1. Initial signup form submission
+2. Onboarding form (second step)
+
+### Root Cause Analysis
+
+After checking the browser console errors in the noticeboard file (`/Users/jonathanfulton/Desktop/NOTICEBOARDS/WEB_NOTICEBOARD.md`), I identified that the Content Security Policy (CSP) configuration in `next.config.mjs` was blocking necessary external resources:
+
+**Error 1:** Supabase authentication API blocked
+```
+Connecting to 'https://jabcqjgrzlizmwjrqapc.supabase.co/auth/v1/signup' violates 
+the following Content Security Policy directive: "connect-src 'self' 
+https://api.stripe.com https://www.google-analytics.com https://analytics.google.com"
+```
+
+**Error 2:** Google Fonts stylesheet blocked on onboarding form
+```
+Loading the stylesheet 'https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap' 
+violates the following Content Security Policy directive: "style-src 'self' 
+'unsafe-inline' https://api.fontshare.com"
+```
+
+### Solution Implemented
+
+**Fix 1: Added Supabase to connect-src directive**
+- Location: `next.config.mjs` line 54
+- Added: `https://jabcqjgrzlizmwjrqapc.supabase.co` to the `connect-src` CSP directive
+- Result: Signup form could now successfully submit authentication requests to Supabase
+
+**Fix 2: Added Google Fonts to style-src directive**
+- Location: `next.config.mjs` line 51
+- Added: `https://fonts.googleapis.com` to the `style-src` CSP directive
+- Result: Onboarding form could now load its required fonts
+
+### Testing & Verification
+
+1. After first fix: User reported "ok got through to second form" - confirming the initial authentication step was working
+2. After second fix: Google Fonts are now allowed to load on the onboarding form
+3. Dev server was running cleanly on localhost:3002 with both changes applied
+
+### Security Considerations
+
+Both additions are necessary and safe:
+- **Supabase URL** is the project's authentication backend - essential for user signup/login
+- **Google Fonts** is a standard, trusted font CDN used across millions of websites
+
+No security compromise was made - we only allowed specific, necessary external resources rather than opening up CSP broadly.
+
+### Current Status
+
+- ✅ CSP configuration updated
+- ✅ First fix verified by user
+- ✅ Second fix applied
+- ⏳ Waiting for user to test complete signup flow with both fixes
+
+### Next Steps
+
+User should test the complete signup flow:
+1. Fill in initial signup form (name, email, password)
+2. Click "Continue to Details"
+3. Complete onboarding form
+4. Verify successful redirect to `/tools` page
+
+If any additional CSP violations occur, they will appear in the browser console and can be addressed similarly.
+
+
+### Third Issue Discovered
+
+After the first two fixes, user reported another CSP error: **"no user found"** plus font loading violation.
+
+**Error 3:** Google Fonts font files blocked
+```
+Loading the font 'https://fonts.gstatic.com/...' violates the following 
+Content Security Policy directive: "font-src 'self' data: https://api.fontshare.com"
+```
+
+**Root Cause:** Google Fonts uses TWO domains:
+- `fonts.googleapis.com` - serves the CSS stylesheet (already fixed)
+- `fonts.gstatic.com` - serves the actual font files (.woff2, .ttf, etc.) - **this was still blocked**
+
+**Fix 3: Added Google Fonts CDN to font-src directive**
+- Location: `next.config.mjs` line 53
+- Added: `https://fonts.gstatic.com` to the `font-src` CSP directive
+- Result: Font files can now be downloaded properly
+
+### Complete CSP Configuration Summary
+
+After 3 fixes, the complete Google Fonts support now includes:
+
+**Line 51 (style-src):** Allows Google Fonts **stylesheet**
+```javascript
+"style-src 'self' 'unsafe-inline' https://api.fontshare.com https://fonts.googleapis.com"
+```
+
+**Line 53 (font-src):** Allows Google Fonts **font files**
+```javascript
+"font-src 'self' data: https://api.fontshare.com https://fonts.gstatic.com"
+```
+
+**Line 54 (connect-src):** Allows Supabase **authentication API**
+```javascript
+"connect-src 'self' https://api.stripe.com https://www.google-analytics.com https://analytics.google.com https://jabcqjgrzlizmwjrqapc.supabase.co"
+```
+
+All three CSP fixes are now in place. The signup flow should work completely from initial form through onboarding to redirect.
+
+**Note on "no user found" error:** This is likely a separate Supabase authentication issue, not related to CSP. Will need to investigate database/auth configuration if this persists after CSP fixes.
+

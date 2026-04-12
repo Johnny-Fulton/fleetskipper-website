@@ -37,7 +37,7 @@ export default function ConsultancyPage() {
       }
     } catch (error) {
       console.error('Form submission error:', error)
-      alert('Failed to submit request. Please email support@seaready.co.uk directly.')
+      alert('Failed to submit request. Please email info@fleetskipper.com directly.')
       setIsSubmitting(false)
     }
   }
@@ -48,7 +48,7 @@ export default function ConsultancyPage() {
       <NavbarTransparent />
 
       {/* Hero Section with Image */}
-      <div className="relative isolate overflow-hidden">
+      <div className="relative mt-28 isolate overflow-hidden">
         <img
           src="/images/workboats/sunset-workboat.jpg"
           alt="UK workboat operations at sunset"
@@ -56,7 +56,7 @@ export default function ConsultancyPage() {
         />
         <div className="absolute inset-0 bg-black/50" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:py-36 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Get Your Custom SMS Quote
@@ -374,7 +374,7 @@ export default function ConsultancyPage() {
         {/* Trust Elements */}
         <div className="mt-12 border-t border-gray-200 pt-8 text-center">
           <p className="text-sm text-gray-600">
-            Questions? Email us at <a href="mailto:support@seaready.co.uk" className="font-semibold text-sea-teal hover:underline">support@seaready.co.uk</a>
+            Questions? Email us at <a href="mailto:info@fleetskipper.com" className="font-semibold text-sea-teal hover:underline">info@fleetskipper.com</a>
           </p>
         </div>
       </div>

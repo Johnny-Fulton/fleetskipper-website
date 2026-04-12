@@ -1,0 +1,79 @@
+import { NextResponse } from 'next/server';
+
+// Import the FV checker engine
+// @ts-ignore - JavaScript module
+import { checkVesselRequirements } from '../../../../../../SeaReady/products/fv-requirements-checker/src/index.js';
+
+/**
+ * POST /api/fv-crew-check
+ *
+ * Check crew requirements for fishing vessels (MSN 1871/1872/1873).
+ * Returns ONLY crew-related items (filtered from full engine output).
+ *
+ * Filter Recipe: Tool 1 — Crew Requirements Checker
+ * Per WEB-ORCHESTRATOR-HANDOFF.md
+ */
+export async function POST(request: Request) {
+  try {
+    const vesselInput = await request.json();
+
+    // Run the full checker
+    const result = checkVesselRequirements(vesselInput);
+
+    if (!result.success) {
+      return NextResponse.json(result, { status: 400 });
+    }
+
+    // FILTER to crew requirements only (as per handoff doc)
+    const allClassified = [
+      ...result.data.documentation,
+      ...result.data.maintenance,
+    ].filter((item: any) => item.appliesTo);
+
+    // Personal certs and training only (exclude vessel-level items)
+    // Include 'engineer' role for vessels with 750kW+ engines
+    const crewItems = allClassified.filter((item: any) =>
+      ['all_crew', 'new_entrant', 'experienced_crew', 'skipper', 'engineer'].includes(item.appliesTo)
+    );
+
+    // NOTE: Vessel size filtering is now handled by gate expressions in the engine
+    // The engine automatically includes/excludes skipper certs based on vessel size:
+    // - Under 16.5m RL: Shows voluntary "Under 16.5m Skipper Certificate" items
+    // - 16.5m-24m RL: Shows mandatory "Class 2 Deck Officer CoC"
+    // - 24m+ RL: Shows mandatory "Class 1 Deck Officer CoC"
+    // No additional filtering needed here.
+
+    // Return filtered result
+    return NextResponse.json({
+      success: true,
+      data: {
+        crewRequirements: crewItems,
+        _meta: result.data._meta,
+        summary: {
+          totalCrewRequirements: crewItems.length,
+          byAppliesTo: crewItems.reduce((acc: any, item: any) => {
+            const key = item.appliesTo;
+            if (!acc[key]) acc[key] = { label: item.appliesToLabel, count: 0 };
+            acc[key].count++;
+            return acc;
+          }, {}),
+          bySubcategory: crewItems.reduce((acc: any, item: any) => {
+            const key = item.subcategory;
+            if (!acc[key]) acc[key] = { label: item.subcategoryLabel, count: 0 };
+            acc[key].count++;
+            return acc;
+          }, {}),
+        }
+      }
+    });
+  } catch (error) {
+    console.error('FV Crew Check Error:', error);
+    return NextResponse.json(
+      {
+        success: false,
+        errors: [{ message: 'Internal server error processing crew requirements' }]
+      },
+      { status: 500 }
+    );
+  }
+}

@@ -1,0 +1,558 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { Navbar } from '@/components/NavBar'
+import { Footer } from '@/components/Footer'
+import { ChevronDownIcon, ChevronUpIcon, BookOpenIcon } from '@heroicons/react/24/outline'
+
+type CrewRole = 'master' | 'second_person' | 'engineer' | 'all'
+
+// WBC3 Regulatory quotes for each requirement type
+const getWBC3Quote = (reqName: string, reqType: string) => {
+  const quotes: Record<string, { quote: string; section: string; description?: string }> = {
+    // Master Qualifications
+    'Certificate of Competency (CoC)': {
+      quote: '"28.1.1 A vessel shall be safely manned, as a minimum, in accordance with the manning and qualifications requirements indicated in Tables A5.1 and A5.2 of Appendix 5."',
+      section: 'WBC3 Section 28.1.1',
+      description: 'Table A5.1 lists all acceptable Master qualifications by Area Category. Higher-level certificates are valid at lower levels (e.g., Boatmaster T2 is valid for T3 requirements).'
+    },
+    // Medical Fitness
+    'ENG1 Medical Certificate': {
+      quote: '"28.1.2 All crew members shall hold a valid medical fitness certificate issued or accepted by the Administration."',
+      section: 'WBC3 Section 28.1.2',
+      description: 'ML5 medical certificates are also acceptable for vessels operating in Categories 5 and 6.'
+    },
+    'ML5 Medical Certificate': {
+      quote: '"28.1.2 All crew members shall hold a valid medical fitness certificate issued or accepted by the Administration."',
+      section: 'WBC3 Section 28.1.2',
+      description: 'ML5 is the reduced medical standard for limited operations (Categories 5 and 6 only).'
+    },
+    // Engineering Qualifications
+    'Engineering Certificate': {
+      quote: '"Table A5.2 – Minimum Engine Room Manning Requirements. Note 5: In all cases, one of the crew shall be sufficiently familiar with the operation and maintenance of the vessel\'s machinery to ensure safe passage."',
+      section: 'WBC3 Appendix 5, Table A5.2',
+      description: 'Engineering requirements are determined by engine power (kW) and vessel type. The table specifies which certificates are acceptable for each power tier.'
+    },
+    // Mandatory Training - General
+    'Sea Survival': {
+      quote: '"28.1.4 Anyone employed or engaged in any capacity onboard a vessel shall complete the required Administration-approved mandatory training courses listed in Table A5.3."',
+      section: 'WBC3 Section 28.1.4',
+      description: 'STCW route: MCA approved Personal Survival Techniques. Non-STCW route: RYA Basic Sea Survival.'
+    },
+    'Basic Sea Survival': {
+      quote: '"All operators not following this route shall complete a RYA Basic Sea Survival or may complete an MCA approved Personal Survival Techniques course as an alternative."',
+      section: 'WBC3 Appendix 5, Table A5.3',
+      description: 'Acceptable alternative to STCW Personal Survival Techniques for non-STCW Certificate holders.'
+    },
+    'First Aid': {
+      quote: '"Minimum one person on board shall hold MCA approved Elementary First Aid Certificate (or the First Aid at Sea Certificate or Medical First Aid Certificate), or an RYA First Aid Certificate."',
+      section: 'WBC3 Appendix 5, Table A5.3',
+      description: 'Requirements vary by vessel category and MLC compliance status. Categories 0-1 may require higher medical care qualifications.'
+    },
+    'Fire Fighting': {
+      quote: '"All crew members shall complete an MCA approved one day fire fighting course, or STCW Fire Fighting and Prevention, or the equivalent Royal Navy course."',
+      section: 'WBC3 Appendix 5, Table A5.3 (for vessels 15m+)',
+      description: 'Vessels under 15m require minimum one crew member trained. Vessels 15m and over require ALL crew members trained.'
+    },
+    'Radar Training': {
+      quote: '"All Masters, and crew likely to use radar shall complete an MCA approved Small Ships Navigation and Radar: Radar and Meteorology course."',
+      section: 'WBC3 Appendix 5, Table A5.3',
+      description: 'Only required for vessels equipped with radar.'
+    },
+    'Stability Training': {
+      quote: '"The Master shall have completed stability awareness training unless the vessel has a full stability book."',
+      section: 'WBC3 Appendix 5, Table A5.3',
+      description: 'Not required if vessel has a comprehensive stability booklet prepared by naval architect.'
+    }
+  }
+
+  // Try exact match first
+  if (quotes[reqName]) {
+    return quotes[reqName]
+  }
+
+  // Try partial matches for training courses
+  for (const key in quotes) {
+    if (reqName.includes(key) || key.includes(reqName)) {
+      return quotes[key]
+    }
+  }
+
+  // Default fallback based on type
+  if (reqType === 'certificate') {
+    return {
+      quote: '"28.1.1 A vessel shall be safely manned, as a minimum, in accordance with the manning and qualifications requirements indicated in Tables A5.1 and A5.2 of Appendix 5."',
+      section: 'WBC3 Section 28.1.1',
+      description: 'Specific qualifications are listed in Appendix 5 tables based on vessel type, area category, and operational requirements.'
+    }
+  } else if (reqType === 'training') {
+    return {
+      quote: '"28.1.4 Anyone employed or engaged in any capacity onboard a vessel shall complete the required Administration-approved mandatory training courses listed in Table A5.3. If completion of the relevant mandatory courses cannot be demonstrated to the satisfaction of the Administration, then the vessel may be detained."',
+      section: 'WBC3 Section 28.1.4',
+      description: 'All mandatory training must be completed and certificates kept valid.'
+    }
+  } else if (reqType === 'medical') {
+    return {
+      quote: '"28.1.2 All crew members shall hold a valid medical fitness certificate issued or accepted by the Administration."',
+      section: 'WBC3 Section 28.1.2',
+      description: 'Medical certificates must be in-date and appropriate for the area of operation.'
+    }
+  }
+
+  return null
+}
+
+export default function CrewResultsPage() {
+  const [results, setResults] = useState<any>(null)
+  const [selectedRole, setSelectedRole] = useState<CrewRole>('all')
+  const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({})
+
+  useEffect(() => {
+    const stored = localStorage.getItem('crewResults')
+    if (stored) {
+      const parsed = JSON.parse(stored)
+      setResults(parsed.data || parsed)
+    }
+  }, [])
+
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionId]: !prev[sectionId]
+    }))
+  }
+
+  if (!results) {
+    return (
+      <>
+        <Navbar />
+        <main className="py-20">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-3xl font-bold mb-4">No Results Found</h1>
+            <Link href="/tools/crew-checker" className="text-cyan-500 hover:underline">
+              Go back to the checker
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </>
+    )
+  }
+
+  const {
+    masterQualifications = {},
+    secondPerson = {},
+    engineeringQualifications = {},
+    mandatoryTraining = [],
+    medicalFitness = {},
+    specialOperations = {},
+    _meta = {}
+  } = results
+
+  // Build role-specific requirements
+  const getRoleRequirements = (role: CrewRole) => {
+    const requirements: any[] = []
+
+    if (role === 'all' || role === 'master') {
+      // Master's Certificate of Competency
+      if (masterQualifications.acceptableCertificates?.length > 0) {
+        requirements.push({
+          role: 'Master',
+          name: 'Certificate of Competency (CoC)',
+          type: 'certificate',
+          expandable: true,
+          mandatory: true,
+          options: masterQualifications.acceptableCertificates,
+          notes: `Required level: ${masterQualifications.qualificationLevel || 'As specified'}. You need ANY ONE of these certificates.`,
+          reasoning: masterQualifications.reasoning
+        })
+      }
+
+      // Master's training (all mandatory training applies to master)
+      mandatoryTraining.forEach((training: any) => {
+        requirements.push({
+          role: 'Master',
+          name: training.name || training.course,
+          type: 'training',
+          mandatory: training.mandatory !== false,
+          notes: training.reasoning,
+          reference: training.wbc3Reference
+        })
+      })
+
+      // Medical fitness for master
+      if (medicalFitness.certificateType) {
+        requirements.push({
+          role: 'Master',
+          name: medicalFitness.certificateType,
+          type: 'medical',
+          mandatory: true,
+          notes: medicalFitness.reasoning
+        })
+      }
+    }
+
+    if (role === 'all' || role === 'second_person') {
+      if (secondPerson.required && secondPerson.acceptableCertificates?.length > 0) {
+        requirements.push({
+          role: 'Second Person',
+          name: 'Certificate of Competency (CoC)',
+          type: 'certificate',
+          expandable: true,
+          mandatory: true,
+          options: secondPerson.acceptableCertificates,
+          notes: `You need ANY ONE of these certificates.`,
+          reasoning: secondPerson.reasoning
+        })
+      }
+
+      // Second person training (all mandatory training applies)
+      if (secondPerson.required) {
+        mandatoryTraining.forEach((training: any) => {
+          requirements.push({
+            role: 'Second Person',
+            name: training.name || training.course,
+            type: 'training',
+            mandatory: training.mandatory !== false,
+            notes: training.reasoning,
+            reference: training.wbc3Reference
+          })
+        })
+      }
+
+      // Medical for second person
+      if (secondPerson.required && medicalFitness.certificateType) {
+        requirements.push({
+          role: 'Second Person',
+          name: medicalFitness.certificateType,
+          type: 'medical',
+          mandatory: true,
+          notes: medicalFitness.reasoning
+        })
+      }
+    }
+
+    if (role === 'all' || role === 'engineer') {
+      if (engineeringQualifications.required && engineeringQualifications.acceptableCertificates?.length > 0) {
+        requirements.push({
+          role: 'Engineer',
+          name: 'Engineering Certificate',
+          type: 'certificate',
+          expandable: true,
+          mandatory: true,
+          options: engineeringQualifications.acceptableCertificates,
+          notes: `Required for ${engineeringQualifications.powerTier || 'this vessel'}. You need ANY ONE of these certificates.`,
+          reasoning: engineeringQualifications.reasoning
+        })
+      }
+
+      // Engineer training (all mandatory training applies)
+      if (engineeringQualifications.required) {
+        mandatoryTraining.forEach((training: any) => {
+          requirements.push({
+            role: 'Engineer',
+            name: training.name || training.course,
+            type: 'training',
+            mandatory: training.mandatory !== false,
+            notes: training.reasoning,
+            reference: training.wbc3Reference
+          })
+        })
+      }
+
+      // Medical for engineer
+      if (engineeringQualifications.required && medicalFitness.certificateType) {
+        requirements.push({
+          role: 'Engineer',
+          name: medicalFitness.certificateType,
+          type: 'medical',
+          mandatory: true,
+          notes: medicalFitness.reasoning
+        })
+      }
+    }
+
+    return requirements
+  }
+
+  const displayedRequirements = getRoleRequirements(selectedRole)
+
+  // Get role name for display
+  const getRoleName = (role: CrewRole): string => {
+    const roleNames = {
+      master: 'Master',
+      second_person: 'Second Person',
+      engineer: 'Engineer',
+      all: 'All Crew Roles'
+    }
+    return roleNames[role]
+  }
+
+  // Get icon colors by type
+  const getTypeColor = (type: string): string => {
+    const colors = {
+      certificate: 'bg-cyan-500',
+      training: 'bg-green-500',
+      medical: 'bg-red-500',
+      radio: 'bg-purple-500'
+    }
+    return colors[type as keyof typeof colors] || 'bg-gray-500'
+  }
+
+  return (
+    <>
+      <Navbar />
+
+      <main className="overflow-hidden">
+        {/* Hero */}
+        <section className="bg-gradient-to-br from-cyan-600 to-cyan-700 py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl font-black text-white mb-4">
+                Crew Requirements for {_meta?.vesselSummary?.name || 'Your Vessel'}
+              </h1>
+              <p className="text-xl text-white/90">
+                Select a crew role to see exactly what certificates and training they need
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Requirements */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+
+              {/* Role Selector */}
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 mb-8 border border-gray-200">
+                <label htmlFor="role-selector" className="block text-sm font-bold text-gray-900 mb-3">
+                  Select Crew Role
+                </label>
+                <select
+                  id="role-selector"
+                  value={selectedRole}
+                  onChange={(e) => setSelectedRole(e.target.value as CrewRole)}
+                  className="w-full px-4 py-3 border-2 border-cyan-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 bg-white text-lg font-medium"
+                >
+                  <option value="all">All Crew Roles</option>
+                  <option value="master">Master</option>
+                  {secondPerson.required && <option value="second_person">Second Person</option>}
+                  {engineeringQualifications.required && <option value="engineer">Engineer</option>}
+                </select>
+                <p className="text-sm text-gray-600 mt-3">
+                  Showing requirements for: <span className="font-bold text-cyan-600">{getRoleName(selectedRole)}</span>
+                </p>
+              </div>
+
+              {/* Requirements List */}
+              {displayedRequirements.length > 0 ? (
+                <div className="space-y-4">
+                  {displayedRequirements.map((req, idx) => {
+                    const sectionId = `${req.role}-${req.name}-${idx}`
+                    const isExpanded = expandedSections[sectionId]
+
+                    return (
+                      <div key={idx} className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-cyan-300 transition-colors">
+                        {/* Requirement Header */}
+                        <div className="p-5">
+                          <div className="flex items-start gap-4">
+                            {/* Role Badge (only show if viewing all roles) */}
+                            {selectedRole === 'all' && (
+                              <div className="flex-shrink-0">
+                                <span className="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-bold rounded-full">
+                                  {req.role}
+                                </span>
+                              </div>
+                            )}
+
+                            {/* Type Indicator Dot */}
+                            <div className={`mt-1.5 w-3 h-3 rounded-full flex-shrink-0 ${getTypeColor(req.type)}`} />
+
+                            {/* Content */}
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-start justify-between gap-3">
+                                <div className="flex-1">
+                                  <h3 className="text-lg font-bold text-gray-900 mb-1">
+                                    {req.name}
+                                  </h3>
+                                  {req.notes && (
+                                    <p className="text-sm text-gray-600 mb-2">{req.notes}</p>
+                                  )}
+                                  {req.reference && (
+                                    <p className="text-xs text-gray-500">WBC3 Ref: {req.reference}</p>
+                                  )}
+                                </div>
+
+                                {/* Mandatory Badge */}
+                                {req.mandatory && (
+                                  <span className="flex-shrink-0 px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
+                                    Mandatory
+                                  </span>
+                                )}
+                              </div>
+
+                              {/* WBC3 Regulation Quote - Clickable/Expandable */}
+                              {(() => {
+                                const wbc3Info = getWBC3Quote(req.name, req.type)
+                                if (!wbc3Info) return null
+                                const regSectionId = `${sectionId}-regulation`
+                                const isRegExpanded = expandedSections[regSectionId]
+
+                                return (
+                                  <div className="mt-4 border-t border-gray-200 pt-4">
+                                    <button
+                                      onClick={() => toggleSection(regSectionId)}
+                                      className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                                    >
+                                      <BookOpenIcon className="w-4 h-4" />
+                                      {isRegExpanded ? (
+                                        <>
+                                          <ChevronUpIcon className="w-3 h-3" />
+                                          Hide WBC3 Regulation
+                                        </>
+                                      ) : (
+                                        <>
+                                          <ChevronDownIcon className="w-3 h-3" />
+                                          View WBC3 Regulation
+                                        </>
+                                      )}
+                                    </button>
+
+                                    {isRegExpanded && (
+                                      <div className="mt-3 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-r-lg">
+                                        <div className="space-y-3">
+                                          <div>
+                                            <p className="text-xs font-bold text-blue-900 uppercase mb-1">
+                                              Regulatory Reference
+                                            </p>
+                                            <p className="text-sm font-semibold text-blue-800">
+                                              {wbc3Info.section}
+                                            </p>
+                                          </div>
+
+                                          <div>
+                                            <p className="text-xs font-bold text-blue-900 uppercase mb-1">
+                                              Quoted Regulation
+                                            </p>
+                                            <p className="text-sm text-gray-700 italic leading-relaxed">
+                                              {wbc3Info.quote}
+                                            </p>
+                                          </div>
+
+                                          {wbc3Info.description && (
+                                            <div>
+                                              <p className="text-xs font-bold text-blue-900 uppercase mb-1">
+                                                Additional Information
+                                              </p>
+                                              <p className="text-sm text-gray-700">
+                                                {wbc3Info.description}
+                                              </p>
+                                            </div>
+                                          )}
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                )
+                              })()}
+
+                              {/* Expandable Certificate Options */}
+                              {req.expandable && req.options && req.options.length > 0 && (
+                                <div className="mt-4">
+                                  <button
+                                    onClick={() => toggleSection(sectionId)}
+                                    className="flex items-center gap-2 text-sm font-semibold text-cyan-600 hover:text-cyan-700 transition-colors"
+                                  >
+                                    {isExpanded ? (
+                                      <>
+                                        <ChevronUpIcon className="w-4 h-4" />
+                                        Hide acceptable certificates ({req.options.length})
+                                      </>
+                                    ) : (
+                                      <>
+                                        <ChevronDownIcon className="w-4 h-4" />
+                                        Show acceptable certificates ({req.options.length})
+                                      </>
+                                    )}
+                                  </button>
+
+                                  {isExpanded && (
+                                    <div className="mt-3 pl-4 border-l-2 border-cyan-200 space-y-2">
+                                      {req.options.map((cert: any, certIdx: number) => (
+                                        <div key={certIdx} className="py-2">
+                                          <p className="font-medium text-gray-900">
+                                            {typeof cert === 'string' ? cert : cert.name}
+                                          </p>
+                                          {typeof cert === 'object' && cert.notes && (
+                                            <p className="text-sm text-gray-600 mt-1">{cert.notes}</p>
+                                          )}
+                                        </div>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              ) : (
+                <div className="text-center py-12 bg-gray-50 rounded-xl">
+                  <p className="text-gray-600 text-lg">No requirements found for the selected role</p>
+                  <button
+                    onClick={() => setSelectedRole('all')}
+                    className="mt-4 px-6 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg font-medium transition-colors"
+                  >
+                    Show All Roles
+                  </button>
+                </div>
+              )}
+
+              {/* Info Box */}
+              <div className="mt-8 bg-blue-50 border-l-4 border-blue-500 rounded-lg p-5">
+                <h4 className="font-bold text-blue-900 mb-2">About Certificate Requirements</h4>
+                <ul className="text-sm text-blue-800 space-y-1">
+                  <li>• For Certificate of Competency (CoC), crew members need <strong>ANY ONE</strong> of the listed certificates</li>
+                  <li>• Higher-level certificates are valid at lower levels (e.g., Boatmaster T2 is valid for T3 requirements)</li>
+                  <li>• All mandatory training must be completed and in-date</li>
+                  <li>• Medical certificates must be valid and appropriate for the role</li>
+                </ul>
+              </div>
+
+            </div>
+
+            {/* CTA */}
+            <div className="mt-16 text-center max-w-4xl mx-auto">
+              <div className="bg-cyan-50 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold mb-4">Need Help Managing Crew Compliance?</h3>
+                <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+                  FleetSkipper tracks crew certificates, sends expiry alerts, and ensures ongoing WBC3 compliance for your entire fleet.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl"
+                  >
+                    Book Free Consultation →
+                  </Link>
+                  <Link
+                    href="/tools/crew-checker"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-cyan-600 border-2 border-cyan-500 rounded-xl font-bold text-lg transition-all"
+                  >
+                    Check Another Vessel
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  )
+}

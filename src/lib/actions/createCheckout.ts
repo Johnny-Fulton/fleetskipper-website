@@ -23,7 +23,7 @@ export async function createCheckout(
     // Mock data for now
     const mockOrg = {
       id: 'org_demo',
-      email: 'support@seaready.co.uk',
+      email: 'info@fleetskipper.com',
     };
     
     const plan = plans[planKey];

@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
           <div className="mt-6 space-y-2 text-sm text-gray-600">
             <p><strong>Company:</strong> SeaReady Ltd</p>
             <p><strong>Registered Office:</strong> Office 1581, 92 Castle Street, Belfast, BT1 1HE</p>
-            <p><strong>Contact:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></p>
+            <p><strong>Contact:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></p>
             <p className="pt-4"><strong>Version:</strong> v1.0</p>
             <p><strong>Effective Date:</strong> [Date of incorporation]</p>
             <p><strong>Last Updated:</strong> 2026-01-22</p>
@@ -400,7 +400,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <p className="text-gray-700 mt-6 font-semibold">
-              To exercise your rights, contact: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>
+              To exercise your rights, contact: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>
             </p>
           </section>
 
@@ -451,7 +451,7 @@ export default function PrivacyPolicyPage() {
             </ul>
 
             <p className="text-gray-700 font-semibold">
-              To report a suspected breach: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>
+              To report a suspected breach: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>
             </p>
           </section>
 
@@ -550,7 +550,7 @@ export default function PrivacyPolicyPage() {
                 We do not knowingly collect personal information from children. If you believe we have inadvertently collected data from a child, contact us immediately:
               </p>
               <p className="text-gray-700">
-                <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>
+                <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>
               </p>
             </div>
           </section>
@@ -585,7 +585,7 @@ export default function PrivacyPolicyPage() {
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
               <h3 className="font-semibold text-gray-900 mb-3">Data Protection Queries:</h3>
               <ul className="space-y-2 text-gray-700">
-                <li><strong>Email:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                <li><strong>Email:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                 <li><strong>Post:</strong> SeaReady Ltd, Office 1581, 92 Castle Street, Belfast, BT1 1HE</li>
               </ul>
 
@@ -653,7 +653,7 @@ export default function PrivacyPolicyPage() {
               <p><strong>How long:</strong> As long as you&apos;re a customer + 7 years for maritime records (legal requirement).</p>
               <p><strong>Your rights:</strong> Access, correct, delete, download, or object to use of your data anytime.</p>
               <p className="mt-6 font-semibold">
-                <strong>Contact:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>
+                <strong>Contact:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>
               </p>
             </div>
           </div>

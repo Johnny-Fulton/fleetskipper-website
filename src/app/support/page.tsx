@@ -118,7 +118,7 @@ export default function SupportPolicyPage() {
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#0891B2' }}>3. Contact Details</h2>
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
               <ul className="space-y-2 text-gray-700">
-                <li><strong>Email Support:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                <li><strong>Email Support:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                 <li><strong>Phone Support:</strong> [To be added after incorporation]</li>
                 <li><strong>Knowledge Base:</strong> help.seaready.co.uk [To be implemented]</li>
                 <li><strong>Status Page:</strong> status.seaready.co.uk [To be implemented]</li>
@@ -388,13 +388,13 @@ export default function SupportPolicyPage() {
                 <div className="space-y-4">
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <p className="font-semibold text-gray-900 mb-2">Level 1: Support Team</p>
-                    <p className="text-gray-700">Email: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a> (most issues resolved here)</p>
+                    <p className="text-gray-700">Email: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a> (most issues resolved here)</p>
                   </div>
 
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <p className="font-semibold text-gray-900 mb-2">Level 2: Escalation Team</p>
                     <p className="text-gray-700">
-                      Email: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a><br/>
+                      Email: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a><br/>
                       (Mark subject: &quot;ESCALATION - [Ticket #12345]&quot;)
                     </p>
                   </div>
@@ -402,7 +402,7 @@ export default function SupportPolicyPage() {
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <p className="font-semibold text-gray-900 mb-2">Level 3: Director</p>
                     <p className="text-gray-700">
-                      Email: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a><br/>
+                      Email: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a><br/>
                       (For unresolved or serious issues only)
                     </p>
                   </div>
@@ -445,7 +445,7 @@ export default function SupportPolicyPage() {
                     <li>Priority handling of all tickets</li>
                   </ul>
                   <p className="text-gray-700 mt-4">
-                    <strong>Contact us for quote:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>
+                    <strong>Contact us for quote:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>
                   </p>
                 </div>
               </div>
@@ -585,7 +585,7 @@ export default function SupportPolicyPage() {
                 <p className="text-gray-700 mb-3">We welcome feedback on our support:</p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700">
                   <li>After ticket resolution: Rate our service (1-5 stars)</li>
-                  <li>Email anytime: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                  <li>Email anytime: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                   <li>Annual survey: Help us improve</li>
                 </ul>
               </div>
@@ -594,9 +594,9 @@ export default function SupportPolicyPage() {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">13.2 Formal Complaints</h3>
                 <p className="text-gray-700 mb-3">If you&apos;re unhappy with our support:</p>
                 <ol className="list-decimal pl-6 space-y-2 text-gray-700">
-                  <li>Email: <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+                  <li>Email: <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
                   <li>We&apos;ll investigate and respond within 5 business days</li>
-                  <li>If unresolved: Escalate to Director (<a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a>)</li>
+                  <li>If unresolved: Escalate to Director (<a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a>)</li>
                 </ol>
               </div>
             </div>
@@ -692,9 +692,9 @@ export default function SupportPolicyPage() {
           <div className="mt-8 bg-gray-50 border border-gray-200 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-700">
-              <li><strong>Email:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
-              <li><strong>Escalation:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
-              <li><strong>Director:</strong> <a href="mailto:support@seaready.co.uk" className="text-sea-teal hover:underline">support@seaready.co.uk</a></li>
+              <li><strong>Email:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
+              <li><strong>Escalation:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
+              <li><strong>Director:</strong> <a href="mailto:info@fleetskipper.com" className="text-sea-teal hover:underline">info@fleetskipper.com</a></li>
               <li><strong>Phone:</strong> [To be added]</li>
               <li><strong>Office:</strong> SeaReady Ltd, Office 1581, 92 Castle Street, Belfast, BT1 1HE</li>
             </ul>
