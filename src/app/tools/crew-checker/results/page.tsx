@@ -755,11 +755,15 @@ export default function CrewResultsPage() {
               {/* CARD 6: ADDITIONAL TRAINING (conditional) */}
               {(_meta.hasRadar || _meta.hasElectronicCharts || _meta.hasStabilityBooklet || _meta.crewPreparesFood) && (
                 <div className="bg-white rounded-2xl shadow-card border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-200 hover:-translate-y-1">
-                  {/* Dark gradient header */}
-                  <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-6">
-                    <Radio className="text-white mb-3" size={48} strokeWidth={2.5} />
-                    <h2 className="text-2xl font-black text-white">ADDITIONAL TRAINING - Equipment Specific</h2>
-                    <p className="text-white/90 mt-2">Based on your vessel's equipment and operations</p>
+                  {/* Dark gradient header - compact horizontal layout */}
+                  <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-4">
+                    <div className="flex items-center gap-3">
+                      <Radio className="text-white flex-shrink-0" size={32} strokeWidth={2.5} />
+                      <div>
+                        <h2 className="text-lg font-black text-white">ADDITIONAL TRAINING - Equipment Specific</h2>
+                        <p className="text-white/90 text-sm">Based on your vessel's equipment and operations</p>
+                      </div>
+                    </div>
                   </div>
 
                   {/* White body content */}
