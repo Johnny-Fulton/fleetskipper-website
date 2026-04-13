@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 // Import the WBC3 Crew Certification Checker engine
 // @ts-ignore - JavaScript module
-import { checkCrewRequirements } from '../../../../../../../SeaReady/products/wbc3-crew-checker/src/index.js';
+import { checkCrewRequirements } from '@/lib/crew-checker/index.js';
 
 /**
  * POST /api/crew/check
