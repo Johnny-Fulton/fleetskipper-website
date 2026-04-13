@@ -53,6 +53,11 @@ export function checkCrewRequirements(vesselInput) {
         enginePowerKW: vesselInput.enginePowerKW,
         crewCount: vesselInput.crewCount,
       },
+      // Include equipment flags for results page display
+      hasRadar: validation.normalizedInput.hasRadar,
+      hasElectronicCharts: validation.normalizedInput.hasElectronicCharts,
+      hasStabilityBooklet: validation.normalizedInput.hasStabilityBooklet,
+      crewPreparesFood: validation.normalizedInput.crewPreparesFood,
     },
 
     // Pass through all requirement categories from the engine
