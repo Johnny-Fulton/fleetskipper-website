@@ -50,8 +50,8 @@ export default function ConsultancyPage() {
       {/* Hero Section with Image */}
       <div className="relative mt-28 isolate overflow-hidden">
         <img
-          src="/images/workboats/sunset-workboat.jpg"
-          alt="UK workboat operations at sunset"
+          src="/hero-workboat2.jpg"
+          alt="UK workboat operations"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" />
