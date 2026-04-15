@@ -19,8 +19,8 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/hero-vessel.jpg"
-            alt="Maritime vessel operations"
+            src="/images/pilot-boat-night.jpeg"
+            alt="Pilot boat at night"
             className="w-full h-full object-cover"
           />
           {/* Lighter overlay to show more detail */}
@@ -83,12 +83,12 @@ export default function AboutPage() {
 
             {/* About Our Founder */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-              {/* Workboat Maritime Experience Image */}
+              {/* Pilot Boat Maritime Experience Image */}
               <div className="order-2 lg:order-1">
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="/hero-workboat1.jpg"
-                    alt="Workboat operations - professional maritime experience"
+                    src="/images/pilot-boat-maritime-experience.jpg"
+                    alt="Pilot boat operations - professional maritime experience"
                     className="w-full h-full object-cover"
                   />
                 </div>
