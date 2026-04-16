@@ -53,12 +53,6 @@ export function Footer() {
                   info@fleetskipper.com
                 </a>
               </p>
-              <p className="text-sm text-gray-300">
-                <span className="font-semibold text-white">Phone:</span>{' '}
-                <a href="tel:+447446858414" className="hover:text-cyan-400 transition">
-                  +44 7446 858414
-                </a>
-              </p>
             </div>
             <div className="flex gap-4">
               <a
@@ -130,7 +124,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
               <p className="text-xs text-gray-400">
-                &copy; {currentYear} FleetSkipper Ltd. All rights reserved.
+                &copy; {currentYear} FleetSkipper. All rights reserved.
               </p>
             </div>
             <p className="text-xs text-gray-400">
