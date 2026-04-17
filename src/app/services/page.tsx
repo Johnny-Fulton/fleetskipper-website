@@ -56,7 +56,7 @@ export default function ServicesPage() {
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start gap-3">
                       <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Complete MGN 280 (M) compliant documentation</span>
+                      <span className="text-slate-700">Complete WBC3 compliant documentation</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
@@ -143,7 +143,7 @@ export default function ServicesPage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Gap analysis against MGN 280 requirements</span>
+                      <span className="text-slate-700">Gap analysis against WBC3 requirements</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
