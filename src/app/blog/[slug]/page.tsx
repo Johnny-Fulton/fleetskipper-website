@@ -6,6 +6,7 @@ import fs from 'fs'
 import path from 'path'
 import { remark } from 'remark'
 import html from 'remark-html'
+import styles from './article.module.css'
 
 // The 5 WBC3 blog posts
 const blogPosts = [
@@ -94,121 +95,9 @@ export default async function BlogPostPage({
             <div className="max-w-4xl mx-auto">
               {/* Article content with custom styling */}
               <div
-                className="article-content"
+                className={styles.articleContent}
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
-
-              <style jsx>{`
-                .article-content {
-                  font-size: 1.125rem;
-                  line-height: 1.75;
-                  color: #374151;
-                }
-
-                .article-content h1 {
-                  font-size: 2.5rem;
-                  font-weight: 800;
-                  color: #111827;
-                  margin-bottom: 2rem;
-                  line-height: 1.2;
-                }
-
-                .article-content h2 {
-                  font-size: 1.875rem;
-                  font-weight: 700;
-                  color: #111827;
-                  margin-top: 3rem;
-                  margin-bottom: 1rem;
-                  line-height: 1.3;
-                }
-
-                .article-content h3 {
-                  font-size: 1.5rem;
-                  font-weight: 600;
-                  color: #111827;
-                  margin-top: 2rem;
-                  margin-bottom: 0.75rem;
-                }
-
-                .article-content p {
-                  margin-bottom: 1.5rem;
-                  line-height: 1.8;
-                }
-
-                .article-content ul, .article-content ol {
-                  margin: 1.5rem 0;
-                  padding-left: 1.5rem;
-                }
-
-                .article-content li {
-                  margin: 0.5rem 0;
-                  line-height: 1.7;
-                }
-
-                .article-content ul {
-                  list-style-type: disc;
-                }
-
-                .article-content ol {
-                  list-style-type: decimal;
-                }
-
-                .article-content a {
-                  color: #0891b2;
-                  text-decoration: underline;
-                }
-
-                .article-content a:hover {
-                  color: #06b6d4;
-                }
-
-                .article-content strong {
-                  font-weight: 700;
-                  color: #111827;
-                }
-
-                .article-content img {
-                  border-radius: 0.75rem;
-                  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-                  margin: 2rem 0;
-                  width: 100%;
-                  height: auto;
-                }
-
-                .article-content table {
-                  width: 100%;
-                  margin: 2rem 0;
-                  border-collapse: collapse;
-                }
-
-                .article-content th {
-                  background-color: #f9fafb;
-                  padding: 0.75rem 1rem;
-                  text-align: left;
-                  font-weight: 700;
-                  border: 1px solid #e5e7eb;
-                }
-
-                .article-content td {
-                  padding: 0.75rem 1rem;
-                  border: 1px solid #e5e7eb;
-                }
-
-                .article-content hr {
-                  margin: 3rem 0;
-                  border: none;
-                  border-top: 1px solid #e5e7eb;
-                }
-
-                .article-content code {
-                  background-color: #f3f4f6;
-                  color: #0891b2;
-                  padding: 0.125rem 0.375rem;
-                  border-radius: 0.25rem;
-                  font-size: 0.875em;
-                  font-family: monospace;
-                }
-              `}</style>
 
               {/* Back to Blog Link */}
               <div className="mt-16 pt-8 border-t border-gray-200">
