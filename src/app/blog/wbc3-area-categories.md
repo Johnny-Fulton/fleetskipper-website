@@ -72,6 +72,8 @@ Getting a higher category than you need means carrying more equipment and holdin
 
 Your Certifying Authority can advise on the right category for your operation.
 
+**Read next:** [WBC3 Crew Qualifications — What Your Crew Actually Need →](/blog/wbc3-crew-qualifications)
+
 ---
 
 *Sources: WBC3 Sections 3.10, 28.1.3. Tables A5.1, 14.1.2.*

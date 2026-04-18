@@ -76,6 +76,8 @@ Personal Safety and Social Responsibilities (PSSR) is an STCW requirement, not a
 
 WBC3 defines "crew" as anyone employed or engaged in any capacity on the business of the vessel. A trainee on board for training purposes is crew — the medical fitness and sea survival requirements apply to them in full. There is no trainee exemption.
 
+**Read next:** [Keeping Your WBC3 Certificate Valid →](/blog/keeping-wbc3-certificate-valid)
+
 ---
 
 *Sources: WBC3 Sections 28.1.1–28.1.8. Tables A5.1, A5.2, A5.3. Table A5.1 Notes H, 1, 3.*

@@ -63,6 +63,8 @@ After each annual examination, the CA issues an identification disc. This must b
 - **Know your SWB2.** If anything has changed on the vessel since the last examination — new equipment, modifications, removed items — the CA needs to know before the examination, not during it.
 - **Don't let certificates expire.** Crew medical certificates, fire extinguisher servicing, liferaft servicing, radio licences — if these lapse between examinations, the vessel is technically non-compliant even if the Workboat Certificate is still in date.
 
+**Read next:** [What is WBC3 and Does My Vessel Need It? →](/blog/what-is-wbc3)
+
 ---
 
 *Sources: WBC3 Sections 3.8, 4.4, 4.5, 4.6, 4.7, 4.3.4.*

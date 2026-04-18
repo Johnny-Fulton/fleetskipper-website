@@ -74,6 +74,8 @@ The certificate is cancelled automatically when the vessel is sold. The new owne
 
 WBC3 doesn't specify a timeline — it depends on the vessel's readiness, the CA's availability, and whether any deficiencies need to be addressed. For a new-build under construction survey, the process runs alongside the build. For an existing vessel, it depends on condition.
 
+**Read next:** [WBC3 Area Categories Explained — Cat 0 to Cat 6 →](/blog/wbc3-area-categories)
+
 ---
 
 *Sources: WBC3 Sections 3.8, 4.1, 4.2, 4.3, 31.2. MIN 538 Amendment 7.*

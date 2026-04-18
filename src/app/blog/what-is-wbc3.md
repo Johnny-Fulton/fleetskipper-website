@@ -68,6 +68,8 @@ If your vessel is used commercially at sea — even if it's a small open boat do
 
 The first step is choosing a Certifying Authority, who will examine your vessel and issue the Workboat Certificate. The MCA publishes the full list of authorised Certifying Authorities at gov.uk.
 
+**Read next:** [How to Get Your Workboat Certified Under WBC3 →](/blog/how-to-get-wbc3-certified)
+
 ---
 
 *Sources: WBC3 Sections 1.1–1.10, 3.8, 31.2. The Merchant Shipping (Small Workboats and Pilot Boats) Regulations 2023.*
