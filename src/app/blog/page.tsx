@@ -15,41 +15,51 @@ const blogPosts = [
     slug: 'what-is-wbc3',
     title: 'What is WBC3 and Does My Vessel Need It?',
     excerpt: 'A comprehensive guide to the Workboat Code Edition 3, covering what it is, which vessels need it, and the December 2026 transition deadline.',
-    date: '2025-04-18',
+    date: '2026-04-18',
     category: 'WBC3 Compliance',
     image: '/images/workboats/workboat-01-hero.jpg',
+    author: 'Jonathan Fulton',
+    readTime: '5 min read',
   },
   {
     slug: 'how-to-get-wbc3-certified',
     title: 'How to Get Your Workboat Certified Under WBC3',
     excerpt: 'A practical step-by-step guide to getting your workboat WBC3 certified, from choosing a Certifying Authority to receiving your certificate.',
-    date: '2025-04-18',
+    date: '2026-04-18',
     category: 'WBC3 Compliance',
     image: '/images/workboats/tugboat-hero-clean.jpg',
+    author: 'Jonathan Fulton',
+    readTime: '6 min read',
   },
   {
     slug: 'wbc3-area-categories',
     title: 'WBC3 Area Categories Explained — Cat 0 to Cat 6',
     excerpt: 'Understanding WBC3 area categories and how they determine your equipment requirements, crew qualifications, and operational limits.',
-    date: '2025-04-18',
+    date: '2026-04-18',
     category: 'WBC3 Compliance',
     image: '/images/workboats/navigation-sunrise-large.jpg',
+    author: 'Jonathan Fulton',
+    readTime: '7 min read',
   },
   {
     slug: 'wbc3-crew-qualifications',
     title: 'WBC3 Crew Qualifications — What Your Crew Actually Need',
     excerpt: 'A definitive guide to WBC3 crew qualification requirements, covering mandatory certificates, Master qualifications by category, and common misconceptions.',
-    date: '2025-04-18',
+    date: '2026-04-18',
     category: 'WBC3 Compliance',
     image: '/images/workboats/crew-operations-large.jpg',
+    author: 'Jonathan Fulton',
+    readTime: '8 min read',
   },
   {
     slug: 'keeping-wbc3-certificate-valid',
     title: 'Keeping Your Workboat Certificate Valid',
     excerpt: 'Understanding the WBC3 examination cycle: annual examinations, intermediate out-of-water surveys, and 5-year renewal requirements.',
-    date: '2025-04-18',
+    date: '2026-04-18',
     category: 'WBC3 Compliance',
     image: '/images/workboats/crew-safety-large.jpg',
+    author: 'Jonathan Fulton',
+    readTime: '6 min read',
   },
 ]
 
@@ -118,15 +128,19 @@ export default function BlogPage() {
                       </p>
 
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-sm text-gray-500">
-                          <Calendar className="h-4 w-4" />
-                          <time>
-                            {new Date(post.date).toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'short',
-                              year: 'numeric',
-                            })}
-                          </time>
+                        <div className="flex items-center gap-3 text-sm text-gray-500">
+                          <div className="flex items-center gap-1.5">
+                            <Calendar className="h-4 w-4" />
+                            <time>
+                              {new Date(post.date).toLocaleDateString('en-GB', {
+                                day: 'numeric',
+                                month: 'short',
+                                year: 'numeric',
+                              })}
+                            </time>
+                          </div>
+                          <span className="text-gray-300">•</span>
+                          <span>{post.readTime}</span>
                         </div>
                         <Link
                           href={`/blog/${post.slug}`}
