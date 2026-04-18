@@ -92,26 +92,123 @@ export default async function BlogPostPage({
         <article className="pt-32 pb-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              {/* Prose styling for markdown content */}
+              {/* Article content with custom styling */}
               <div
-                className="prose prose-lg prose-slate max-w-none
-                  prose-headings:font-bold prose-headings:text-gray-900
-                  prose-h1:text-4xl prose-h1:mb-8
-                  prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-                  prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                  prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
-                  prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:underline
-                  prose-strong:text-gray-900 prose-strong:font-bold
-                  prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
-                  prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
-                  prose-li:text-gray-700 prose-li:my-2
-                  prose-img:rounded-xl prose-img:shadow-lg prose-img:my-8
-                  prose-table:my-8
-                  prose-th:bg-gray-50 prose-th:p-3 prose-th:font-bold
-                  prose-td:p-3 prose-td:border prose-td:border-gray-200
-                  prose-code:text-cyan-600 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded"
+                className="article-content"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
+
+              <style jsx>{`
+                .article-content {
+                  font-size: 1.125rem;
+                  line-height: 1.75;
+                  color: #374151;
+                }
+
+                .article-content h1 {
+                  font-size: 2.5rem;
+                  font-weight: 800;
+                  color: #111827;
+                  margin-bottom: 2rem;
+                  line-height: 1.2;
+                }
+
+                .article-content h2 {
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                  color: #111827;
+                  margin-top: 3rem;
+                  margin-bottom: 1rem;
+                  line-height: 1.3;
+                }
+
+                .article-content h3 {
+                  font-size: 1.5rem;
+                  font-weight: 600;
+                  color: #111827;
+                  margin-top: 2rem;
+                  margin-bottom: 0.75rem;
+                }
+
+                .article-content p {
+                  margin-bottom: 1.5rem;
+                  line-height: 1.8;
+                }
+
+                .article-content ul, .article-content ol {
+                  margin: 1.5rem 0;
+                  padding-left: 1.5rem;
+                }
+
+                .article-content li {
+                  margin: 0.5rem 0;
+                  line-height: 1.7;
+                }
+
+                .article-content ul {
+                  list-style-type: disc;
+                }
+
+                .article-content ol {
+                  list-style-type: decimal;
+                }
+
+                .article-content a {
+                  color: #0891b2;
+                  text-decoration: underline;
+                }
+
+                .article-content a:hover {
+                  color: #06b6d4;
+                }
+
+                .article-content strong {
+                  font-weight: 700;
+                  color: #111827;
+                }
+
+                .article-content img {
+                  border-radius: 0.75rem;
+                  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                  margin: 2rem 0;
+                  width: 100%;
+                  height: auto;
+                }
+
+                .article-content table {
+                  width: 100%;
+                  margin: 2rem 0;
+                  border-collapse: collapse;
+                }
+
+                .article-content th {
+                  background-color: #f9fafb;
+                  padding: 0.75rem 1rem;
+                  text-align: left;
+                  font-weight: 700;
+                  border: 1px solid #e5e7eb;
+                }
+
+                .article-content td {
+                  padding: 0.75rem 1rem;
+                  border: 1px solid #e5e7eb;
+                }
+
+                .article-content hr {
+                  margin: 3rem 0;
+                  border: none;
+                  border-top: 1px solid #e5e7eb;
+                }
+
+                .article-content code {
+                  background-color: #f3f4f6;
+                  color: #0891b2;
+                  padding: 0.125rem 0.375rem;
+                  border-radius: 0.25rem;
+                  font-size: 0.875em;
+                  font-family: monospace;
+                }
+              `}</style>
 
               {/* Back to Blog Link */}
               <div className="mt-16 pt-8 border-t border-gray-200">
