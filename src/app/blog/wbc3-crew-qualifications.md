@@ -16,12 +16,12 @@ These apply to everyone employed or engaged in any capacity on the vessel — Ma
 **Medical fitness certificate**
 Every crew member must hold a valid ML5 or ENG1 medical certificate. ML5 is acceptable for Cat 3–6 domestic operations. ENG1 is required for Cat 0–2 or international voyages.
 
-If a crew member doesn't have a valid medical certificate, they cannot legally be on board as crew.
+If a crew member doesn't have a valid medical certificate, they cannot legally be on board as crew. The Code uses the words "anyone employed or engaged in any capacity" — there are no exceptions. If someone is on the vessel for work purposes without a valid medical certificate, the vessel is non-compliant and can be detained.
 
 **Sea Survival training**
 Every crew member must have completed RYA Basic Sea Survival or MCA-approved Personal Survival Techniques.
 
-These two are the absolute baseline. Without them, a person is not legally crew — they would need to be classified as a passenger.
+These two are the absolute baseline. Without them, a person is not legally crew — they would need to be classified as a passenger. And passengers count toward your 12-person limit and affect stability calculations, so this isn't just a technicality.
 
 ## Master Qualification
 
@@ -43,6 +43,8 @@ All RYA certificates must carry a **commercial endorsement**. This requires a va
 ⚠️ <strong>RYA Powerboat Level 2 is restricted to Cat 6 only</strong> — open boats, RIBs, and inflatable boats under 3GT. It is NOT valid for any other area category or for enclosed vessels.
 </div>
 
+**Important:** RYA Powerboat Level 2 is only valid for Cat 6 on open boats, RIBs, and inflatable boats under 3GT. It is not valid for any other category. This is a significant change from the old MGN 280, where PB Level 2 was more widely accepted. If you or your skipper currently hold PB Level 2 and operate beyond Cat 6, you will need to upgrade to at least Powerboat Advanced or Day Skipper before transitioning to WBC3.
+
 ## At Least One Crew Member Must Hold
 
 These are collective requirements — at least one person on board must have them, but not necessarily everyone.
@@ -55,6 +57,10 @@ For Cat 2–6: at least one crew member. For Cat 0–1: a higher standard applie
 
 **Radio Operator certificate**
 At least one person on board must be qualified for distress and safety radio communication. Short Range Certificate (SRC) for VHF, or ROC/GOC for GMDSS.
+
+The key word here is "at least one." These don't need to be held by every crew member — but someone on board must have them. The practical question to ask before every departure is: if the one person holding the fire fighting certificate isn't available for this trip, can you still sail? The answer is no — you need to make sure the coverage is there for every voyage, not just on paper.
+
+Also note the 15m threshold for fire fighting. On vessels under 15m, only one person needs the certificate. On vessels 15m and over, every crew member needs it. That's a significant jump in training costs if your vessel is right on the boundary.
 
 ## Conditional Requirements
 
