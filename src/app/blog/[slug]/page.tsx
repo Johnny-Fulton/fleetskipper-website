@@ -1,23 +1,53 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import NavbarLight from '@/components/navbar-light'
-import { SiteFooter } from '@/components/primitives'
-import { BlogPost, BlogPostWrapper } from '@/components/blog/BlogPost'
-import { EMPXProductCTA } from '@/components/blog/BlogCTA'
-import type { AuthorInfo } from '@/components/blog/BlogAuthor'
-import {
-  getBlogPost,
-  getAllBlogSlugs,
-  getRelatedBlogPosts,
-  formatBlogPostForPage,
-} from '@/lib/blog'
+import { Navigation } from '@/components/Navigation'
+import { Footer } from '@/components/Footer'
+import fs from 'fs'
+import path from 'path'
+import { remark } from 'remark'
+import html from 'remark-html'
+
+// The 5 WBC3 blog posts
+const blogPosts = [
+  'what-is-wbc3',
+  'how-to-get-wbc3-certified',
+  'wbc3-area-categories',
+  'wbc3-crew-qualifications',
+  'keeping-wbc3-certificate-valid',
+]
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
-  const slugs = getAllBlogSlugs()
-  return slugs.map((slug) => ({
+  return blogPosts.map((slug) => ({
     slug,
   }))
+}
+
+// Read and parse markdown file
+async function getPostContent(slug: string) {
+  const filePath = path.join(process.cwd(), 'src/app/blog', `${slug}.md`)
+
+  if (!fs.existsSync(filePath)) {
+    return null
+  }
+
+  const fileContents = fs.readFileSync(filePath, 'utf8')
+
+  // Convert markdown to HTML
+  const processedContent = await remark()
+    .use(html, { sanitize: false })
+    .process(fileContents)
+  const contentHtml = processedContent.toString()
+
+  // Extract title (first H1)
+  const titleMatch = fileContents.match(/^#\s+(.+)$/m)
+  const title = titleMatch ? titleMatch[1] : slug
+
+  return {
+    slug,
+    title,
+    content: contentHtml,
+  }
 }
 
 // Generate metadata for SEO
@@ -27,36 +57,17 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const post = await getPostContent(slug)
 
   if (!post) {
     return {
-      title: 'Post Not Found | SeaReady Blog',
+      title: 'Post Not Found | FleetSkipper Blog',
     }
   }
 
   return {
-    title: `${post.metadata.title} | SeaReady Blog`,
-    description: post.metadata.excerpt || post.metadata.title,
-    openGraph: {
-      title: post.metadata.title,
-      description: post.metadata.excerpt,
-      type: 'article',
-      publishedTime: post.metadata.date,
-      authors: [post.metadata.author],
-      images: [
-        {
-          url: post.metadata.heroImage,
-          alt: post.metadata.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.metadata.title,
-      description: post.metadata.excerpt,
-      images: [post.metadata.heroImage],
-    },
+    title: `${post.title} | FleetSkipper Blog`,
+    description: 'WBC3 compliance guide for UK workboat operators',
   }
 }
 
@@ -66,79 +77,85 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const post = getBlogPost(slug)
+  const post = await getPostContent(slug)
 
   if (!post) {
     notFound()
   }
 
-  // Format the post content to HTML
-  const formattedPost = formatBlogPostForPage(post)
-
-  // Get related posts
-  const relatedPostsData = getRelatedBlogPosts(slug, 3)
-  const relatedPosts = relatedPostsData.map((rp) => ({
-    slug: rp.slug,
-    title: rp.metadata.title,
-    excerpt: rp.metadata.excerpt || '',
-    date: rp.metadata.date,
-    category: rp.metadata.category,
-  }))
-
-  // Author information
-  const author: AuthorInfo = {
-    name: post.metadata.author,
-    role: post.metadata.role,
-    bio: 'The SeaReady team develops maritime software solutions built by mariners, for mariners. Combining decades of seagoing experience with modern technology, we create practical tools that solve real operational challenges in the maritime industry.',
-    // Optional: add image, linkedin, email when available
-    // image: '/authors/jonathan-fulton.jpg',
-    // linkedin: 'https://linkedin.com/in/jonathanfulton',
-    // email: 'jonathan@searead.com',
-  }
-
-  const footerContent = {
-    product: {
-      heading: 'Products',
-      links: ['eMPX', 'SeaReady App', 'Features', 'Pricing'],
-    },
-    company: {
-      heading: 'Company',
-      links: ['About', 'Contact'],
-    },
-    resources: {
-      heading: 'Resources',
-      links: ['Blog', 'Case Studies'],
-      urls: ['/blog', '/case-studies'],
-    },
-    legal: {
-      heading: 'Legal',
-      links: ['Privacy Policy', 'Terms of Service'],
-      urls: ['/privacy', '/terms'],
-    },
-    copyright: '© 2024 SeaReady. All rights reserved.',
-  }
-
   return (
-    <BlogPostWrapper>
-      <div className="bg-white">
-        {/* Navbar */}
-        <NavbarLight />
+    <>
+      <Navigation />
 
-        {/* Main Article */}
-        <BlogPost
-          metadata={formattedPost.metadata}
-          content={formattedPost.content}
-          author={author}
-          relatedPosts={relatedPosts}
-        >
-          {/* Add product-specific CTA based on category */}
-          {(post.metadata.category === 'Port Innovation' ||
-            post.metadata.category === 'Pilot Operations') && <EMPXProductCTA />}
-        </BlogPost>
+      <main className="overflow-hidden bg-white">
+        {/* Article Content */}
+        <article className="pt-32 pb-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              {/* Prose styling for markdown content */}
+              <div
+                className="prose prose-lg prose-slate max-w-none
+                  prose-headings:font-bold prose-headings:text-gray-900
+                  prose-h1:text-4xl prose-h1:mb-8
+                  prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+                  prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+                  prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
+                  prose-a:text-cyan-600 prose-a:no-underline hover:prose-a:underline
+                  prose-strong:text-gray-900 prose-strong:font-bold
+                  prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+                  prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
+                  prose-li:text-gray-700 prose-li:my-2
+                  prose-img:rounded-xl prose-img:shadow-lg prose-img:my-8
+                  prose-table:my-8
+                  prose-th:bg-gray-50 prose-th:p-3 prose-th:font-bold
+                  prose-td:p-3 prose-td:border prose-td:border-gray-200
+                  prose-code:text-cyan-600 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
 
-        {/* Footer */}
-        <SiteFooter {...footerContent} />
-      </div>
-    </BlogPostWrapper>
+              {/* Back to Blog Link */}
+              <div className="mt-16 pt-8 border-t border-gray-200">
+                <a
+                  href="/blog"
+                  className="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-semibold transition-colors"
+                >
+                  ← Back to Blog
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-br from-cyan-600 to-cyan-700">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
+                Need Help With WBC3 Compliance?
+              </h2>
+              <p className="text-xl text-white/90 mb-8">
+                Get expert guidance from a Master Mariner on SMS documentation, audits, and ongoing compliance.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                >
+                  Book Free Consultation
+                </a>
+                <a
+                  href="/services"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white border-2 border-white rounded-xl font-bold text-lg hover:bg-white/10 transition-all"
+                >
+                  View Services →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
   )
 }
