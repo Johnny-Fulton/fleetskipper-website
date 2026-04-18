@@ -9,19 +9,44 @@ import html from 'remark-html'
 import remarkGfm from 'remark-gfm'
 import styles from './article.module.css'
 
-// The 5 WBC3 blog posts
+// The 5 WBC3 blog posts with metadata
 const blogPosts = [
-  'what-is-wbc3',
-  'how-to-get-wbc3-certified',
-  'wbc3-area-categories',
-  'wbc3-crew-qualifications',
-  'keeping-wbc3-certificate-valid',
+  {
+    slug: 'what-is-wbc3',
+    author: 'Jonathan Fulton',
+    readTime: '5 min read',
+    date: '2026-04-18',
+  },
+  {
+    slug: 'how-to-get-wbc3-certified',
+    author: 'Jonathan Fulton',
+    readTime: '6 min read',
+    date: '2026-04-18',
+  },
+  {
+    slug: 'wbc3-area-categories',
+    author: 'Jonathan Fulton',
+    readTime: '7 min read',
+    date: '2026-04-18',
+  },
+  {
+    slug: 'wbc3-crew-qualifications',
+    author: 'Jonathan Fulton',
+    readTime: '8 min read',
+    date: '2026-04-18',
+  },
+  {
+    slug: 'keeping-wbc3-certificate-valid',
+    author: 'Jonathan Fulton',
+    readTime: '6 min read',
+    date: '2026-04-18',
+  },
 ]
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
-  return blogPosts.map((slug) => ({
-    slug,
+  return blogPosts.map((post) => ({
+    slug: post.slug,
   }))
 }
 
@@ -86,6 +111,9 @@ export default async function BlogPostPage({
     notFound()
   }
 
+  // Find metadata for this post
+  const postMeta = blogPosts.find(p => p.slug === slug)
+
   return (
     <>
       <Navigation />
@@ -95,6 +123,17 @@ export default async function BlogPostPage({
         <article className="pt-32 pb-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
+              {/* Author and Reading Time - displayed before article content */}
+              {postMeta && (
+                <div className="mb-8 pb-6 border-b border-gray-200">
+                  <div className="flex items-center gap-3 text-sm text-gray-600">
+                    <span className="font-semibold">By {postMeta.author}</span>
+                    <span className="text-gray-400">•</span>
+                    <span>{postMeta.readTime}</span>
+                  </div>
+                </div>
+              )}
+
               {/* Article content with custom styling */}
               <div
                 className={styles.articleContent}
