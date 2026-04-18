@@ -4,6 +4,11 @@
 
 If you operate a workboat commercially in UK waters, the Workboat Code Edition 3 (WBC3) is the regulation that governs your vessel's safety standards, certification, and crew requirements. It's published by the Maritime and Coastguard Agency (MCA) and given legal effect by The Merchant Shipping (Small Workboats and Pilot Boats) Regulations 2023.
 
+> **Key points:**
+> - WBC3 applies to all UK commercial workboats and pilot boats operating at sea
+> - It replaced Workboat Code Edition 2 and MGN 280
+> - Existing vessels must transition to WBC3 by December 2026
+
 ## What Does WBC3 Cover?
 
 WBC3 is a complete compliance regime covering every aspect of your vessel's safety and operation:
@@ -58,7 +63,11 @@ Lithium-ion battery and alternative fuel requirements are included for the first
 
 ## Transition Deadline — December 2026
 
-If your vessel is currently certified under Workboat Code Edition 2 or MGN 280, you must transition to WBC3 by **December 2026**. After that date, the older codes will no longer be accepted. You cannot mix codes — once you adopt WBC3, you must comply with it fully.
+<div class="callout callout-warning">
+⚠️ <strong>Important deadline:</strong> If your vessel is currently certified under Workboat Code Edition 2 or MGN 280, you must transition to WBC3 by <strong>December 2026</strong>. After that date, the older codes will no longer be accepted.
+</div>
+
+You cannot mix codes — once you adopt WBC3, you must comply with it fully.
 
 If you haven't started the transition yet, now is the time to talk to your Certifying Authority about what's involved.
 

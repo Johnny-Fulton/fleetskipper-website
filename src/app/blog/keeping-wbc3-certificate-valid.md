@@ -4,6 +4,12 @@
 
 Getting your Workboat Certificate is step one. Keeping it valid requires a rolling cycle of examinations over the 5-year certificate life. Miss one, and your certificate ceases to be valid — meaning your vessel can't legally operate.
 
+> **Key points:**
+> - Annual examinations required every year (within 3 months of anniversary date)
+> - Intermediate out-of-water examination required at least once every 3 years
+> - Renewal examination needed before the 5-year certificate expires
+> - Missing any examination makes the certificate invalid immediately
+
 ## The Examination Cycle
 
 ### Annual Examination — Every Year
@@ -42,7 +48,9 @@ If the vessel is involved in an incident that may affect its seaworthiness — c
 
 ## What Happens If You Miss an Examination?
 
-If the annual or intermediate examination is not completed within the required period, the certificate ceases to be valid. The vessel cannot legally operate.
+<div class="callout callout-danger">
+🚨 <strong>Critical:</strong> If the annual or intermediate examination is not completed within the required period, the certificate ceases to be valid immediately. The vessel cannot legally operate until a new examination is completed and the certificate is reinstated.
+</div>
 
 If an examination has been missed by more than one month, you'll need to contact your CA to arrange an appropriate examination — which may be more extensive than a standard annual check.
 

@@ -4,6 +4,12 @@
 
 Every workboat certified under WBC3 is assigned an area category of operation. This determines where the vessel can go, what equipment it must carry, and what qualifications the crew need. Getting the right category matters — too low and you're limited in where you can work; too high and you're carrying equipment and qualifications you don't need.
 
+> **Key points:**
+> - Seven area categories from Cat 0 (unrestricted) to Cat 6 (within 3nm, daylight only)
+> - Higher categories require more equipment and higher crew qualifications
+> - Most UK harbour workboats operate at Cat 3–6
+> - Vessels can operate at a lower category than their certificate allows
+
 ## The Seven Categories
 
 WBC3 defines seven area categories, from unrestricted ocean operations to limited coastal daylight work:

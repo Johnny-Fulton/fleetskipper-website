@@ -4,6 +4,11 @@
 
 One of the most common questions from workboat operators is: "What certificates do my crew need?" WBC3 sets out clear requirements, but they vary depending on the vessel's area category, size, and equipment. Here's the breakdown.
 
+> **Key points:**
+> - Every crew member must hold a valid medical certificate (ML5/ENG1) and sea survival training
+> - Master qualifications vary by area category (from PB Level 2 for Cat 6 to STCW Master for Cat 0)
+> - At least one crew member must hold fire fighting, first aid, and radio operator certificates
+
 ## Mandatory for Every Person on Board
 
 These apply to everyone employed or engaged in any capacity on the vessel — Master, crew, deckhands, trainees. No exceptions.
@@ -34,7 +39,9 @@ The Master (or Skipper) must hold a Certificate of Competency appropriate to the
 
 All RYA certificates must carry a **commercial endorsement**. This requires a valid medical certificate, sea survival training, and the RYA Professional Practices and Responsibilities (PPR) course.
 
-**Important:** RYA Powerboat Level 2 is only valid for Cat 6 on open boats, RIBs, and inflatable boats under 3GT. It is not valid for any other category.
+<div class="callout callout-warning">
+⚠️ <strong>RYA Powerboat Level 2 is restricted to Cat 6 only</strong> — open boats, RIBs, and inflatable boats under 3GT. It is NOT valid for any other area category or for enclosed vessels.
+</div>
 
 ## At Least One Crew Member Must Hold
 
@@ -70,7 +77,9 @@ Every crewed voyage (unless single-handed operations are permitted) requires a s
 
 ## What About PSSR?
 
-Personal Safety and Social Responsibilities (PSSR) is an STCW requirement, not a WBC3 requirement. It does not appear anywhere in the Workboat Code. Crew following the full STCW certification route may hold it, but it is not mandatory for WBC3 compliance.
+<div class="callout callout-info">
+ℹ️ <strong>PSSR is NOT a WBC3 requirement.</strong> Personal Safety and Social Responsibilities (PSSR) is an STCW requirement, not a Workboat Code requirement. It does not appear anywhere in WBC3. Crew following the full STCW certification route may hold it, but it is not mandatory for WBC3 compliance.
+</div>
 
 ## What About Trainees?
 

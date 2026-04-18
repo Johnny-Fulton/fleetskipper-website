@@ -4,6 +4,12 @@
 
 Getting a workboat certified under the Workboat Code Edition 3 (WBC3) is a structured process. Here's what's involved, from start to certificate.
 
+> **Key points:**
+> - Choose an authorised Certifying Authority (CA) from the MCA list
+> - Decide your area category (Cat 0-6) based on operational needs
+> - Pass compliance examination (in-water and out-of-water)
+> - Have a Safety Management System (SMS) in place before certificate issue
+
 ## Step 1: Choose a Certifying Authority
 
 A Certifying Authority (CA) is the organisation authorised by the MCA to examine and certify your vessel. You choose which CA to use — they're not assigned to you.

@@ -108,3 +108,52 @@
   font-size: 0.875em;
   font-family: monospace;
 }
+
+/* Key points summary box */
+.articleContent blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-left: 4px solid #0891b2;
+  background-color: #f0f9ff;
+  border-radius: 0.5rem;
+}
+
+.articleContent blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.articleContent blockquote strong:first-child {
+  display: block;
+  color: #0891b2;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+/* Callout boxes - using HTML div with data attributes */
+.articleContent .callout {
+  margin: 2rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.articleContent .callout-warning {
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+  color: #92400e;
+}
+
+.articleContent .callout-info {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+  color: #1e3a8a;
+}
+
+.articleContent .callout-danger {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+  color: #991b1b;
+}
