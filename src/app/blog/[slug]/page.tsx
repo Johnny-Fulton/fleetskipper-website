@@ -6,6 +6,7 @@ import fs from 'fs'
 import path from 'path'
 import { remark } from 'remark'
 import html from 'remark-html'
+import remarkGfm from 'remark-gfm'
 import styles from './article.module.css'
 
 // The 5 WBC3 blog posts
@@ -34,8 +35,9 @@ async function getPostContent(slug: string) {
 
   const fileContents = fs.readFileSync(filePath, 'utf8')
 
-  // Convert markdown to HTML
+  // Convert markdown to HTML with GFM support for tables
   const processedContent = await remark()
+    .use(remarkGfm)
     .use(html, { sanitize: false })
     .process(fileContents)
   const contentHtml = processedContent.toString()
