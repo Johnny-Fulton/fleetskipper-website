@@ -14,6 +14,10 @@ Every workboat certified under WBC3 is assigned an area category of operation. T
 | **Cat 5** | Within 3nm of land | Day and night |
 | **Cat 6** | Within 3nm of land, max 3nm from departure point | Daylight only, favourable weather |
 
+One thing that confuses operators: **Cat 3 and Cat 4 cover the same distance** — 20 nautical miles from a safe haven. The only difference is Cat 4 is restricted to daylight. This matters more than you'd think, because it affects crew qualifications. RYA Day Skipper is acceptable as a Master qualification for Cat 4 (daylight) but not for Cat 3 (which includes night operations). If you might ever need to operate after dark, you need Cat 3 — and that means a higher Master qualification.
+
+Similarly, **Cat 5 and Cat 6 both cover 3 nautical miles** from land. But Cat 5 allows night operations and Cat 6 doesn't. Day Skipper is valid for Cat 6 but not Cat 5. The distance is the same — it's the daylight restriction that changes everything.
+
 ## What Changes Between Categories?
 
 ### Equipment
@@ -34,7 +38,9 @@ The minimum Master qualification varies significantly:
 - **Cat 5:** Powerboat Advanced (Day Skipper is NOT valid — Cat 5 includes night operations)
 - **Cat 6:** Powerboat Level 2 (restricted to open boats/RIBs under 3GT), Day Skipper, or above
 
-The second person requirement also varies — Cat 0 and Cat 1 require a specifically qualified second person, while Cat 3–6 only require someone the owner considers experienced and competent.
+The second person requirement also varies — Cat 0 and Cat 1 require a specifically qualified second person (Yachtmaster Offshore for Cat 0, Yachtmaster Coastal for Cat 1). For Cat 2, the Master decides if the second person is competent. For Cat 3–6, it's the owner/operator's judgement — no specific qualification is needed, just someone they consider experienced and competent.
+
+**Watch out for Powerboat Level 2.** Under the old MGN 280, PB Level 2 was accepted for vessels up to 24m. Under WBC3, it's restricted to **Category 6 only**, and only on open boats, RIBs, or inflatables under 3 gross tonnes. If your vessel doesn't meet those conditions, PB Level 2 is not a valid Master qualification — regardless of whether it has a commercial endorsement.
 
 ### Construction
 Higher categories have more stringent requirements for structural strength, stability, and watertight integrity.
@@ -43,7 +49,7 @@ Higher categories have more stringent requirements for structural strength, stab
 
 A vessel can always operate at a lower category than the one it's certificated for. If your vessel holds a Cat 2 certificate and you're making a trip that falls within Cat 4 limits, you can use Cat 4 manning and equipment requirements for that voyage.
 
-This is useful for vessels that occasionally make longer passages but mostly operate closer to shore.
+This is useful for vessels that occasionally make longer passages but mostly operate closer to shore. For example, a Cat 2 vessel making a short harbour run doesn't need to carry all its offshore equipment for that trip — it can operate under Cat 5 or Cat 6 requirements for the voyage. But the reverse isn't true — a Cat 6 vessel can't make a Cat 2 trip without being re-certificated.
 
 ## Choosing the Right Category
 

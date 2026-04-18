@@ -19,6 +19,8 @@ WBC3 sets out the technical requirements for:
 
 It's a complete compliance regime — if your vessel is certified under WBC3, it covers everything from how the hull is built to what certificates your crew need to hold.
 
+In plain terms: there isn't one regulation for the hull, another for the crew, and another for the safety gear. WBC3 wraps it all into one Code. If you comply with it, you're covered. If you don't, your vessel can be detained by the MCA.
+
 ## Which vessels does it apply to?
 
 WBC3 applies to workboats and pilot boats in commercial use that operate at sea. Specifically:
@@ -28,6 +30,8 @@ WBC3 applies to workboats and pilot boats in commercial use that operate at sea.
 - Vessels carrying cargo and/or not more than 12 passengers and industrial personnel combined
 
 This includes harbour workboats, survey vessels, crew transfer vessels, dive support boats, tugs, safety standby vessels, and even remotely operated unmanned vessels (USVs) — which are covered under a dedicated section of the Code (Annex 2).
+
+If you're unsure whether your vessel falls under WBC3, the simple test is: is it used commercially at sea and is it under 24 metres? If the answer to both is yes, WBC3 almost certainly applies.
 
 ## What did it replace?
 
@@ -45,6 +49,8 @@ Some key changes from the older codes:
 If your vessel is currently certified under Workboat Code Edition 2 or MGN 280, you must transition to WBC3 by **December 2026**. After that date, the older codes will no longer be accepted. You cannot mix codes — once you adopt WBC3, you must comply with it fully.
 
 If you haven't started the transition yet, now is the time to talk to your Certifying Authority about what's involved.
+
+One important point: you cannot mix codes. You can't keep some parts of WBC2 and adopt other parts of WBC3. Once you transition, you comply with WBC3 in full. This also means your SMS, crew qualifications, and equipment carriage may need updating — the requirements have changed in several areas.
 
 ## Do I need it?
 

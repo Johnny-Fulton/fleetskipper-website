@@ -12,6 +12,8 @@ Your vessel must be examined annually by an authorised person appointed by your 
 
 **What's checked:** The authorised person confirms that the vessel, machinery, fittings, and equipment are maintained in a satisfactory condition and match what's documented in the SWB2 (Documentation of Compliance). They're checking that nothing has changed, deteriorated, or been removed since the last examination.
 
+In practice, the examiner will walk the vessel checking safety equipment is present and in date (fire extinguishers, liferaft service, lifejacket condition), navigation equipment is working, machinery is maintained, and your paperwork is up to date (crew certificates, SMS, logbooks, maintenance records). If something doesn't match the SWB2 — for example, you've swapped a piece of equipment without telling the CA — that's a problem.
+
 **What you need to do:** Arrange the examination with your CA in good time. Have the SWB2 on board. Make sure your maintenance records, certificates, and safety equipment are up to date.
 
 ### Intermediate Examination — Midpoint of Certificate
@@ -42,7 +44,9 @@ If the vessel is involved in an incident that may affect its seaworthiness — c
 
 If the annual or intermediate examination is not completed within the required period, the certificate ceases to be valid. The vessel cannot legally operate.
 
-If an examination has been missed by more than one month, you'll need to contact your CA to arrange an appropriate examination — which may be more extensive than a standard annual check.
+If an examination has been missed by more than one month, you'll need to contact your CA to arrange an appropriate examination — which may be more extensive (and more expensive) than a standard annual check. The CA decides what level of examination is needed based on how long the vessel has been out of compliance and its overall condition.
+
+The bottom line: it's always cheaper and easier to stay on top of the schedule than to catch up after a lapse. Set reminders, book early, and don't let it drift.
 
 ## What Gets Recorded?
 
@@ -59,7 +63,7 @@ After each annual examination, the CA issues an identification disc. This must b
 - **Book early.** CAs have limited availability, especially for out-of-water examinations in summer. Don't leave it until the last month.
 - **Keep maintenance records up to date.** The examiner will check that servicing has been done on schedule. If your records are patchy, it creates problems.
 - **Know your SWB2.** If anything has changed on the vessel since the last examination — new equipment, modifications, removed items — the CA needs to know before the examination, not during it.
-- **Don't let certificates expire.** Crew medical certificates, fire extinguisher servicing, liferaft servicing, radio licences — if these lapse between examinations, the vessel is technically non-compliant even if the Workboat Certificate is still in date.
+- **Don't let certificates expire.** Crew medical certificates, fire extinguisher servicing, liferaft servicing, radio licences — if these lapse between examinations, the vessel is technically non-compliant even if the Workboat Certificate is still in date. This is the most common issue operators face — the Workboat Certificate is valid for 5 years, but the things that keep it valid (crew certs, equipment servicing, maintenance records) need attention throughout the year. A valid certificate doesn't mean much if your crew's medical certificates have expired or your fire extinguishers are overdue for servicing.
 
 ---
 

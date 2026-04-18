@@ -11,6 +11,8 @@ https://www.gov.uk/government/publications/list-of-certifying-authorities
 
 There are currently 10 authorised CAs, ranging from large classification societies (Lloyd's Register, Bureau Veritas, DNV) to specialist small-vessel bodies (YDSA, MECAL, IIMS, RYA). For most small workboats under 15m, the specialist CAs are the most common and practical choice.
 
+It's worth getting quotes from 2-3 CAs before committing. They each set their own fees, and the level of service and local availability varies. Choose one that has experience with your type of vessel and is practical to work with for ongoing annual examinations — you'll be dealing with them for years, not just the initial survey.
+
 ## Step 2: Submit the SWB1 Application
 
 The SWB1 is the application form you complete and send to your chosen CA. It covers the basics: vessel type, dimensions, construction, intended use, area of operation, and owner details.
@@ -30,6 +32,8 @@ Your vessel will be certificated for an area category of operation (Cat 0 throug
 - **Cat 6** — Within 3nm (daylight only, favourable weather)
 
 Higher categories mean more equipment and higher crew qualifications. Most small harbour workboats operate at Cat 4–6.
+
+Don't certificate for a higher category than you need. A Cat 2 certificate means carrying more safety equipment, holding higher crew qualifications, and meeting stricter construction standards — all of which cost money. If your vessel only operates within 3 miles of land in daylight, Cat 6 is all you need. Your CA can advise on the right category for your operation.
 
 ## Step 4: Compliance Examination
 
@@ -53,9 +57,13 @@ The CA also issues an annual identification disc that must be displayed visibly 
 
 The certificate and an up-to-date copy of the SWB2 must be kept on board (or ashore if not practicable, available on request).
 
+The SWB2 is worth understanding — it's not just a form that gets filed and forgotten. It's the vessel's permanent compliance record. Every modification, every examination, every change to equipment gets recorded on it. If you add a new piece of navigation equipment or change your liferaft, the SWB2 needs to be updated. Think of it as the vessel's logbook for compliance.
+
 ## What Happens If You Sell the Vessel?
 
 The certificate is cancelled automatically when the vessel is sold. The new owner must apply to a CA for a new certificate — the CA will decide what level of examination is needed based on the vessel's age, condition, and history.
+
+This catches some buyers out. Buying a vessel with a valid Workboat Certificate doesn't mean you inherit it — it's cancelled the moment ownership changes. The new owner needs to go through the certification process with a CA before the vessel can operate commercially. Factor this into any purchase timeline.
 
 ## How Long Does It Take?
 

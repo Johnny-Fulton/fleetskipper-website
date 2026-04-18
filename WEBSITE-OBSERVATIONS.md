@@ -174,6 +174,43 @@ All 5 posts show **18 Apr 2025**. Should be **2026**.
 
 ---
 
+## 🔴 URGENT — Blog Posts Not Updated (3rd Attempt)
+
+Posts 2, 3, and 5 on the live site do NOT match the source drafts. The drafts have been updated with additional plain-English content but the live pages are still showing old text. Previous prompts to update these were not applied correctly.
+
+### INSTRUCTIONS — Read the files, not this description
+
+**Step 1 — Read these 3 draft files (they are the source of truth):**
+1. `/Users/jonathanfulton/REGULATION APP/FleetSkipper/website/blog/drafts/wbc3-post-2-how-to-get-certified.md`
+2. `/Users/jonathanfulton/REGULATION APP/FleetSkipper/website/blog/drafts/wbc3-post-3-area-categories.md`
+3. `/Users/jonathanfulton/REGULATION APP/FleetSkipper/website/blog/drafts/wbc3-post-5-keeping-certificate-valid.md`
+
+**Step 2 — Replace the live blog content with the exact text from each draft:**
+- Post 2 draft → `/blog/how-to-get-wbc3-certified`
+- Post 3 draft → `/blog/wbc3-area-categories`
+- Post 5 draft → `/blog/keeping-wbc3-certificate-valid`
+
+Do NOT paraphrase. Do NOT rewrite. Do NOT summarise. Use the exact text from the draft files.
+
+**Step 3 — Add to ALL 5 blog posts (including posts 1 and 4):**
+- Author byline: "By Jonathan Fulton" below the title
+- Reading time: estimate based on word count (200 words per minute), display as "X min read" next to author name
+
+### VERIFICATION — Check these phrases exist on the live pages after your changes:
+
+| Post | URL | Must contain |
+|------|-----|-------------|
+| Post 2 | `/blog/how-to-get-wbc3-certified` | "catches some buyers out" |
+| Post 2 | `/blog/how-to-get-wbc3-certified` | "logbook for compliance" |
+| Post 3 | `/blog/wbc3-area-categories` | "Cat 3 and Cat 4 cover the same distance" |
+| Post 3 | `/blog/wbc3-area-categories` | "Watch out for Powerboat Level 2" |
+| Post 5 | `/blog/keeping-wbc3-certificate-valid` | "examiner will walk the vessel" |
+| Post 5 | `/blog/keeping-wbc3-certificate-valid` | "cheaper and easier to stay on top" |
+
+If those phrases are NOT on the live pages after your changes, you have not used the draft files correctly. Read the drafts again.
+
+---
+
 ## Things That Are Working Well (Don't Change)
 
 - **"Built by a Master Mariner" positioning** — this is the strongest credibility signal on the site and a genuine differentiator. Keep it front and centre.
