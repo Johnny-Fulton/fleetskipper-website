@@ -55,12 +55,12 @@ export function EmailGate({
       // Store email in localStorage
       localStorage.setItem('fleetskipper_user_email', email)
 
-      // Optional: Send to your backend/database
-      // await fetch('/api/collect-email', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email })
-      // })
+      // Send to backend/database
+      await fetch('/api/collect-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'wbc3-checker' })
+      })
 
       // Close modal and notify parent
       setIsOpen(false)
