@@ -23,23 +23,34 @@ The CA uses this to understand what they'll be examining and which parts of the 
 
 Your vessel will be certificated for an area category of operation (Cat 0 through Cat 6). This determines what equipment you need, what crew qualifications are required, and where you can operate.
 
-- **Cat 0** — Unrestricted
-- **Cat 1** — Up to 150nm from a safe haven
-- **Cat 2** — Up to 60nm
-- **Cat 3** — Up to 20nm (day and night)
-- **Cat 4** — Up to 20nm (daylight only)
-- **Cat 5** — Within 3nm (day and night)
-- **Cat 6** — Within 3nm (daylight only, favourable weather)
+### The Seven Categories
+- **Cat 0** — Unrestricted worldwide operations
+- **Cat 1** — Up to 150nm from a safe haven (offshore)
+- **Cat 2** — Up to 60nm from a safe haven (extended coastal)
+- **Cat 3** — Up to 20nm, day and night (near coastal)
+- **Cat 4** — Up to 20nm, daylight only (near coastal)
+- **Cat 5** — Within 3nm of land, day and night
+- **Cat 6** — Within 3nm of land, daylight only, favourable weather
 
 Higher categories mean more equipment and higher crew qualifications. Most small harbour workboats operate at Cat 4–6.
 
 ## Step 4: Compliance Examination
 
-This is the full survey. It's conducted in two parts:
+This is the full survey, conducted in two parts:
 
-**In-water examination** — the vessel afloat with all systems operational. The examiner checks construction, machinery, electrical systems, fire protection, life-saving appliances, navigation and radio equipment, stability, and manning.
+### In-Water Examination
+The vessel afloat with all systems operational. The examiner checks:
+- Construction and structural integrity
+- Machinery and electrical systems
+- Fire protection and life-saving appliances
+- Navigation and radio equipment
+- Stability and manning
 
-**Out-of-water examination** — the vessel lifted or dried out. The examiner inspects the hull, underwater fittings, propeller, rudder, anodes, and through-hull fittings.
+### Out-of-Water Examination
+The vessel lifted or dried out. The examiner inspects:
+- Hull and underwater fittings
+- Propeller, rudder, and anodes
+- Through-hull fittings and sea cocks
 
 Everything is documented on the **SWB2** (Documentation of Compliance). This is the vessel's permanent record — it stays with the vessel for life and is updated at every examination.
 
