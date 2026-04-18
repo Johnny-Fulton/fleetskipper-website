@@ -1,5 +1,7 @@
 # What is WBC3 and Does My Vessel Need It?
 
+![UK workboat operating under WBC3 regulations](/images/workboats/workboat-01-hero.jpg)
+
 If you operate a workboat commercially in UK waters, the Workboat Code Edition 3 (WBC3) is the regulation that governs your vessel's safety standards, certification, and crew requirements. It's published by the Maritime and Coastguard Agency (MCA) and given legal effect by The Merchant Shipping (Small Workboats and Pilot Boats) Regulations 2023.
 
 ## What does it cover?

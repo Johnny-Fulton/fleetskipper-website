@@ -1,5 +1,7 @@
 # WBC3 Crew Qualifications — What Your Crew Actually Need
 
+![Crew operations on a commercial workboat showing qualified personnel](/images/workboats/crew-operations-large.jpg)
+
 One of the most common questions from workboat operators is: "What certificates do my crew need?" WBC3 sets out clear requirements, but they vary depending on the vessel's area category, size, and equipment. Here's the breakdown.
 
 ## Mandatory for Every Person on Board

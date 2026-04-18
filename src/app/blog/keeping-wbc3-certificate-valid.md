@@ -1,5 +1,7 @@
 # Keeping Your Workboat Certificate Valid — The WBC3 Examination Cycle
 
+![Crew conducting safety operations on workboat, maintaining WBC3 compliance](/images/workboats/crew-safety-large.jpg)
+
 Getting your Workboat Certificate is step one. Keeping it valid requires a rolling cycle of examinations over the 5-year certificate life. Miss one, and your certificate ceases to be valid — meaning your vessel can't legally operate.
 
 ## The Examination Cycle

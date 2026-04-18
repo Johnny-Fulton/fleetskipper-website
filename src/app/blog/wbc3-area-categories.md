@@ -1,5 +1,7 @@
 # WBC3 Area Categories Explained — Cat 0 to Cat 6
 
+![Workboat navigating at sunrise, demonstrating WBC3 area category operations](/images/workboats/navigation-sunrise-large.jpg)
+
 Every workboat certified under WBC3 is assigned an area category of operation. This determines where the vessel can go, what equipment it must carry, and what qualifications the crew need. Getting the right category matters — too low and you're limited in where you can work; too high and you're carrying equipment and qualifications you don't need.
 
 ## The Seven Categories

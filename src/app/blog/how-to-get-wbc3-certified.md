@@ -1,5 +1,7 @@
 # How to Get Your Workboat Certified Under WBC3 — Step by Step
 
+![Commercial tugboat undergoing WBC3 certification inspection](/images/workboats/tugboat-hero-clean.jpg)
+
 Getting a workboat certified under the Workboat Code Edition 3 (WBC3) is a structured process. Here's what's involved, from start to certificate.
 
 ## Step 1: Choose a Certifying Authority
