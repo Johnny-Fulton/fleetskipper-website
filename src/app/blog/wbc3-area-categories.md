@@ -6,15 +6,28 @@ Every workboat certified under WBC3 is assigned an area category of operation. T
 
 ## The Seven Categories
 
-| Category | Operating Area | Conditions |
-|---|---|---|
-| **Cat 0** | Unrestricted | No distance limit |
-| **Cat 1** | Up to 150nm from a safe haven | Offshore operations |
-| **Cat 2** | Up to 60nm from a safe haven | Extended coastal |
-| **Cat 3** | Up to 20nm from a safe haven | Near coastal, day and night |
-| **Cat 4** | Up to 20nm from a safe haven | Daylight only |
-| **Cat 5** | Within 3nm of land | Day and night |
-| **Cat 6** | Within 3nm of land, max 3nm from departure point | Daylight only, favourable weather |
+WBC3 defines seven area categories, from unrestricted ocean operations to limited coastal daylight work:
+
+### Cat 0 — Unrestricted
+No distance limit from a safe haven. Offshore operations anywhere in the world. Requires full STCW qualifications and highest equipment standards.
+
+### Cat 1 — Up to 150nm Offshore
+Up to 150 nautical miles from a safe haven. Suitable for offshore wind farm operations, oil and gas support, and extended coastal passages.
+
+### Cat 2 — Up to 60nm Extended Coastal
+Up to 60 nautical miles from a safe haven. Extended coastal operations covering most UK inshore waters and offshore approaches.
+
+### Cat 3 — Up to 20nm Near Coastal (Day & Night)
+Up to 20 nautical miles from a safe haven, operating day and night. The most common category for crew transfer vessels, survey boats, and general coastal workboats.
+
+### Cat 4 — Up to 20nm Near Coastal (Daylight Only)
+Same distance as Cat 3 but restricted to daylight operations only. Lower qualification and equipment requirements than Cat 3.
+
+### Cat 5 — Within 3nm of Land (Day & Night)
+Operations within 3 nautical miles of land, day and night. Harbour workboats, pilot boats, and short coastal transfers.
+
+### Cat 6 — Within 3nm of Land (Daylight, Favourable Weather)
+Operations within 3 nautical miles of land and maximum 3 nautical miles from departure point. Daylight only, in favourable weather. Lowest qualification and equipment requirements — suitable for sheltered harbour work and short RIB operations.
 
 ## What Changes Between Categories?
 
