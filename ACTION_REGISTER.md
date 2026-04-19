@@ -614,3 +614,76 @@ Updated Glasgow City Boats testimonial on homepage to remove the phrase "no gene
 - No lint errors
 
 ---
+
+## 2026-04-19 - Email Gate Moved to Tools Page
+
+**Task:** Centralize email collection to single entry point
+**Status:** ✅ DEPLOYED
+**Priority:** Lead generation optimization
+
+### Change Summary
+
+Moved email gate from individual tool pages to the main `/tools` page. Users must now enter their email BEFORE they can see the list of available tools.
+
+### Changes Made
+
+**1. Updated `/src/app/tools/page.tsx`:**
+- Converted from Server Component to Client Component (`'use client'`)
+- Added EmailGate component
+- Added state management for access control
+- Content only shows after email is submitted
+- Shows user email in hero after submission
+
+**2. Updated `/src/components/EmailGate.tsx`:**
+- Added `source` parameter to track lead origin
+- Now accepts: 'tools-page', 'wbc3-checker', 'crew-checker', etc
+- Sends source to API for better lead tracking
+
+**3. Updated API tracking:**
+- Emails now tracked with source = 'tools-page'
+- Can differentiate between entry points in Supabase
+
+### User Experience
+
+**BEFORE:**
+1. User visits `/tools` → sees tool list
+2. User clicks "Launch Tool" → email popup appears
+3. Different popups for each tool
+
+**AFTER:**
+1. User visits `/tools` → email popup appears immediately
+2. User enters email → sees full tool list
+3. User can access ALL tools without additional prompts
+4. Email stored in localStorage (no repeated popups)
+
+### Benefits
+
+✅ **Higher conversion rate** - Gate at entry point captures more leads
+✅ **Better UX** - One gate instead of three separate popups
+✅ **Better tracking** - Know which tools users are interested in
+✅ **Consistent experience** - All tools protected equally
+✅ **Lead qualification** - Users who give email are serious prospects
+
+### Testing
+
+- Build: ✅ Successful
+- Email gate: ✅ Shows on page load
+- Email capture: ✅ Saves to Supabase with source='tools-page'
+- localStorage: ✅ Prevents repeated prompts
+- Tool access: ✅ All 3 tools accessible after email submission
+
+### Deployment
+
+- Committed: `a881115`
+- Pushed to: `main` branch
+- Vercel: Auto-deploying
+- Live URL: https://fleetskipper.com/tools
+
+### Supabase Tracking
+
+View captured emails:
+```sql
+SELECT * FROM leads WHERE signup_source = 'tools-page' ORDER BY created_at DESC;
+```
+
+---

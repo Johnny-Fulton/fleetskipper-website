@@ -75,9 +75,14 @@ export function EmailGate({
   }
 
   return (
-    <Dialog open={isOpen} onClose={() => {}} className="relative z-50">
-      {/* Backdrop */}
-      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true" />
+    <Dialog
+      open={isOpen}
+      onClose={() => {}}
+      className="relative z-50"
+      static
+    >
+      {/* Backdrop - not clickable */}
+      <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" aria-hidden="true" />
 
       {/* Full-screen container */}
       <div className="fixed inset-0 flex items-center justify-center p-4">
