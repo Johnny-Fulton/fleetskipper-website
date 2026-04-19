@@ -8,12 +8,14 @@ interface EmailGateProps {
   onEmailSubmitted: (email: string) => void
   title?: string
   description?: string
+  source?: string
 }
 
 export function EmailGate({
   onEmailSubmitted,
   title = "Access Free Tools",
-  description = "Enter your email to access our free compliance tools. No password required."
+  description = "Enter your email to access our free compliance tools. No password required.",
+  source = "tools"
 }: EmailGateProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [email, setEmail] = useState('')
@@ -59,7 +61,7 @@ export function EmailGate({
       await fetch('/api/collect-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'wbc3-checker' })
+        body: JSON.stringify({ email, source })
       })
 
       // Close modal and notify parent
