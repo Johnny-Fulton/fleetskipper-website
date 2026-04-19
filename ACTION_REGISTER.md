@@ -589,3 +589,28 @@ text-ink                 → text-slate-800
 3. Optional: Clean up unused custom color definitions in tailwind.css
 
 ---
+
+## 2026-04-19 - Testimonial Update: Removed "no generic templates"
+
+**Task:** Update homepage testimonial text
+**Status:** COMPLETED
+**Priority:** Content refinement
+
+### Change Made
+Updated Glasgow City Boats testimonial on homepage to remove the phrase "no generic templates" from the end of the quote.
+
+**Before:**
+"FleetSkipper helped us get our SMS documentation sorted quickly and professionally. The tailored approach meant everything was specific to our operations - no generic templates."
+
+**After:**
+"FleetSkipper helped us get our SMS documentation sorted quickly and professionally. The tailored approach meant everything was specific to our operations."
+
+### File Modified
+- `/src/app/page.tsx` (line 506) - Testimonial section
+
+### Testing
+- Build: ✅ Successful (`npm run build`)
+- No TypeScript errors
+- No lint errors
+
+---

@@ -503,7 +503,7 @@ export default function HomePage() {
                   </svg>
                 </div>
                 <p className="text-lg md:text-xl text-white/90 italic mb-8 leading-relaxed relative z-10">
-                  &quot;FleetSkipper helped us get our SMS documentation sorted quickly and professionally. The tailored approach meant everything was specific to our operations - no generic templates.&quot;
+                  &quot;FleetSkipper helped us get our SMS documentation sorted quickly and professionally. The tailored approach meant everything was specific to our operations.&quot;
                 </p>
                 <footer className="flex items-center gap-4 relative z-10">
                   <Image
