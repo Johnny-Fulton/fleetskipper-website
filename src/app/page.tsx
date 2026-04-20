@@ -82,7 +82,7 @@ export default function HomePage() {
                 Book Free Consultation →
               </Link>
               <Link
-                href="#app-demo"
+                href="/app"
                 className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-bold text-white transition-all hover:bg-white/10 border-2 border-white/50 backdrop-blur-sm"
               >
                 See the App →
