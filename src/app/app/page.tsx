@@ -493,7 +493,7 @@ export default function AppPage() {
               <div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">"What about MARPOL oil records and garbage records?"</h3>
                 <p className="text-lg text-slate-700 leading-relaxed">
-                  Under MARPOL, electronic record books require formal IMO or flag state approval (MEPC.312(74)). We haven't pursued that approval yet, so we don't claim to offer an approved electronic ORB or GRB. You can log MARPOL-relevant events in the daily logbook for operational reference, but your statutory record books still need to be kept in the approved format. We'll add formally approved electronic record books when we've earned the approval — not before.
+                  Under MARPOL, electronic record books require formal IMO or flag state approval (MEPC.312(74)). We haven't pursued that approval yet, so we don't offer an approved electronic ORB or GRB. You can log MARPOL-relevant events in the daily logbook for operational reference, but your statutory record books still need to be kept in the approved format. We'll add formally approved electronic record books when we've earned the approval — not before.
                 </p>
               </div>
 
