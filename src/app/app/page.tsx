@@ -104,12 +104,9 @@ export default function AppPage() {
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <h2 className="text-cyan-600 font-bold text-sm uppercase tracking-wide mb-4">What FleetSkipper is for</h2>
 
-            <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+            <div className="text-lg text-slate-700 leading-relaxed">
               <p>
                 FleetSkipper is a Safety Management System for UK workboat operators, built specifically for MCA Workboat Code Edition 3. It replaces the paper forms, spreadsheets, and scattered folders that most small operators rely on — and it does it without asking you to change how you already run your vessels.
-              </p>
-              <p>
-                Everything in the app is editable. Your operations, your checklists, your familiarisation, your templates — all bend to how <em>you</em> work, not how the software thinks you should. The app matches your SMS, not the other way round.
               </p>
             </div>
           </div>
@@ -173,10 +170,6 @@ export default function AppPage() {
 
                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
                   When a skipper goes to start a voyage, FleetSkipper runs the Workboat Code Edition 3 requirements against the crew manifest and the vessel configuration. Missing certificate? Expired training? Not enough hands on deck? The voyage is blocked. The skipper can override, but only by filling out a formal override form — which creates an auditable record of the exception.
-                </p>
-
-                <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                  It's not about being restrictive. It's about catching the thing that would otherwise become an incident.
                 </p>
 
                 <ul className="space-y-3">
@@ -245,11 +238,11 @@ export default function AppPage() {
                 </h2>
 
                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                  Every operational event your crew would normally fill in on paper — pre-departure checks, position logs, weather reports, fuel updates, operations, arrivals — happens with a single tap in the app. Then it writes itself into the logbook automatically, with a full audit trail of who did what and when.
+                  Every operational event your crew would normally fill in on paper — pre-departure checks, position logs, weather reports, fuel updates, operations, arrivals — happens with a single tap in the app. The logbook fills itself in, with a full audit trail of who did what and when.
                 </p>
 
                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                  Your crew don't fill in a logbook. They do their job, and the logbook fills itself in. Every entry is expandable, every change is attributed, every daily page requires Master or Admin sign-off.
+                  Every entry is expandable, every change is attributed, every daily page requires Master or Admin sign-off.
                 </p>
 
                 <ul className="space-y-3">
@@ -334,7 +327,7 @@ export default function AppPage() {
                 </p>
 
                 <p className="text-lg text-slate-700 leading-relaxed mb-4">
-                  <strong>Risk Assessments</strong> use a proper 5×5 matrix with separate initial and residual scoring, controls, risk reduction %, and ALARP status. Build from scratch or use templates keyed to workboat tasks (launching small boats, working at height, crane operations, etc.). Apply a single RA across multiple vessels in your fleet. The app builds and maintains a review schedule automatically — with the WBC3 clause driving each review cited in the schedule.
+                  <strong>Risk Assessments</strong> use a proper 5×5 matrix with separate initial and residual scoring, controls, risk reduction %, and ALARP status. Apply a single RA across multiple vessels in your fleet. The app builds and maintains a review schedule automatically — with the WBC3 clause driving each review cited in the schedule.
                 </p>
 
                 <p className="text-lg text-slate-700 leading-relaxed mb-4">
@@ -342,7 +335,7 @@ export default function AppPage() {
                 </p>
 
                 <p className="text-lg text-slate-700 leading-relaxed">
-                  <strong>Incidents</strong> follow the full ISM-Code corrective action lifecycle — report, investigate, root cause, corrective action, effectiveness verification, close-out. Contributing factors captured as structured data (human error, equipment failure, fatigue, communication failure and more). SLA compliance tracked so your DPA knows exactly where every incident stands.
+                  <strong>Incidents</strong> follow the full ISM-Code corrective action lifecycle — report, investigate, root cause, corrective action, effectiveness verification, close-out. Contributing factors captured as structured data (human error, equipment failure, fatigue, communication failure and more).
                 </p>
               </div>
 
@@ -413,7 +406,7 @@ export default function AppPage() {
                 </p>
 
                 <p>
-                  FleetSkipper's compliance logic is mapped directly to the text of the Workboat Code Edition 3. Every required certificate, every crew qualification threshold, every risk assessment review interval, every reporting requirement — traces back to a specific, named clause. When the app tells you a crew member needs STCW Master Workboat under 500GT, it's because the code says so, and we can show you where.
+                  FleetSkipper's compliance logic is mapped directly to the text of the Workboat Code Edition 3. Every required certificate, every crew qualification threshold, every risk assessment review interval, every reporting requirement — traces back to a specific, named clause.
                 </p>
 
                 <p>
@@ -448,7 +441,7 @@ export default function AppPage() {
               </p>
 
               <p>
-                That matters because every feature in the app was designed by someone who's stood a watch, filled in a logbook at 3am, and faced an MCA inspection the next morning. The crew compliance gate that blocks a voyage if certs are missing? That's someone who has personally watched a vessel sail with an issue nobody caught. The auto-populating logbook? That's someone who has filled in the paper one. The regulation-mapped engine? That's someone who reads the Workboat Code for a living.
+                That matters because every feature in the app was designed by someone who's stood a watch, filled in a logbook at 3am, and faced an MCA inspection the next morning. The crew compliance gate that blocks a voyage if certs are missing? That's someone who has personally watched a vessel sail with an issue nobody caught.
               </p>
 
               <p>
@@ -467,15 +460,14 @@ export default function AppPage() {
               Who's already using it
             </h2>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 mb-8">
-              <p className="text-lg text-slate-700 leading-relaxed mb-4">
-                <strong className="text-slate-900">Glasgow City Boats</strong> use FleetSkipper for their workboat operations in Scotland.
-              </p>
-              <blockquote className="text-lg text-slate-600 italic border-l-4 border-cyan-500 pl-6">
-                "FleetSkipper helped us get our SMS documentation sorted quickly and professionally. The tailored approach meant everything was specific to our operations."
-              </blockquote>
-              <p className="text-sm text-slate-500 mt-2">— Glasgow City Boats</p>
-            </div>
+            <p className="text-lg text-slate-700 leading-relaxed mb-6">
+              Glasgow City Boats use FleetSkipper for their workboat operations in Scotland.
+            </p>
+
+            <blockquote className="text-lg text-slate-600 italic border-l-4 border-cyan-500 pl-6 mb-6">
+              "FleetSkipper helped us get our SMS documentation sorted quickly and professionally. The tailored approach meant everything was specific to our operations."
+            </blockquote>
+            <p className="text-sm text-slate-500 mb-8">— Glasgow City Boats</p>
 
             <p className="text-lg text-slate-700 leading-relaxed">
               FleetSkipper is currently in pilot with a UK local authority marina, with further operators joining the trial in the coming weeks.
