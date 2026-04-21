@@ -27,7 +27,7 @@ export default function AppPage() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left column - Hero text */}
-            <div>
+            <div className="order-1">
               {/* Logo + | + app treatment (matching homepage) */}
               <div className="flex items-center gap-3 mb-6">
                 <Image
@@ -66,7 +66,7 @@ export default function AppPage() {
             </div>
 
             {/* Right column - Hero screenshot */}
-            <div className="relative max-w-lg mx-auto lg:max-w-none">
+            <div className="relative max-w-lg mx-auto lg:max-w-none order-2">
               <div className="relative">
                 <Image
                   src="/images/app-hero-ipad.png"
@@ -223,7 +223,7 @@ export default function AppPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Screenshot on LEFT */}
-              <div>
+              <div className="order-2 lg:order-1">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
                     <p className="text-slate-500 text-sm">Screenshot 3: Voyage Log with Pre-Departure Checks</p>
@@ -235,7 +235,7 @@ export default function AppPage() {
               </div>
 
               {/* Copy on RIGHT */}
-              <div>
+              <div className="order-1 lg:order-2">
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
                   Replace the paperwork, keep the paper trail
                 </h2>
