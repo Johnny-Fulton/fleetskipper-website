@@ -138,7 +138,7 @@ export default function AppPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Screenshot on LEFT - order-3 on mobile (after title and intro, before bullets) */}
               <div className="order-3 lg:order-1">
-                <div className="relative w-3/4 mx-auto lg:w-full">
+                <div className="relative w-1/2 mx-auto lg:w-1/2">
                   <Image
                     src="/images/fleet-management-mobile.png"
                     alt="FleetSkipper fleet management on mobile"
