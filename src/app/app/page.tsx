@@ -98,11 +98,6 @@ export default function AppPage() {
               <CheckCircle size={16} className="text-cyan-400" />
               UK-hosted on Microsoft Azure
             </div>
-            <span className="hidden md:inline text-white/30">•</span>
-            <div className="flex items-center gap-2">
-              <CheckCircle size={16} className="text-cyan-400" />
-              Built by a Master Mariner
-            </div>
           </div>
         </div>
       </section>
