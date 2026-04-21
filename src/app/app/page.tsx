@@ -286,14 +286,15 @@ export default function AppPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Screenshot on LEFT - order-3 on mobile (after title and intro, before bullets) */}
               <div className="order-3 lg:order-1">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-                    <p className="text-slate-500 text-sm">Screenshot 3: Voyage Log with Pre-Departure Checks</p>
-                  </div>
+                <div className="relative w-1/2 mx-auto lg:w-1/2">
+                  <Image
+                    src="/images/logbook-mobile.png"
+                    alt="FleetSkipper voyage logbook on mobile"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
-                <p className="mt-4 text-sm text-slate-600 italic">
-                  A single logbook entry expanded to show every underlying check, by whom, with timestamps. This is what auditable looks like.
-                </p>
               </div>
 
               {/* Copy on RIGHT - order-4 on mobile (after image) */}
