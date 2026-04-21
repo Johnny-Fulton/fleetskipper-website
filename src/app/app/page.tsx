@@ -159,10 +159,15 @@ export default function AppPage() {
         {/* Section 2 - Crew compliance (with screenshot RIGHT) */}
         <section className="py-16 md:py-20 bg-white">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Title - always first on mobile */}
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 lg:hidden">
+              Keep your crew compliant — before they sail
+            </h2>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Copy on LEFT */}
-              <div className="order-1 lg:order-1">
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
+              {/* Text content on LEFT - desktop only shows title, mobile hides it */}
+              <div className="order-3 lg:order-1">
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
                   Keep your crew compliant — before they sail
                 </h2>
 
@@ -202,7 +207,7 @@ export default function AppPage() {
                 </ul>
               </div>
 
-              {/* Screenshot on RIGHT */}
+              {/* Screenshot on RIGHT - order-2 to appear between title and description on mobile */}
               <div className="flex items-start justify-center h-full order-2 lg:order-2">
                 <div className="relative w-3/4">
                   <Image
@@ -221,8 +226,13 @@ export default function AppPage() {
         {/* Section 3 - Logbook (with screenshot LEFT) */}
         <section className="py-16 md:py-20 bg-gray-50">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Title - always first on mobile */}
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 lg:hidden">
+              Replace the paperwork, keep the paper trail
+            </h2>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Screenshot on LEFT */}
+              {/* Screenshot on LEFT - order-2 on mobile (after title, before description) */}
               <div className="order-2 lg:order-1">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
@@ -234,9 +244,9 @@ export default function AppPage() {
                 </p>
               </div>
 
-              {/* Copy on RIGHT */}
-              <div className="order-1 lg:order-2">
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
+              {/* Copy on RIGHT - order-3 on mobile (after title and image) */}
+              <div className="order-3 lg:order-2">
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
                   Replace the paperwork, keep the paper trail
                 </h2>
 
@@ -318,10 +328,15 @@ export default function AppPage() {
         {/* Section 5 - Risk/Drills/Incidents (with screenshot RIGHT) */}
         <section className="py-16 md:py-20 bg-gray-50">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Title - always first on mobile */}
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 lg:hidden">
+              Handle the moments that matter
+            </h2>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Copy on LEFT */}
-              <div className="order-1 lg:order-1">
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
+              {/* Text content on LEFT - desktop only shows title, mobile hides it */}
+              <div className="order-3 lg:order-1">
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
                   Handle the moments that matter
                 </h2>
 
@@ -342,7 +357,7 @@ export default function AppPage() {
                 </p>
               </div>
 
-              {/* Screenshot on RIGHT */}
+              {/* Screenshot on RIGHT - order-2 to appear between title and description on mobile */}
               <div className="flex items-start justify-center h-full order-2 lg:order-2">
                 <div className="relative w-full">
                   <Image
