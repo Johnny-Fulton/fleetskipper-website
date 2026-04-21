@@ -347,7 +347,7 @@ export default function AppPage() {
 
               {/* Screenshot on RIGHT */}
               <div className="flex items-start justify-center h-full">
-                <div className="relative w-3/4">
+                <div className="relative w-full">
                   <Image
                     src="/images/risk-assessment-desktop.png"
                     alt="FleetSkipper risk assessment with ALARP matrix"
