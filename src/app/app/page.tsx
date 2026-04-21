@@ -355,7 +355,7 @@ export default function AppPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Text content on LEFT - desktop: title + paragraphs + bullets */}
               <div className="order-4 lg:order-1">
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
