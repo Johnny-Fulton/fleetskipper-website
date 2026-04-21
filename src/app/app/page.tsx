@@ -122,37 +122,69 @@ export default function AppPage() {
 
         {/* Section 1 - Run your fleet (copy-only) */}
         <section className="py-16 md:py-20 bg-gray-50">
-          <div className="mx-auto max-w-4xl px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Title - always first on mobile */}
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 lg:hidden">
               Run your fleet from one place
             </h2>
 
-            <p className="text-lg text-slate-700 leading-relaxed mb-6">
-              Every vessel, every cert, every job — visible per vessel and across the fleet.
-            </p>
+            {/* Intro paragraph - shown on mobile BEFORE image */}
+            <div className="lg:hidden mb-6">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                Every vessel, every cert, every job — visible per vessel and across the fleet.
+              </p>
+            </div>
 
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Multi-vessel management with fast vessel switching</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Per-vessel dashboard with live compliance scores</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Forward calendar of jobs and scheduled events</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Fleet-wide aggregated dashboard coming soon</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Works on any phone, tablet, or laptop</span>
-              </li>
-            </ul>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Screenshot on LEFT - order-3 on mobile (after title and intro, before bullets) */}
+              <div className="order-3 lg:order-1">
+                <div className="relative w-3/4 mx-auto lg:w-full">
+                  <Image
+                    src="/images/fleet-management-mobile.png"
+                    alt="FleetSkipper fleet management on mobile"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Copy on RIGHT - order-4 on mobile (after image) */}
+              <div className="order-4 lg:order-2">
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
+                  Run your fleet from one place
+                </h2>
+
+                <div className="hidden lg:block">
+                  <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                    Every vessel, every cert, every job — visible per vessel and across the fleet.
+                  </p>
+                </div>
+
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Multi-vessel management with fast vessel switching</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Per-vessel dashboard with live compliance scores</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Forward calendar of jobs and scheduled events</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Fleet-wide aggregated dashboard coming soon</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Works on any phone, tablet, or laptop</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
