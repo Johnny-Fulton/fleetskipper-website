@@ -164,20 +164,33 @@ export default function AppPage() {
               Keep your crew compliant — before they sail
             </h2>
 
+            {/* Intro paragraphs - shown on mobile BEFORE image */}
+            <div className="lg:hidden mb-6">
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                FleetSkipper stops a voyage from starting if the crew isn't compliant.
+              </p>
+
+              <p className="text-lg text-slate-700 leading-relaxed">
+                On voyage-start, the app runs Workboat Code Edition 3 requirements against the crew manifest and vessel configuration. Missing cert, expired training, insufficient manning — the voyage blocks. Overrides require a formal form, which creates an auditable record.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Text content on LEFT - desktop only shows title, mobile hides it */}
-              <div className="order-3 lg:order-1">
+              {/* Text content on LEFT - desktop: title + paragraphs + bullets */}
+              <div className="order-4 lg:order-1">
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
                   Keep your crew compliant — before they sail
                 </h2>
 
-                <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                  FleetSkipper stops a voyage from starting if the crew isn't compliant.
-                </p>
+                <div className="hidden lg:block">
+                  <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                    FleetSkipper stops a voyage from starting if the crew isn't compliant.
+                  </p>
 
-                <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                  On voyage-start, the app runs Workboat Code Edition 3 requirements against the crew manifest and vessel configuration. Missing cert, expired training, insufficient manning — the voyage blocks. Overrides require a formal form, which creates an auditable record.
-                </p>
+                  <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                    On voyage-start, the app runs Workboat Code Edition 3 requirements against the crew manifest and vessel configuration. Missing cert, expired training, insufficient manning — the voyage blocks. Overrides require a formal form, which creates an auditable record.
+                  </p>
+                </div>
 
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -207,8 +220,8 @@ export default function AppPage() {
                 </ul>
               </div>
 
-              {/* Screenshot on RIGHT - order-2 to appear between title and description on mobile */}
-              <div className="flex items-start justify-center h-full order-2 lg:order-2">
+              {/* Screenshot on RIGHT - order-3 to appear after paragraphs, before bullets on mobile */}
+              <div className="flex items-start justify-center h-full order-3 lg:order-2">
                 <div className="relative w-3/4">
                   <Image
                     src="/images/crew-compliance-ipad.png"
@@ -231,9 +244,16 @@ export default function AppPage() {
               Replace the paperwork, keep the paper trail
             </h2>
 
+            {/* Intro paragraph - shown on mobile BEFORE image */}
+            <div className="lg:hidden mb-6">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                One-tap logging. The logbook fills itself in.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Screenshot on LEFT - order-2 on mobile (after title, before description) */}
-              <div className="order-2 lg:order-1">
+              {/* Screenshot on LEFT - order-3 on mobile (after title and intro, before bullets) */}
+              <div className="order-3 lg:order-1">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
                     <p className="text-slate-500 text-sm">Screenshot 3: Voyage Log with Pre-Departure Checks</p>
@@ -244,15 +264,17 @@ export default function AppPage() {
                 </p>
               </div>
 
-              {/* Copy on RIGHT - order-3 on mobile (after title and image) */}
-              <div className="order-3 lg:order-2">
+              {/* Copy on RIGHT - order-4 on mobile (after image) */}
+              <div className="order-4 lg:order-2">
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
                   Replace the paperwork, keep the paper trail
                 </h2>
 
-                <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                  One-tap logging. The logbook fills itself in.
-                </p>
+                <div className="hidden lg:block">
+                  <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                    One-tap logging. The logbook fills itself in.
+                  </p>
+                </div>
 
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -333,16 +355,25 @@ export default function AppPage() {
               Handle the moments that matter
             </h2>
 
+            {/* Intro paragraph - shown on mobile BEFORE image */}
+            <div className="lg:hidden mb-6">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                Risk assessments, drills, and incidents — where an SMS earns its name.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Text content on LEFT - desktop only shows title, mobile hides it */}
-              <div className="order-3 lg:order-1">
+              {/* Text content on LEFT - desktop: title + all paragraphs */}
+              <div className="order-4 lg:order-1">
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
                   Handle the moments that matter
                 </h2>
 
-                <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                  Risk assessments, drills, and incidents — where an SMS earns its name.
-                </p>
+                <div className="hidden lg:block">
+                  <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                    Risk assessments, drills, and incidents — where an SMS earns its name.
+                  </p>
+                </div>
 
                 <p className="text-lg text-slate-700 leading-relaxed mb-4">
                   <strong>Risk Assessments</strong> — proper 5×5 ALARP methodology, multi-vessel application, automated review schedule with WBC3 clause citations.
@@ -357,8 +388,8 @@ export default function AppPage() {
                 </p>
               </div>
 
-              {/* Screenshot on RIGHT - order-2 to appear between title and description on mobile */}
-              <div className="flex items-start justify-center h-full order-2 lg:order-2">
+              {/* Screenshot on RIGHT - order-3 to appear after intro, before detail paragraphs on mobile */}
+              <div className="flex items-start justify-center h-full order-3 lg:order-2">
                 <div className="relative w-full">
                   <Image
                     src="/images/risk-assessment-desktop.png"
