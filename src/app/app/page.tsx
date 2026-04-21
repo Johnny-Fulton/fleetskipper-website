@@ -67,7 +67,7 @@ export default function AppPage() {
 
             {/* Right column - Hero screenshot */}
             <div className="relative max-w-lg mx-auto lg:max-w-none">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="relative">
                 <Image
                   src="/images/app-hero-ipad.png"
                   alt="FleetSkipper app on iPad showing active voyage screen"
@@ -207,7 +207,7 @@ export default function AppPage() {
 
               {/* Screenshot on RIGHT */}
               <div className="flex items-center">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 max-h-[600px] w-full">
+                <div className="relative max-h-[600px] w-full">
                   <Image
                     src="/images/crew-compliance-ipad.png"
                     alt="FleetSkipper crew compliance gate on iPad"
