@@ -162,7 +162,7 @@ export default function AppPage() {
         {/* Section 2 - Crew compliance (with screenshot RIGHT) */}
         <section className="py-16 md:py-20 bg-white">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Copy on LEFT */}
               <div>
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
@@ -206,8 +206,8 @@ export default function AppPage() {
               </div>
 
               {/* Screenshot on RIGHT */}
-              <div className="flex items-center justify-center">
-                <div className="relative max-h-[450px] w-3/4">
+              <div className="flex items-start justify-center h-full">
+                <div className="relative w-3/4">
                   <Image
                     src="/images/crew-compliance-ipad.png"
                     alt="FleetSkipper crew compliance gate on iPad"
