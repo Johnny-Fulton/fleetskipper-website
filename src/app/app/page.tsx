@@ -321,7 +321,7 @@ export default function AppPage() {
         {/* Section 5 - Risk/Drills/Incidents (with screenshot RIGHT) */}
         <section className="py-16 md:py-20 bg-gray-50">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Copy on LEFT */}
               <div>
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
@@ -346,15 +346,16 @@ export default function AppPage() {
               </div>
 
               {/* Screenshot on RIGHT */}
-              <div>
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-                    <p className="text-slate-500 text-sm">Screenshot 4: Risk Assessment with ALARP Matrix</p>
-                  </div>
+              <div className="flex items-start justify-center h-full">
+                <div className="relative w-3/4">
+                  <Image
+                    src="/images/risk-assessment-desktop.png"
+                    alt="FleetSkipper risk assessment with ALARP matrix"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
-                <p className="mt-4 text-sm text-slate-600 italic">
-                  A finished risk assessment, ready to hand to an auditor. Initial and residual scores, risk reduction percentage, ALARP status.
-                </p>
               </div>
             </div>
           </div>
