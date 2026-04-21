@@ -65,12 +65,17 @@ export default function AppPage() {
               </div>
             </div>
 
-            {/* Right column - Hero screenshot placeholder */}
+            {/* Right column - Hero screenshot */}
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <div className="aspect-[4/3] bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
-                  <p className="text-white/50 text-sm">Screenshot 1: Active Voyage Screen</p>
-                </div>
+                <Image
+                  src="/images/app-hero-ipad.png"
+                  alt="FleetSkipper app on iPad showing active voyage screen"
+                  width={1200}
+                  height={900}
+                  className="w-full h-auto"
+                  priority
+                />
               </div>
               <p className="mt-4 text-sm text-white/70 italic text-center">
                 A voyage in progress. One tap for position, weather, fuel and operations. Every entry timestamped, attributed, and written to the logbook automatically.
