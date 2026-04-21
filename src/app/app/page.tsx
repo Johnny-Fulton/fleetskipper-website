@@ -206,8 +206,8 @@ export default function AppPage() {
               </div>
 
               {/* Screenshot on RIGHT */}
-              <div className="flex items-center">
-                <div className="relative max-h-[600px] w-full">
+              <div className="flex items-center justify-center">
+                <div className="relative max-h-[450px] w-3/4">
                   <Image
                     src="/images/crew-compliance-ipad.png"
                     alt="FleetSkipper crew compliance gate on iPad"
