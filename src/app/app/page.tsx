@@ -66,7 +66,7 @@ export default function AppPage() {
             </div>
 
             {/* Right column - Hero screenshot */}
-            <div className="relative">
+            <div className="relative max-w-lg mx-auto lg:max-w-none">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                 <Image
                   src="/images/app-hero-ipad.png"
