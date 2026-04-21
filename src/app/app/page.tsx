@@ -340,43 +340,75 @@ export default function AppPage() {
           </div>
         </section>
 
-        {/* Section 4 - Equipment (copy-only) */}
+        {/* Section 4 - Equipment (with screenshot RIGHT) */}
         <section className="py-16 md:py-20 bg-white">
-          <div className="mx-auto max-w-4xl px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            {/* Title - always first on mobile */}
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 lg:hidden">
               Equipment, maintenance, and defects — properly tracked
             </h2>
 
-            <p className="text-lg text-slate-700 leading-relaxed mb-6">
-              Every piece of kit, every service, every defect — on every vessel.
-            </p>
+            {/* Intro paragraph - shown on mobile BEFORE image */}
+            <div className="lg:hidden mb-6">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                Every piece of kit, every service, every defect — on every vessel.
+              </p>
+            </div>
 
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Equipment register by category, with location and serial</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Planned maintenance with red/amber/green status</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Maintenance history per item, updated on every service</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">One-click defect logging from any equipment item</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Structured defect close-out (root cause, action, parts)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-700">Filterable defect history by kit, severity, and date</span>
-              </li>
-            </ul>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              {/* Text content on LEFT - desktop: title + paragraphs + bullets */}
+              <div className="order-4 lg:order-1">
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
+                  Equipment, maintenance, and defects — properly tracked
+                </h2>
+
+                <div className="hidden lg:block">
+                  <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                    Every piece of kit, every service, every defect — on every vessel.
+                  </p>
+                </div>
+
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Equipment register by category, with location and serial</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Planned maintenance with red/amber/green status</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Maintenance history per item, updated on every service</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">One-click defect logging from any equipment item</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Structured defect close-out (root cause, action, parts)</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">Filterable defect history by kit, severity, and date</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Screenshot on RIGHT - order-3 to appear after intro, before bullets on mobile */}
+              <div className="flex items-start justify-center h-full order-3 lg:order-2">
+                <div className="relative w-3/4">
+                  <Image
+                    src="/images/equipment-maintenance-ipad.png"
+                    alt="FleetSkipper equipment and maintenance tracking on iPad"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
