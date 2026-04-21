@@ -161,7 +161,7 @@ export default function AppPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Copy on LEFT */}
-              <div className="order-2 lg:order-1">
+              <div className="order-1 lg:order-1">
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
                   Keep your crew compliant — before they sail
                 </h2>
@@ -203,7 +203,7 @@ export default function AppPage() {
               </div>
 
               {/* Screenshot on RIGHT */}
-              <div className="flex items-start justify-center h-full order-1 lg:order-2">
+              <div className="flex items-start justify-center h-full order-2 lg:order-2">
                 <div className="relative w-3/4">
                   <Image
                     src="/images/crew-compliance-ipad.png"
@@ -320,7 +320,7 @@ export default function AppPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               {/* Copy on LEFT */}
-              <div className="order-2 lg:order-1">
+              <div className="order-1 lg:order-1">
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
                   Handle the moments that matter
                 </h2>
@@ -343,7 +343,7 @@ export default function AppPage() {
               </div>
 
               {/* Screenshot on RIGHT */}
-              <div className="flex items-start justify-center h-full order-1 lg:order-2">
+              <div className="flex items-start justify-center h-full order-2 lg:order-2">
                 <div className="relative w-full">
                   <Image
                     src="/images/risk-assessment-desktop.png"
