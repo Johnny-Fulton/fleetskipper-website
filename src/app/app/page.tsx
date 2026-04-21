@@ -206,15 +206,16 @@ export default function AppPage() {
               </div>
 
               {/* Screenshot on RIGHT */}
-              <div>
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-                    <p className="text-slate-500 text-sm">Screenshot 2: New Voyage Compliance Gate</p>
-                  </div>
+              <div className="flex items-center">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 max-h-[600px] w-full">
+                  <Image
+                    src="/images/crew-compliance-ipad.png"
+                    alt="FleetSkipper crew compliance gate on iPad"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
-                <p className="mt-4 text-sm text-slate-600 italic">
-                  The pre-voyage compliance gate — showing an MGN 71 advisory on drill participation and a WBC3 Table A5.1 block on minimum manning, both cited in plain English.
-                </p>
               </div>
             </div>
           </div>
