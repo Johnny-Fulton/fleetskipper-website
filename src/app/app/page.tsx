@@ -501,44 +501,6 @@ export default function AppPage() {
           </div>
         </section>
 
-        {/* ARCHITECTURE STORY CALLOUT - Visually distinct */}
-        <section className="py-16 md:py-20 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.3),transparent_50%)]" />
-          </div>
-
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
-                Built around WBC3, not on top of AI
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6 text-lg text-white/90 leading-relaxed">
-                <p>
-                  FleetSkipper's compliance engine was written from the Workboat Code Edition 3 outward — requirements, thresholds, review intervals coded and cross-referenced against the Code as we built it.
-                </p>
-
-                <p>
-                  No generative AI makes compliance calls inside the product. In a regulated industry, confident-sounding answers that might be right are a liability. The engine is deterministic: rules in, answers out. Auditable.
-                </p>
-              </div>
-
-              <div>
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
-                    <p className="text-white/50 text-sm">Screenshot 5: Review Schedule with WBC3 Citation</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm text-white/70 italic">
-                  A review schedule with its driving WBC3 clause cited in plain English. Every rule the app applies traces back to a clause you can read.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* FOUNDER SECTION */}
         <section className="py-16 md:py-20 bg-white">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
