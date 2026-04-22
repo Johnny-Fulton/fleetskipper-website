@@ -193,7 +193,7 @@ export default function AppPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             {/* Title - always first on mobile */}
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 lg:hidden">
-              Keep your crew compliant — before they sail
+              Keep your crew compliant — before sailing
             </h2>
 
             {/* Intro paragraphs - shown on mobile BEFORE image */}
@@ -211,7 +211,7 @@ export default function AppPage() {
               {/* Text content on LEFT - desktop: title + paragraphs + bullets */}
               <div className="order-4 lg:order-1">
                 <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 hidden lg:block">
-                  Keep your crew compliant — before they sail
+                  Keep your crew compliant — before sailing
                 </h2>
 
                 <div className="hidden lg:block">
@@ -239,7 +239,7 @@ export default function AppPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700">Hours-of-rest grid, signable and printable</span>
+                    <span className="text-slate-700">Hours-of-rest (if applicable), signable and printable</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
@@ -351,7 +351,7 @@ export default function AppPage() {
             {/* Intro paragraph - shown on mobile BEFORE image */}
             <div className="lg:hidden mb-6">
               <p className="text-lg text-slate-700 leading-relaxed">
-                Every piece of kit, every service, every defect — on every vessel.
+                Every piece of equipment, every service, every defect — on every vessel.
               </p>
             </div>
 
@@ -364,7 +364,7 @@ export default function AppPage() {
 
                 <div className="hidden lg:block">
                   <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                    Every piece of kit, every service, every defect — on every vessel.
+                    Every piece of equipment, every service, every defect — on every vessel.
                   </p>
                 </div>
 
@@ -387,7 +387,7 @@ export default function AppPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-slate-700">Structured defect close-out (root cause, action, parts)</span>
+                    <span className="text-slate-700">Structured defect close-out</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-cyan-600 flex-shrink-0 mt-0.5" />
