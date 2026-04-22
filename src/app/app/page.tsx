@@ -199,7 +199,7 @@ export default function AppPage() {
             {/* Intro paragraphs - shown on mobile BEFORE image */}
             <div className="lg:hidden mb-6">
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                FleetSkipper stops a voyage from starting if the crew isn't compliant.
+                FleetSkipper stops a voyage from starting if the crew isn’t compliant.
               </p>
 
               <p className="text-lg text-slate-700 leading-relaxed">
@@ -216,7 +216,7 @@ export default function AppPage() {
 
                 <div className="hidden lg:block">
                   <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                    FleetSkipper stops a voyage from starting if the crew isn't compliant.
+                    FleetSkipper stops a voyage from starting if the crew isn’t compliant.
                   </p>
 
                   <p className="text-lg text-slate-700 leading-relaxed mb-6">
@@ -521,7 +521,7 @@ export default function AppPage() {
                 </p>
 
                 <p>
-                  We deliberately don't use generative AI for compliance answers. In a regulated industry, confident-sounding answers that <em>might</em> be right are a liability — one wrong citation during a Port State Control inspection is the kind of problem that ends careers. Deterministic rules, mapped to the code, don't hallucinate.
+                  We deliberately don’t use generative AI for compliance answers. In a regulated industry, confident-sounding answers that <em>might</em> be right are a liability â one wrong citation during a Port State Control inspection is the kind of problem that ends careers. Deterministic rules, mapped to the code, don’t hallucinate.
                 </p>
               </div>
 
@@ -614,7 +614,7 @@ export default function AppPage() {
               <div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">"Where is my data stored? Is it secure?"</h3>
                 <p className="text-lg text-slate-700 leading-relaxed">
-                  UK data residency on Microsoft Azure. Encrypted in transit and at rest. Your cloud document links stay under your organisation's control — we track them, we don't mirror them.
+                  UK data residency on Microsoft Azure. Encrypted in transit and at rest. Your cloud document links stay under your organisation's control â we track them, we don’t mirror them.
                 </p>
               </div>
             </div>
