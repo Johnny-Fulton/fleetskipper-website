@@ -510,18 +510,18 @@ export default function AppPage() {
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
-                Why a regulation-mapped compliance engine
+                Built around WBC3, not on top of AI
               </h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 text-lg text-white/90 leading-relaxed">
                 <p>
-                  When an MCA inspector asks <em>"where did this come from?"</em>, the answer has to be a clause of the Workboat Code. Not "the system said so." Not "the AI suggested it." A clause number.
+                  FleetSkipper's compliance engine was written from the Workboat Code Edition 3 outward — requirements, thresholds, review intervals coded and cross-referenced against the Code as we built it.
                 </p>
 
                 <p>
-                  We deliberately don’t use generative AI for compliance answers. In a regulated industry, confident-sounding answers that <em>might</em> be right are a liability â one wrong citation during a Port State Control inspection is the kind of problem that ends careers. Deterministic rules, mapped to the code, don’t hallucinate.
+                  No generative AI makes compliance calls inside the product. In a regulated industry, confident-sounding answers that might be right are a liability. The engine is deterministic: rules in, answers out. Auditable.
                 </p>
               </div>
 
