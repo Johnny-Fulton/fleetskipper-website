@@ -7,8 +7,9 @@ deployed on Vercel. Markets the FleetSkipper compliance app to UK workboat opera
 ## Repository
 - **Path:** `/Users/jonathanfulton/REGULATION APP/FleetSkipper/website`
 - **GitHub:** `Johnny-Fulton/fleetskipper-website`
-- **Branch:** `main` (auto-deploys to Vercel)
+- **Branch:** `main`
 - **Live:** fleetskipper.com
+- **⚠️ Deploy is NOT automatic on git push** (verified 2026-07-28 — a push triggered no build). Deploy with **`vercel --prod --yes`** from this repo (Vercel-linked, project `website`). Always run it AND verify the live site — the local `npm run build` on macOS is case-insensitive and cannot catch filename-case bugs that break Vercel's Linux build.
 
 ## Run commands
 ```bash
