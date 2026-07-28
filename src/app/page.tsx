@@ -8,10 +8,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'FleetSkipper - WBC3 Compliance Made Simple for Workboat Operators',
-  description: 'Expert SMS documentation and digital tools for workboat operators. Built by a Master Mariner. Get WBC3 compliant fast with professional SMS consultancy services.',
+  description: 'Advisory services and digital tools for workboat operators. Built by a Master Mariner and Marine Pilot. Gap analysis, audits, guided SMS setup, and the FleetSkipper app.',
   openGraph: {
     title: 'FleetSkipper - WBC3 Compliance Made Simple',
-    description: 'Professional SMS documentation for workboat operators. Built by a Master Mariner who understands your operations.',
+    description: 'Advisory services and digital tools for workboat operators. Built by a Master Mariner and Marine Pilot.',
     type: 'website',
   },
 }
@@ -75,17 +75,17 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Link
-                href="/contact#book-consultation"
+                href="/app"
                 className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:shadow-2xl hover:-translate-y-0.5"
                 style={{ backgroundColor: '#ff6b35' }}
               >
-                Book Free Consultation →
+                See the App →
               </Link>
               <Link
-                href="/app"
+                href="/contact#book-consultation"
                 className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-bold text-white transition-all hover:bg-white/10 border-2 border-white/50 backdrop-blur-sm"
               >
-                See the App →
+                Book Free Consultation →
               </Link>
             </div>
 
@@ -93,11 +93,11 @@ export default function HomePage() {
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
                 <CheckCircle size={20} className="text-white flex-shrink-0" strokeWidth={2.5} />
-                <p className="text-white font-medium">Custom-built SMS for your vessel operations</p>
+                <p className="text-white font-medium">Manage your SMS operations digitally with the FleetSkipper app</p>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle size={20} className="text-white flex-shrink-0" strokeWidth={2.5} />
-                <p className="text-white font-medium">Pass MCA inspections with confidence</p>
+                <p className="text-white font-medium">Walk into your MCA inspection prepared — gap analysis, audits, and guided setup</p>
               </div>
             </div>
           </div>
@@ -160,88 +160,6 @@ export default function HomePage() {
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {/* SMS Consultancy Services */}
-              <div
-                className="relative overflow-hidden text-white p-10 md:p-12 rounded-3xl shadow-2xl flex flex-col"
-                style={{ background: 'linear-gradient(to bottom right, #1e3a5f, #142a45)' }}
-              >
-                <div
-                  className="absolute top-0 right-0 -mt-4 -mr-4 w-40 h-40 rounded-full blur-3xl"
-                  style={{ backgroundColor: 'rgba(0, 168, 204, 0.1)' }}
-                />
-
-                <div className="relative z-10 flex-grow flex flex-col">
-                  {/* Icon */}
-                  <div
-                    className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm"
-                    style={{ backgroundColor: 'rgba(0, 168, 204, 0.2)' }}
-                  >
-                    <FileText style={{ color: '#33b8d6' }} size={40} strokeWidth={2} />
-                  </div>
-
-                  {/* Header */}
-                  <h3 className="text-3xl md:text-4xl font-bold mb-3">SMS Consultancy</h3>
-                  <p className="text-xl mb-8 font-semibold" style={{ color: '#33b8d6' }}>Get Compliant Fast</p>
-
-                  {/* Features */}
-                  <ul className="space-y-5 mb-12 flex-grow">
-                    <li className="flex items-start gap-4">
-                      <div
-                        className="rounded-full p-1 flex-shrink-0 mt-0.5"
-                        style={{ backgroundColor: 'rgba(51, 184, 214, 0.2)' }}
-                      >
-                        <CheckCircle size={20} style={{ color: '#33b8d6' }} strokeWidth={2.5} />
-                      </div>
-                      <div>
-                        <p className="font-bold text-lg text-white">Complete SMS Documentation</p>
-                        <p className="text-white/70 text-sm mt-1">Tailored to your vessels, WBC3-compliant, MCA-ready</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <div
-                        className="rounded-full p-1 flex-shrink-0 mt-0.5"
-                        style={{ backgroundColor: 'rgba(51, 184, 214, 0.2)' }}
-                      >
-                        <CheckCircle size={20} style={{ color: '#33b8d6' }} strokeWidth={2.5} />
-                      </div>
-                      <div>
-                        <p className="font-bold text-lg text-white">SMS Audits & Gap Analysis</p>
-                        <p className="text-white/70 text-sm mt-1">Review existing SMS, identify gaps, prepare for inspections</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <div
-                        className="rounded-full p-1 flex-shrink-0 mt-0.5"
-                        style={{ backgroundColor: 'rgba(51, 184, 214, 0.2)' }}
-                      >
-                        <CheckCircle size={20} style={{ color: '#33b8d6' }} strokeWidth={2.5} />
-                      </div>
-                      <div>
-                        <p className="font-bold text-lg text-white">Ongoing SMS Support</p>
-                        <p className="text-white/70 text-sm mt-1">Updates, training, phone/email support</p>
-                      </div>
-                    </li>
-                  </ul>
-
-                  {/* CTAs - Always at bottom */}
-                  <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                    <Link
-                      href="/services"
-                      className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:shadow-2xl hover:-translate-y-0.5"
-                      style={{ backgroundColor: '#ff6b35' }}
-                    >
-                      Get Quote →
-                    </Link>
-                    <Link
-                      href="/services"
-                      className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-bold text-white transition-all hover:bg-white/10 border-2 border-white/50 backdrop-blur-sm"
-                    >
-                      Learn More
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
               {/* FleetSkipper App */}
               <div
                 className="relative overflow-hidden text-white p-10 md:p-12 rounded-3xl shadow-2xl flex flex-col"
@@ -260,7 +178,7 @@ export default function HomePage() {
 
                   {/* Header */}
                   <h3 className="text-3xl md:text-4xl font-bold mb-3">FleetSkipper App</h3>
-                  <p className="text-xl mb-8 font-semibold" style={{ color: '#142a45' }}>Go Digital, Stay Compliant</p>
+                  <p className="text-xl mb-8 font-semibold" style={{ color: '#142a45' }}>Manage Your SMS Digitally</p>
 
                   {/* Features */}
                   <ul className="space-y-5 mb-12 flex-grow">
@@ -324,7 +242,7 @@ export default function HomePage() {
                       Book Demo →
                     </Link>
                     <Link
-                      href="/contact"
+                      href="/app"
                       className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-bold text-white transition-all hover:bg-white/10 border-2 border-white/50 backdrop-blur-sm"
                     >
                       See Features
@@ -332,7 +250,93 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
+              {/* SMS Consultancy Services */}
+              <div
+                className="relative overflow-hidden text-white p-10 md:p-12 rounded-3xl shadow-2xl flex flex-col"
+                style={{ background: 'linear-gradient(to bottom right, #1e3a5f, #142a45)' }}
+              >
+                <div
+                  className="absolute top-0 right-0 -mt-4 -mr-4 w-40 h-40 rounded-full blur-3xl"
+                  style={{ backgroundColor: 'rgba(0, 168, 204, 0.1)' }}
+                />
+
+                <div className="relative z-10 flex-grow flex flex-col">
+                  {/* Icon */}
+                  <div
+                    className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm"
+                    style={{ backgroundColor: 'rgba(0, 168, 204, 0.2)' }}
+                  >
+                    <FileText style={{ color: '#33b8d6' }} size={40} strokeWidth={2} />
+                  </div>
+
+                  {/* Header */}
+                  <h3 className="text-3xl md:text-4xl font-bold mb-3">SMS Consultancy</h3>
+                  <p className="text-xl mb-8 font-semibold" style={{ color: '#33b8d6' }}>Get Compliant Fast</p>
+
+                  {/* Features */}
+                  <ul className="space-y-5 mb-12 flex-grow">
+                    <li className="flex items-start gap-4">
+                      <div
+                        className="rounded-full p-1 flex-shrink-0 mt-0.5"
+                        style={{ backgroundColor: 'rgba(51, 184, 214, 0.2)' }}
+                      >
+                        <CheckCircle size={20} style={{ color: '#33b8d6' }} strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <p className="font-bold text-lg text-white">SMS Gap Analysis</p>
+                        <p className="text-white/70 text-sm mt-1">Send us your existing SMS — we show you exactly where it falls short of the Workboat Code, in plain English on your own document</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div
+                        className="rounded-full p-1 flex-shrink-0 mt-0.5"
+                        style={{ backgroundColor: 'rgba(51, 184, 214, 0.2)' }}
+                      >
+                        <CheckCircle size={20} style={{ color: '#33b8d6' }} strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <p className="font-bold text-lg text-white">Internal Audit</p>
+                        <p className="text-white/70 text-sm mt-1">Independent second-party SMS audit against the Workboat Code</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div
+                        className="rounded-full p-1 flex-shrink-0 mt-0.5"
+                        style={{ backgroundColor: 'rgba(51, 184, 214, 0.2)' }}
+                      >
+                        <CheckCircle size={20} style={{ color: '#33b8d6' }} strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <p className="font-bold text-lg text-white">Guided SMS Setup</p>
+                        <p className="text-white/70 text-sm mt-1">Starting from scratch? We guide you through building a compliant SMS — you own it, we make sure it&apos;s right</p>
+                      </div>
+                    </li>
+                  </ul>
+
+                  {/* CTAs - Always at bottom */}
+                  <div className="flex flex-col sm:flex-row gap-4 mt-auto">
+                    <Link
+                      href="/services"
+                      className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition-all hover:shadow-2xl hover:-translate-y-0.5"
+                      style={{ backgroundColor: '#ff6b35' }}
+                    >
+                      Get Quote →
+                    </Link>
+                    <Link
+                      href="/services"
+                      className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-bold text-white transition-all hover:bg-white/10 border-2 border-white/50 backdrop-blur-sm"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
             </div>
+
+            <p className="text-sm text-slate-500 text-center mt-8 max-w-3xl mx-auto">
+              Gap analysis, audits and guided setup are advisory services — we can&apos;t issue certificates or approve your SMS (that&apos;s the MCA and its Certifying Authorities); we show you where you stand against the Workboat Code.
+            </p>
           </div>
         </section>
 
@@ -461,9 +465,9 @@ export default function HomePage() {
                     </div>
                     <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-cyan-500 to-transparent" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">We Build Your SMS</h3>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">We Analyse, Audit, or Guide</h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Tailored documentation for your operations. Fast turnaround with regular updates on progress.
+                    Gap analysis on your existing SMS, an independent audit against the Workboat Code, or guided setup if you&apos;re starting from scratch — plain English, specific to your vessel.
                   </p>
                 </div>
 
@@ -474,9 +478,9 @@ export default function HomePage() {
                       3
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">You&apos;re MCA-Ready</h3>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">Walk In Prepared</h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Complete SMS documentation delivered with training on how to use it. Ongoing support available.
+                    Clear findings, prioritised actions, and the confidence to walk into your MCA inspection prepared. Ongoing support available.
                   </p>
                 </div>
               </div>
