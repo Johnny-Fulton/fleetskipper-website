@@ -5,8 +5,8 @@ import { FileText, Search, HeadphonesIcon, CheckCircle, Phone, Mail } from 'luci
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Services - FleetSkipper | WBC3 SMS Consultancy',
-  description: 'Professional WBC3 SMS documentation, audits, and ongoing support for UK workboat operators. Expert guidance from an active Master Mariner.',
+  title: 'Services - FleetSkipper | WBC3 SMS Advisory Services',
+  description: 'WBC3 SMS gap analysis, internal audits, guided SMS setup and ongoing support for UK workboat operators. Guidance from a Master Mariner and Marine Pilot trained in ISM/MLC/ISPS auditing.',
 };
 
 export default function ServicesPage() {
@@ -36,130 +36,44 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto space-y-16">
 
-            {/* Service 1: SMS Documentation Builds */}
-            <div id="consultancy" className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="bg-cyan-100 w-16 h-16 rounded-xl flex items-center justify-center">
-                      <FileText className="text-cyan-600" size={32} />
-                    </div>
-                    <h2 className="text-3xl font-bold text-slate-900">SMS Documentation Builds</h2>
-                  </div>
-
-                  <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                    Complete Safety Management System documentation tailored to your vessel operations.
-                    WBC3-compliant, MCA-ready, and built for real-world use.
-                  </p>
-
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">What&apos;s Included:</h3>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Complete WBC3 compliant documentation</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Vessel-specific risk assessments and procedures</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Operational checklists and logbook templates</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Emergency response plans and drills</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Document control and record-keeping systems</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Regular updates on progress</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Training on how to implement and maintain your SMS</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="lg:col-span-1">
-                  <div className="bg-white rounded-xl p-6 shadow-md border border-gray-200">
-                    <h3 className="font-bold text-slate-900 mb-4">Who It&apos;s For:</h3>
-                    <ul className="space-y-2 mb-6 text-slate-600">
-                      <li>• New workboat operations</li>
-                      <li>• Vessels without existing SMS</li>
-                      <li>• Operators expanding their fleet</li>
-                      <li>• Operations changing classification</li>
-                    </ul>
-
-                    <div className="bg-cyan-50 rounded-lg p-4 mb-6 border border-cyan-100">
-                      <p className="text-sm font-semibold text-slate-900 mb-2">Pricing:</p>
-                      <p className="text-slate-600 text-sm">Contact us for a customized quote based on your vessel type and operations</p>
-                    </div>
-
-                    <div className="space-y-3">
-                      <Link
-                        href="/contact"
-                        className="block w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-md hover:shadow-lg text-center"
-                      >
-                        Get Quote
-                      </Link>
-                      <Link
-                        href="/contact#book-consultation"
-                        className="block w-full bg-white hover:bg-gray-50 text-slate-900 border-2 border-slate-900 px-6 py-3 rounded-lg font-semibold transition-all text-center"
-                      >
-                        Book Consultation
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Service 2: SMS Audits & Gap Analysis */}
-            <div id="audits" className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+            {/* Service 1: SMS Gap Analysis */}
+            <div id="gap-analysis" className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="bg-cyan-100 w-16 h-16 rounded-xl flex items-center justify-center">
                       <Search className="text-cyan-600" size={32} />
                     </div>
-                    <h2 className="text-3xl font-bold text-slate-900">SMS Audits & Gap Analysis</h2>
+                    <h2 className="text-3xl font-bold text-slate-900">SMS Gap Analysis</h2>
                   </div>
 
                   <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                    Comprehensive review of your existing SMS to identify gaps and ensure MCA inspection readiness.
-                    Get expert feedback on what&apos;s working and what needs improvement.
+                    Send us your existing SMS — we show you exactly where it falls short of the Workboat Code,
+                    in plain English on your own document. The best place to start if you already have an SMS
+                    but aren&apos;t sure it&apos;s up to scratch.
                   </p>
 
                   <h3 className="text-xl font-bold text-slate-900 mb-4">What&apos;s Included:</h3>
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start gap-3">
                       <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Full review of existing SMS documentation</span>
+                      <span className="text-slate-700">Full review of your existing SMS documentation</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Gap analysis against WBC3 requirements</span>
+                      <span className="text-slate-700">Gap analysis mapped directly against WBC3 (Appendix 8) requirements</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Detailed report with prioritized recommendations</span>
+                      <span className="text-slate-700">Plain-English findings on your own document — no jargon</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">MCA inspection preparation guidance</span>
+                      <span className="text-slate-700">Prioritised list of what to fix before your next inspection</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Practical advice on implementation improvements</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
-                      <span className="text-slate-700">Follow-up call to discuss findings</span>
+                      <span className="text-slate-700">Follow-up call to walk through findings</span>
                     </li>
                   </ul>
                 </div>
@@ -176,7 +90,7 @@ export default function ServicesPage() {
 
                     <div className="bg-cyan-50 rounded-lg p-4 mb-6 border border-cyan-100">
                       <p className="text-sm font-semibold text-slate-900 mb-2">Pricing:</p>
-                      <p className="text-slate-600 text-sm">Contact us for a customized quote</p>
+                      <p className="text-slate-600 text-sm">Contact us for a quote based on your SMS and vessel type</p>
                     </div>
 
                     <div className="space-y-3">
@@ -198,7 +112,167 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Service 3: Ongoing SMS Support */}
+            {/* Service 2: Internal Audit */}
+            <div id="audits" className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-cyan-100 w-16 h-16 rounded-xl flex items-center justify-center">
+                      <FileText className="text-cyan-600" size={32} />
+                    </div>
+                    <h2 className="text-3xl font-bold text-slate-900">Internal Audit</h2>
+                  </div>
+
+                  <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                    An independent second-party SMS audit against the Workboat Code. Goes further than a gap analysis —
+                    a structured audit of your SMS and how your vessel actually operates against it.
+                    WBC3&apos;s SMS (Appendix 8) is a lighter version of the ISM Code, so the audit discipline transfers directly.
+                  </p>
+
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">What&apos;s Included:</h3>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Structured audit of SMS documentation and implementation</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Independent assessment against WBC3 requirements</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Findings report with observations and non-conformities</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">MCA inspection preparation guidance</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Practical advice on closing out findings</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Follow-up call to discuss findings</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="lg:col-span-1">
+                  <div className="bg-white rounded-xl p-6 shadow-md border border-gray-200">
+                    <h3 className="font-bold text-slate-900 mb-4">Who It&apos;s For:</h3>
+                    <ul className="space-y-2 mb-6 text-slate-600">
+                      <li>• Operators wanting a formal audit</li>
+                      <li>• Pre-inspection preparation</li>
+                      <li>• Post-incident compliance check</li>
+                      <li>• Annual SMS verification</li>
+                    </ul>
+
+                    <div className="bg-cyan-50 rounded-lg p-4 mb-6 border border-cyan-100">
+                      <p className="text-sm font-semibold text-slate-900 mb-2">Pricing:</p>
+                      <p className="text-slate-600 text-sm">Contact us for a customised quote</p>
+                    </div>
+
+                    <div className="space-y-3">
+                      <Link
+                        href="/contact"
+                        className="block w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-md hover:shadow-lg text-center"
+                      >
+                        Get Quote
+                      </Link>
+                      <Link
+                        href="/contact#book-consultation"
+                        className="block w-full bg-white hover:bg-gray-50 text-slate-900 border-2 border-slate-900 px-6 py-3 rounded-lg font-semibold transition-all text-center"
+                      >
+                        Book Consultation
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Service 3: Guided SMS Setup */}
+            <div id="consultancy" className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-cyan-100 w-16 h-16 rounded-xl flex items-center justify-center">
+                      <FileText className="text-cyan-600" size={32} />
+                    </div>
+                    <h2 className="text-3xl font-bold text-slate-900">Guided SMS Setup</h2>
+                  </div>
+
+                  <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                    Starting from scratch with no SMS? We guide you through building a compliant Safety Management System
+                    for your vessel — you author it, we make sure it&apos;s right. You end up with an SMS you understand
+                    and can maintain, not one handed to you by a stranger.
+                  </p>
+
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">What&apos;s Included:</h3>
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Step-by-step guidance through WBC3 SMS requirements</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Review at each stage to confirm it meets the Workboat Code</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Vessel-specific risk assessments and procedures — you draft, we advise</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Operational checklists and logbook templates</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Final review before submission — so you walk in prepared</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle size={22} className="text-cyan-600 flex-shrink-0 mt-1" />
+                      <span className="text-slate-700">Guidance on implementing and maintaining your SMS going forward</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="lg:col-span-1">
+                  <div className="bg-white rounded-xl p-6 shadow-md border border-gray-200">
+                    <h3 className="font-bold text-slate-900 mb-4">Who It&apos;s For:</h3>
+                    <ul className="space-y-2 mb-6 text-slate-600">
+                      <li>• New workboat operations</li>
+                      <li>• Vessels without an existing SMS</li>
+                      <li>• Operators expanding their fleet</li>
+                      <li>• Operations changing classification</li>
+                    </ul>
+
+                    <div className="bg-cyan-50 rounded-lg p-4 mb-6 border border-cyan-100">
+                      <p className="text-sm font-semibold text-slate-900 mb-2">Pricing:</p>
+                      <p className="text-slate-600 text-sm">Contact us for a quote based on your vessel type and operations</p>
+                    </div>
+
+                    <div className="space-y-3">
+                      <Link
+                        href="/contact"
+                        className="block w-full bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-md hover:shadow-lg text-center"
+                      >
+                        Get Quote
+                      </Link>
+                      <Link
+                        href="/contact#book-consultation"
+                        className="block w-full bg-white hover:bg-gray-50 text-slate-900 border-2 border-slate-900 px-6 py-3 rounded-lg font-semibold transition-all text-center"
+                      >
+                        Book Consultation
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Service 4: Ongoing SMS Support */}
             <div className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2">
@@ -211,7 +285,7 @@ export default function ServicesPage() {
 
                   <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                     Continuous support to keep your SMS current and compliant. Regular updates, advice,
-                    and expert guidance whenever you need it.
+                    and guidance whenever you need it.
                   </p>
 
                   <h3 className="text-xl font-bold text-slate-900 mb-4">What&apos;s Included:</h3>
@@ -276,6 +350,10 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
+
+            <p className="text-sm text-slate-500 text-center max-w-3xl mx-auto">
+              Gap analysis, audits and guided setup are advisory services — we can&apos;t issue certificates or approve your SMS (that&apos;s the MCA and its Certifying Authorities); we show you where you stand against the Workboat Code.
+            </p>
 
           </div>
         </div>

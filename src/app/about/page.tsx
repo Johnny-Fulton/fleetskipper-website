@@ -5,8 +5,8 @@ import { CheckCircle, Award, Ship, Anchor, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About - FleetSkipper | Built by a Master Mariner',
-  description: 'FleetSkipper is built by an active Master Mariner and harbour pilot with 20+ years maritime experience. Real maritime expertise meets practical compliance solutions.',
+  title: 'About - FleetSkipper | Built by a Master Mariner and Marine Pilot',
+  description: 'FleetSkipper is built by a Master Mariner and Marine Pilot, trained in ISM/MLC/ISPS auditing. Real maritime expertise meets practical compliance solutions for workboat operators.',
 };
 
 export default function AboutPage() {
@@ -34,7 +34,7 @@ export default function AboutPage() {
               Built by Mariners, For Mariners
             </h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-10">
-              WBC3 compliance from an active Master Mariner, not a consultant
+              WBC3 compliance from a Master Mariner and Marine Pilot — built for operators, not consultants
             </p>
 
             {/* Credential Badges - Animated on scroll/load */}
@@ -50,12 +50,12 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Active Pilot Badge */}
+              {/* Marine Pilot Badge */}
               <div className="group bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 py-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 animation-delay-100">
                 <div className="flex items-center gap-3">
                   <Ship className="w-6 h-6 text-cyan-400" />
                   <div className="text-left">
-                    <div className="text-white font-bold text-sm">Active Pilot</div>
+                    <div className="text-white font-bold text-sm">Marine Pilot</div>
                     <div className="text-white/70 text-xs">UK Harbour</div>
                   </div>
                 </div>
@@ -104,9 +104,9 @@ export default function AboutPage() {
                 </h3>
 
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                  FleetSkipper was founded by an active Master Mariner and harbour pilot
-                  with over 20 years of maritime experience. Unlike traditional consultants, we are working
-                  mariners who understand the real-world challenges of vessel operations and compliance.
+                  FleetSkipper was founded by a Master Mariner and Marine Pilot
+                  with over 20 years of maritime experience, trained in ISM, MLC, and ISPS auditing.
+                  We understand the real-world challenges of vessel operations and compliance because we&apos;ve lived them.
                 </p>
 
                 <ul className="space-y-5">
@@ -120,22 +120,22 @@ export default function AboutPage() {
                   <li className="flex items-start gap-4">
                     <CheckCircle size={28} className="text-cyan-600 flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-lg font-semibold text-slate-900">Active UK Harbour Pilot</p>
-                      <p className="text-slate-600">Currently practicing marine pilot in one of the UK&apos;s busiest ports</p>
+                      <p className="text-lg font-semibold text-slate-900">Marine Pilot</p>
+                      <p className="text-slate-600">Master Mariner and Marine Pilot — the operational experience is real</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
                     <CheckCircle size={28} className="text-cyan-600 flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-lg font-semibold text-slate-900">WBC3 Compliance Specialist</p>
-                      <p className="text-slate-600">Deep practical knowledge of maritime safety management systems</p>
+                      <p className="text-lg font-semibold text-slate-900">ISM / MLC / ISPS Audit-Trained</p>
+                      <p className="text-slate-600">WBC3&apos;s SMS is a lighter version of the ISM Code — the audit discipline transfers directly</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
                     <CheckCircle size={28} className="text-cyan-600 flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-lg font-semibold text-slate-900">Real Operators, Not Just Consultants</p>
-                      <p className="text-slate-600">Solutions built from hands-on experience, not just theory</p>
+                      <p className="text-lg font-semibold text-slate-900">Built from Operational Experience</p>
+                      <p className="text-slate-600">Solutions shaped by what actually happens on vessels, not just what the regulations say</p>
                     </div>
                   </li>
                 </ul>
@@ -184,7 +184,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4">Maritime Expertise</h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Built by an active mariner who understands vessel operations, not just regulations.
+                    Built by a Master Mariner and Marine Pilot who understands vessel operations, not just regulations.
                     Our solutions work in the real world.
                   </p>
                 </div>
@@ -206,8 +206,8 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4">Direct Support</h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Work directly with our expert team - no junior consultants or offshore teams.
-                    You get expert guidance every step of the way.
+                    Work directly with the founder — no junior consultants or offshore teams.
+                    You get informed guidance every step of the way.
                   </p>
                 </div>
               </div>
@@ -235,8 +235,8 @@ export default function AboutPage() {
                   <li className="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-200">
                     <span className="text-cyan-600 font-bold text-2xl">•</span>
                     <div>
-                      <p className="font-semibold text-slate-900 text-lg">Licensed Marine Pilot - Active Duty</p>
-                      <p className="text-slate-600 text-sm">Currently practicing at one of the UK&apos;s busiest ports</p>
+                      <p className="font-semibold text-slate-900 text-lg">Licensed Marine Pilot</p>
+                      <p className="text-slate-600 text-sm">UK harbour pilot — operational experience at the sharp end</p>
                     </div>
                   </li>
 
@@ -251,16 +251,16 @@ export default function AboutPage() {
                   <li className="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-200">
                     <span className="text-cyan-600 font-bold text-2xl">•</span>
                     <div>
-                      <p className="font-semibold text-slate-900 text-lg">WBC3 Compliance Specialist</p>
-                      <p className="text-slate-600 text-sm">Practical expertise in Workboat Code compliance and SMS implementation</p>
+                      <p className="font-semibold text-slate-900 text-lg">ISM / MLC / ISPS Audit-Trained</p>
+                      <p className="text-slate-600 text-sm">WBC3&apos;s SMS (Appendix 8) is a lighter version of the ISM Code, so the audit discipline applies directly to workboat compliance</p>
                     </div>
                   </li>
 
                   <li className="flex items-start gap-4 bg-white p-5 rounded-lg border border-gray-200">
                     <span className="text-cyan-600 font-bold text-2xl">•</span>
                     <div>
-                      <p className="font-semibold text-slate-900 text-lg">Safety Management Systems Expert</p>
-                      <p className="text-slate-600 text-sm">Development, implementation, and maintenance of ISM-compliant SMS</p>
+                      <p className="font-semibold text-slate-900 text-lg">Safety Management Systems — Practical Knowledge</p>
+                      <p className="text-slate-600 text-sm">Development, implementation, and maintenance of SMS aligned to the ISM Code and Workboat Code</p>
                     </div>
                   </li>
 
@@ -268,7 +268,7 @@ export default function AboutPage() {
                     <span className="text-cyan-600 font-bold text-2xl">•</span>
                     <div>
                       <p className="font-semibold text-slate-900 text-lg">MCA Inspection Preparation</p>
-                      <p className="text-slate-600 text-sm">Preparing operators for successful MCA inspections and surveys</p>
+                      <p className="text-slate-600 text-sm">Helping operators walk into their MCA inspection prepared — gap analysis, audits, and guided setup</p>
                     </div>
                   </li>
                 </ul>

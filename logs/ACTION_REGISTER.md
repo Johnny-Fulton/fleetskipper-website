@@ -1,5 +1,17 @@
 # Action Register - FleetSkipper Website
 
+## 2026-07-28 - Repositioning: App + Consultancy copy edit (branch: reposition/app-plus-consultancy)
+
+### Files Modified
+- `src/components/Navigation.tsx` — "Consultancy" nav label → "Services"
+- `src/app/waitlist/layout.tsx` — "SeaReady App" → "FleetSkipper App" in metadata
+- `src/app/page.tsx` — hero bullets, How We Help card copy, Process Step 2 + 3, metadata, advisory disclaimer
+- `src/app/services/page.tsx` — metadata, reordered service blocks (Gap Analysis → Internal Audit → Guided SMS Setup → Ongoing Support), renamed "SMS Documentation Builds" → "Guided SMS Setup", reworded to guided-not-done-for-you, added disclaimer
+- `src/app/about/page.tsx` — credential copy throughout: removed "active/currently practising/WBC3 Compliance Specialist/Safety Management Systems Expert", replaced with "Master Mariner and Marine Pilot, ISM/MLC/ISPS Lead Auditor–Trained" factual framing
+
+### Summary
+Copy-only repositioning. No new components, sections, layouts, or styles created. `npm run build` passes (68 pages, 0 errors).
+
 ## 2026-03-24 - FV Crew Checker UI Redesign - Match WBC3 Style
 
 ### Files Modified
@@ -183,3 +195,6 @@ User feedback: "i think the UI for WBC3 is great but only thing is i like how th
 - Drill Programme (filter to drill items)
 - Full Compliance Suite (paid tool showing all 583 items)
 
+- 2026-07-28 — advisor: homepage 'Two Ways' section — swapped card order so FleetSkipper App leads, SMS Consultancy second (app more dominant, per Jonathan). Copy/order only, no new elements. Branch reposition/app-plus-consultancy.
+- 2026-07-28 — advisor: homepage hero CTAs flipped — 'See the App' now primary (filled), 'Book Free Consultation' secondary (outline). App more dominant. Copy/attr only. Branch reposition/app-plus-consultancy.
+- 2026-07-28 — advisor: PRE-DEPLOY Opus-review fixes (verdict SHIP WITH FIXES) — (1) about/page.tsx 'ISM/MLC/ISPS Lead Auditor — Trained' → 'Audit-Trained' (drop held-title implication, match line 130); (2) services/page.tsx 'confidence it's inspection-ready' → 'so you walk in prepared' (drop 3rd-party outcome claim); (3) page.tsx App-card 'See Features' href /contact → /app (fix app-first contradiction); (4) Footer.tsx service urls '#consultancy'→'#gap-analysis' + '/services#app'→'/app' (dead/misdirected anchors); (5) contact/page.tsx added id='book-consultation' so every Book Consultation CTA scrolls to the form. Build green (68 pages). Branch → merged to main for prod deploy.

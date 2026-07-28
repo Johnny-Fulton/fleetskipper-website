@@ -8,7 +8,7 @@ export function Footer() {
   const services = {
     heading: 'Services',
     links: ['SMS Consultancy', 'SMS Audits', 'FleetSkipper App', 'WBC3 Support'],
-    urls: ['/services#consultancy', '/services#audits', '/services#app', '/services'],
+    urls: ['/services#gap-analysis', '/services#audits', '/app', '/services'],
   }
 
   const company = {

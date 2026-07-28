@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'SeaReady App Waitlist | Maritime Compliance Platform',
-  description: 'Join the waitlist for SeaReady App. Offline-first digital SMS management for UK vessels. MCA-compliant, WBC3 specialist. Coming soon.',
+  title: 'FleetSkipper App Waitlist | Maritime Compliance Platform',
+  description: 'Join the waitlist for FleetSkipper App. Offline-first digital SMS management for UK vessels. Built for the MCA Workboat Code Edition 3 (WBC3). Coming soon.',
 }
 
 export default function WaitlistLayout({
