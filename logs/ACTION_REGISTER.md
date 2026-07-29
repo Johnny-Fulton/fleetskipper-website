@@ -1,5 +1,17 @@
 # Action Register - FleetSkipper Website
 
+## 2026-07-29 - Contact form bug fix: durable Supabase capture (Stage 1)
+
+### Files Modified
+- `src/app/api/contact/route.ts` — rewired success/failure logic; every submission now inserted into `contact_submissions` before email is attempted; `success: true` only returned when DB insert succeeds; added Supabase service-role client (mirrors collect-email pattern)
+- `supabase-contact-submissions-table.sql` — NEW: migration file creating `contact_submissions` table with RLS enabled deny-by-default (no permissive policy) + `REVOKE ALL FROM anon, authenticated`; advisor to run manually in Supabase SQL Editor before deploy
+
+### Summary
+Fixes silent data loss: previously the route caught email-send errors and returned `success: true` regardless, losing every submission. Now submissions are durably recorded in Supabase first; email is best-effort. `npm run build` passes (68 pages, 0 errors).
+
+### Security correction (post-review)
+Removed a permissive `CREATE POLICY ... FOR ALL USING(true) WITH CHECK(true)` from the SQL — with no `TO` clause it defaulted to PUBLIC, exposing contact PII to the browser-shipped `anon` key. The route uses the service-role key (bypasses RLS), so no policy is needed. Kept `ENABLE ROW LEVEL SECURITY` (deny-by-default) and added a belt-and-braces `REVOKE ALL ... FROM anon, authenticated`.
+
 ## 2026-07-28 - Repositioning: App + Consultancy copy edit (branch: reposition/app-plus-consultancy)
 
 ### Files Modified
