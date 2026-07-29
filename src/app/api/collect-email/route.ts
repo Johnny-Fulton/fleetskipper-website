@@ -47,17 +47,20 @@ export async function POST(req: NextRequest) {
       })
     }
 
-    // Create new lead entry
+    // Create new lead entry (or update last_activity_at if email already exists in leads)
     // Note: Since we're not using auth.users for anonymous tool access,
     // we'll create a profile entry without a user_id
     const { data, error } = await supabase
       .from('leads')
-      .insert({
-        email,
-        signup_source: source,
-        created_at: new Date().toISOString(),
-        lead_score: 'warm' // Using tool = warm lead
-      })
+      .upsert(
+        {
+          email,
+          signup_source: source,
+          lead_score: 'warm', // Using tool = warm lead
+          last_activity_at: new Date().toISOString(),
+        },
+        { onConflict: 'email' }
+      )
       .select()
       .single()
 
