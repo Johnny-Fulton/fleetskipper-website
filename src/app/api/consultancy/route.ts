@@ -1,7 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@supabase/supabase-js'
 import nodemailer from 'nodemailer'
 
-// SMS Consultancy quote request handler with email delivery
+// Consultancy quote request handler — every submission is durably captured in Supabase
+// before any email notification is attempted.
+
+// Create Supabase client with service role for server-side operations
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,32 +17,64 @@ export async function POST(request: NextRequest) {
 
     // Extract form fields
     const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      company: formData.get('company'),
-      vessel_count: formData.get('vessel_count'),
-      vessel_type: formData.get('vessel_type'),
-      wbc3_category: formData.get('wbc3_category'),
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      company: formData.get('company') as string,
+      vessel_count: formData.get('vessel_count') as string,
+      vessel_type: formData.get('vessel_type') as string,
+      wbc3_category: formData.get('wbc3_category') as string,
       ops_diving: formData.get('ops_diving') === 'on',
       ops_lifting: formData.get('ops_lifting') === 'on',
       ops_towing: formData.get('ops_towing') === 'on',
       ops_passenger: formData.get('ops_passenger') === 'on',
-      additional_details: formData.get('additional_details'),
-      timeline: formData.get('timeline'),
+      additional_details: formData.get('additional_details') as string,
+      timeline: formData.get('timeline') as string,
       submitted_at: new Date().toISOString(),
     }
 
-    // Build specialized operations list
+    // Validate required fields (guards direct/scripted POSTs against NOT-NULL insert failure)
+    if (!data.name || !data.email) {
+      return NextResponse.json(
+        { success: false, message: 'Name and email are required.' },
+        { status: 400 }
+      )
+    }
+
+    // Build specialized operations list (for email)
     const specializedOps = []
     if (data.ops_diving) specializedOps.push('Diving')
     if (data.ops_lifting) specializedOps.push('Lifting')
     if (data.ops_towing) specializedOps.push('Towing')
     if (data.ops_passenger) specializedOps.push('Passenger Operations')
 
-    // Format email body
-    const emailBody = `
-NEW SMS CONSULTANCY QUOTE REQUEST
+    // --- 1. Durably capture the submission in Supabase ---
+    const { error: dbError } = await supabase
+      .from('contact_submissions')
+      .insert({
+        form_type: 'consultancy',
+        name: data.name,
+        email: data.email,
+        phone: data.phone || null,
+        company: data.company || null,
+        vessel_type: data.vessel_type || null,
+        message: data.additional_details || 'Consultancy quote request',
+        submitted_at: data.submitted_at,
+        details: {
+          vessel_count: data.vessel_count,
+          wbc3_category: data.wbc3_category,
+          ops_diving: data.ops_diving,
+          ops_lifting: data.ops_lifting,
+          ops_towing: data.ops_towing,
+          ops_passenger: data.ops_passenger,
+          timeline: data.timeline,
+        },
+      })
+
+    // Helper: send the email notification
+    const sendEmail = async () => {
+      const emailBody = `
+NEW CONSULTANCY QUOTE REQUEST
 
 ===================================
 CONTACT INFORMATION
@@ -73,24 +113,12 @@ NEXT STEPS
 4. Response deadline: Within 24 hours
 
 Submitted: ${data.submitted_at}
-    `.trim()
-
-    // Send email notification
-    try {
-      const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
-        auth: {
-          user: process.env.EMAIL_FROM,
-          pass: process.env.EMAIL_PASSWORD,
-        },
-      })
+      `.trim()
 
       const htmlBody = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #0891B2; border-bottom: 3px solid #0891B2; padding-bottom: 10px;">
-            New SMS Consultancy Quote Request
+            New Consultancy Quote Request
           </h2>
 
           <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -135,41 +163,91 @@ Submitted: ${data.submitted_at}
               timeStyle: 'short',
               timeZone: 'Europe/London'
             })}</p>
-            <p>Via SeaReady Website - SMS Consultancy Form</p>
+            <p>Via FleetSkipper Website - Consultancy Form</p>
           </div>
         </div>
       `
 
+      const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.EMAIL_FROM,
+          pass: process.env.EMAIL_PASSWORD,
+        },
+      })
+
       await transporter.sendMail({
-        from: `"SeaReady SMS Consultancy" <${process.env.EMAIL_FROM}>`,
+        from: `"FleetSkipper" <${process.env.EMAIL_FROM}>`,
         to: process.env.EMAIL_FROM,
-        replyTo: data.email as string,
-        subject: `SMS Quote Request - ${data.name} - ${data.vessel_count} vessel(s)`,
+        replyTo: data.email,
+        subject: `Consultancy Quote Request - ${data.name} - ${data.vessel_count} vessel(s)`,
         text: emailBody,
         html: htmlBody,
       })
-
-      console.log('Consultancy quote email sent successfully to', process.env.EMAIL_FROM)
-    } catch (emailError) {
-      console.error('Failed to send consultancy email notification:', emailError)
-      // Continue anyway - submission still successful
     }
 
-    // Return success response
+    if (dbError) {
+      console.error('Failed to save consultancy submission to Supabase:', dbError)
+
+      // --- 2. Attempt email as fallback ---
+      try {
+        await sendEmail()
+        console.log('Fallback: consultancy email sent despite DB failure')
+        // Email delivered — lead is not silently lost; return success
+        return NextResponse.json(
+          {
+            success: true,
+            message: "Quote request received! We'll respond within 24 hours.",
+          },
+          { status: 200 }
+        )
+      } catch (emailError) {
+        console.error('Fallback email also failed:', emailError)
+      }
+
+      // Both DB and email failed — nothing was captured; tell the user honestly
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            'Sorry, we were unable to receive your request right now. Please email us directly at info@fleetskipper.com.',
+        },
+        { status: 500 }
+      )
+    }
+
+    // Submission is safely in the database.
+
+    // --- 3. Send email notification (best-effort; failure does NOT undo success) ---
+    try {
+      await sendEmail()
+      console.log('Consultancy quote email sent successfully to', process.env.EMAIL_FROM)
+    } catch (emailError) {
+      // Log but do not surface to the user — the lead is safe in Supabase
+      console.error('Email notification failed (submission already saved):', emailError)
+    }
+
     return NextResponse.json(
       {
         success: true,
-        message: 'Quote request received! We\'ll respond within 24 hours.',
+        message: "Quote request received! We'll respond within 24 hours.",
       },
       { status: 200 }
     )
-
   } catch (error) {
     console.error('Error processing consultancy request:', error)
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : 'No stack trace',
+    })
+
     return NextResponse.json(
       {
         success: false,
-        message: 'Sorry, there was an error submitting your request. Please email info@fleetskipper.com directly.',
+        message:
+          'Sorry, there was an error submitting your request. Please email info@fleetskipper.com directly.',
       },
       { status: 500 }
     )

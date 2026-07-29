@@ -1,5 +1,14 @@
 # Action Register - FleetSkipper Website
 
+## 2026-07-29 - Consultancy + waitlist routes: durable Supabase capture + branding fix
+
+### Files Modified
+- `src/app/api/consultancy/route.ts` — added Supabase service-role client; INSERT to `contact_submissions` (`form_type:'consultancy'`, all fields, `details` JSONB) before email; success only on durable capture; honest 500 if both DB and email fail; email now best-effort; branding `"SeaReady SMS Consultancy"` → `"FleetSkipper"`
+- `src/app/api/waitlist/route.ts` — same treatment: Supabase insert (`form_type:'waitlist'`); durable-first success/failure logic; email best-effort; branding `"SeaReady Waitlist"` → `"FleetSkipper"`
+
+### Summary
+Fixes silent lead loss in both routes: previously email-send errors were swallowed and `success:true` returned regardless. Both routes now mirror the gold-standard contact route pattern. Also added a required-field guard (returns 400 if name or email missing) to both routes for parity with the contact route — prevents a direct/scripted POST from failing the NOT-NULL insert and falling to the fake-success email path. `npm run build` passes (68 pages, 0 errors). No deploy — awaiting migration to add `form_type`, `company`, `details` columns.
+
 ## 2026-07-29 - Contact form bug fix: durable Supabase capture (Stage 1)
 
 ### Files Modified
