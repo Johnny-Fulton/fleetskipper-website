@@ -62,7 +62,7 @@ Submitted: ${data.submitted_at}
     from: `"FleetSkipper Contact Form" <${process.env.EMAIL_FROM}>`,
     to: process.env.EMAIL_FROM, // Send to yourself
     replyTo: data.email, // Allow easy reply to the person who submitted
-    subject: `Contact Form: ${data.subject} - ${data.name}`,
+    subject: `New enquiry (${data.servicesNeeded || 'General'}) — ${data.name}`,
     text: emailBody,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -74,7 +74,9 @@ Submitted: ${data.submitted_at}
           <h3 style="color: #374151; margin-top: 0;">Contact Information</h3>
           <p style="margin: 10px 0;"><strong>Name:</strong> ${data.name}</p>
           <p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:${data.email}">${data.email}</a></p>
-          <p style="margin: 10px 0;"><strong>Subject:</strong> ${data.subject}</p>
+          <p style="margin: 10px 0;"><strong>Phone:</strong> ${data.phone || 'Not provided'}</p>
+          <p style="margin: 10px 0;"><strong>Vessel Type:</strong> ${data.vesselType || 'Not specified'}</p>
+          <p style="margin: 10px 0;"><strong>Service needed:</strong> ${data.servicesNeeded || 'Not specified'}</p>
         </div>
 
         <div style="background: #ffffff; padding: 20px; border-left: 4px solid #0891B2; margin: 20px 0;">
@@ -85,7 +87,7 @@ Submitted: ${data.submitted_at}
         <div style="background: #ecfdf5; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="color: #065f46; margin-top: 0;">Next Steps</h3>
           <ol style="color: #047857;">
-            <li>Review inquiry type: <strong>${data.subject}</strong></li>
+            <li>Review service needed: <strong>${data.servicesNeeded || 'General inquiry'}</strong></li>
             <li>Respond to: <strong><a href="mailto:${data.email}">${data.email}</a></strong></li>
             <li>Response deadline: <strong>Within 24 hours</strong></li>
           </ol>
