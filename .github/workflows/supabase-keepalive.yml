@@ -1,0 +1,41 @@
+name: Supabase keep-alive
+
+# Keeps the free-tier Supabase project (ref: jabcqjgrzlizmwjrqapc) from
+# auto-pausing after ~7 days of inactivity, by making a daily API request.
+# Runs on GitHub's cloud runners, so it works whether or not any local
+# machine is on.
+#
+# NOTE: this is a STOPGAP. The proper fix for production is the Supabase Pro
+# plan (never pauses, includes backups). Delete this workflow once on Pro.
+
+on:
+  schedule:
+    # Daily at 09:00 UTC — well inside the 7-day pause window, with margin
+    # in case GitHub skips or delays a scheduled run.
+    - cron: '0 9 * * *'
+  workflow_dispatch: {}   # allow manual runs from the Actions tab / CLI
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API (counts as activity)
+        env:
+          SUPABASE_URL: https://jabcqjgrzlizmwjrqapc.supabase.co
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            "$SUPABASE_URL/rest/v1/" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY")
+          echo "Supabase responded HTTP $code"
+          # Any HTTP response (200-499) means the project is awake and the
+          # request registered as activity. 000 (no connection) or 5xx means
+          # the project is paused/unreachable — fail so it surfaces as a
+          # notification (bonus monitoring).
+          if [ "$code" -ge 200 ] && [ "$code" -lt 500 ]; then
+            echo "Project is awake ✓"
+          else
+            echo "::error::Supabase unreachable (HTTP $code) — project may be paused or down"
+            exit 1
+          fi
