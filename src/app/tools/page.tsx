@@ -48,7 +48,7 @@ const tools = [
       'Skipper/Master & Engineer CoCs',
       'Medical fitness & safety training',
     ],
-    comingSoon: false,
+    comingSoon: true,
   },
 ]
 
