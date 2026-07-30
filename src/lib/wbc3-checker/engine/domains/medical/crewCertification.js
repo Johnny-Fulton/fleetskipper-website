@@ -44,7 +44,7 @@ export function getMedicalCrewCertificationRequirements(vessel) {
       mandatory: true,
       appliesTo: 'ALL CREW',
       description: 'Medical certificate for vessels ≤60 miles from shore (domestic only)',
-      validity: '5 years (1 year if over 65)',
+      validity: '5 years from issue or 65th birthday, whichever is sooner (1 year if over 65)',
       notes: 'Can be issued by any UK GMC registered doctor. NOT valid for foreign ports'
     });
   }
