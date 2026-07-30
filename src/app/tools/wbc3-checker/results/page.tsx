@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
+import { EmailGate } from '@/components/EmailGate'
 import { ReferenceModal } from '@/components/ReferenceModal'
 import { Ship, Anchor, Package, AlertCircle, CheckCircle } from 'lucide-react'
 import { getReferenceData, hasReferenceData, type RegulationReference } from '@/lib/wbc3-checker/references/wbc3-references'
 
 export default function WBC3ResultsPage() {
   const [results, setResults] = useState<any>(null)
+  const [hasAccess, setHasAccess] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [selectedType, setSelectedType] = useState<string>('all') // 'all', 'mandatory', 'recommended'
   const [modalOpen, setModalOpen] = useState(false)
@@ -73,11 +75,26 @@ export default function WBC3ResultsPage() {
     return acc
   }, {})
 
+  // Build a teaser description using equipment count
+  const gateDescription = equipment.length > 0
+    ? `We've found ${equipment.length} equipment requirements for your vessel (${equipmentMandatoryCount} mandatory). Enter your email to view the full list — no password needed.`
+    : 'Enter your email to view your full WBC3 equipment requirements — no password needed.'
+
   return (
     <>
       <Navigation />
 
-      <main className="overflow-hidden pt-20">
+      {/* Email Gate — shown when results exist but user hasn't provided email */}
+      {!hasAccess && (
+        <EmailGate
+          onEmailSubmitted={() => setHasAccess(true)}
+          title="Your results are ready"
+          description={gateDescription}
+          source="wbc3-checker-results"
+        />
+      )}
+
+      {hasAccess && (<><main className="overflow-hidden pt-20">
         {/* Hero */}
         <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12">
           <div className="container mx-auto px-4">
@@ -324,14 +341,15 @@ export default function WBC3ResultsPage() {
         </section>
       </main>
 
-      <Footer />
-
       {/* Reference Modal */}
       <ReferenceModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         reference={selectedReference}
       />
+      </>)}
+
+      <Footer />
     </>
   )
 }

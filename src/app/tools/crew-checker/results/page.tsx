@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
+import { EmailGate } from '@/components/EmailGate'
 import { ChevronDownIcon, ChevronUpIcon, CheckIcon, InformationCircleIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Users, Anchor, UserPlus, AlertCircle, Wrench, Radio, CheckCircle, Ship } from 'lucide-react'
 import WBC3TableA51 from '@/components/WBC3TableA51'
@@ -119,6 +120,7 @@ const safeRender = (value: any): string => {
 
 export default function CrewResultsPage() {
   const [results, setResults] = useState<any>(null)
+  const [hasAccess, setHasAccess] = useState(false)
   const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({})
   const [settingsExpanded, setSettingsExpanded] = useState(false)
   const [infoModal, setInfoModal] = useState<{ reqName: string; reqType: string } | null>(null)
@@ -209,11 +211,27 @@ export default function CrewResultsPage() {
   // Check if Cat 3-6 (no certificate required for second person)
   const isCat3to6 = ['3', '4', '5', '6'].includes(category)
 
+  // Build a teaser count from mandatory training + core certs (always 3 universal reqs)
+  const reqCount = 3 + (Array.isArray(mandatoryTraining) ? mandatoryTraining.length : 0)
+  const gateDescription = reqCount > 3
+    ? `We've identified ${reqCount} crew requirements for your vessel. Enter your email to view the full breakdown — no password needed.`
+    : 'Enter your email to view your full WBC3 crew certificate requirements — no password needed.'
+
   return (
     <>
       <Navigation />
 
-      <main className="overflow-hidden pt-20">
+      {/* Email Gate — shown when results exist but user hasn't provided email */}
+      {!hasAccess && (
+        <EmailGate
+          onEmailSubmitted={() => setHasAccess(true)}
+          title="Your results are ready"
+          description={gateDescription}
+          source="crew-checker-results"
+        />
+      )}
+
+      {hasAccess && (<><main className="overflow-hidden pt-20">
         {/* Hero - Added pt-20 to account for fixed navigation */}
         <section className="bg-gradient-to-r from-gray-800 to-gray-900 py-16 border-b">
           <div className="container mx-auto px-4">
@@ -947,6 +965,7 @@ export default function CrewResultsPage() {
           </div>
         </div>
       )}
+      </>)}
 
       <Footer />
     </>

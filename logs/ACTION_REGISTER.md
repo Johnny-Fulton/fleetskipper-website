@@ -1,5 +1,14 @@
 # Action Register - FleetSkipper Website
 
+## 2026-07-30 - Email gate added to tool results pages (crew-checker + wbc3-checker)
+
+### Files Modified
+- `src/app/tools/crew-checker/results/page.tsx` — added `hasAccess` state (default false); imported `EmailGate`; results content (main + info modal) wrapped in `{hasAccess && (<>...</>)}`; gate shown when `!hasAccess` with source `"crew-checker-results"` and a teaser count derived from `mandatoryTraining.length + 3 universal reqs`; localStorage key used: `crewResults`
+- `src/app/tools/wbc3-checker/results/page.tsx` — same pattern; source `"wbc3-checker-results"`; teaser shows `equipment.length` and mandatory count; localStorage key used: `wbc3Results`
+
+### Summary
+Results pages now gate their content behind EmailGate. Users who have already given their email (stored in `localStorage['fleetskipper_user_email']`) pass through automatically via EmailGate's built-in `useEffect` check — zero friction for returning users. New users see the gate dialog with a value-forward message showing a count of requirements found, then get full access once they submit. Captured emails POST to `/api/collect-email` (existing), tagged by source. `npm run build` passes (68 pages, 0 errors).
+
 ## 2026-07-29 - Consultancy + waitlist routes: durable Supabase capture + branding fix
 
 ### Files Modified
