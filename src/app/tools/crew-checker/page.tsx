@@ -338,7 +338,7 @@ export default function CrewCheckerPage() {
                             onChange={() => handleOperationToggle('high_speed_ops')}
                             className="w-4 h-4"
                           />
-                          <span className="text-sm">High Speed Operations (&gt;25 knots)</span>
+                          <span className="text-sm">High Speed Operations (20 knots or more)</span>
                         </label>
                         <label className="flex items-center gap-2">
                           <input

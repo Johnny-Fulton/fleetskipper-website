@@ -19,13 +19,13 @@ export function getFFEEquipmentRequirements(vessel) {
     return requirements;
   }
   
-  // UNIVERSAL CONTROL POSITION EXTINGUISHER - WBC3 16.3.1.3.1
+  // UNIVERSAL CONTROL POSITION EXTINGUISHER - WBC3 16.3.1.3
   // Required for ALL seagoing vessels regardless of configuration
   requirements.push({
     id: 'ffe_extinguisher_control_position',
     name: 'Portable Fire Extinguisher - Multi-Purpose (Control Position)',
     category: 'FFE',
-    reference: 'WBC3 16.3.1.3.1',
+    reference: 'WBC3 16.3.1.3',
     mandatory: true,
     description: '1x multi-purpose fire extinguisher within 2m of main control position (universal requirement for all vessels) - protects against electrical fires, navigation equipment fires, and provides general emergency response capability'
   });
@@ -280,7 +280,7 @@ export function getFFEEquipmentRequirements(vessel) {
       category: 'FFE',
       reference: 'WBC3 16.6.1',
       mandatory: vessel.isPracticable || vessel.deemedNecessary, // Mandatory if regulation requires, optional if company choice
-      description: `Fire buckets of at least 9 litres capacity - ${reason}`
+      description: `At least two fire buckets with lanyards long enough to reach the sea from the weather deck; buckets shall be of suitable material and size for their intended service - ${reason}`
     });
   }
 
@@ -366,7 +366,7 @@ export function getFFEEquipmentRequirements(vessel) {
         id: 'ffe_extinguisher_pilot_boat_no_petrol',
         name: 'Pilot Boat - No Petrol Engine',
         category: 'FFE',
-        reference: 'WBC3 27.2.3 Table 8.6',
+        reference: 'WBC3 Table 27.2.3, para 8.6',
         mandatory: true,
         description: 'PROHIBITED: A pilot boat shall not be fitted with a petrol engine - safety requirement',
         classification: 'PROHIBITED'
@@ -419,7 +419,7 @@ export function getFFEEquipmentRequirements(vessel) {
       category: 'FFE',
       reference: 'WBC3 Annex 1 Section 3.4.8',
       mandatory: true,
-      description: 'Protection system to prevent and contain thermal runaway events in battery systems - critical safety requirement'
+      description: 'During a thermal runaway event, active ventilation (where installed) shall continue operating if an explosive atmosphere is present'
     });
   }
   

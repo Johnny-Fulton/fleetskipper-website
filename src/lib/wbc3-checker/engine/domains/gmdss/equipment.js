@@ -267,7 +267,7 @@ export function getGMDSSEquipmentRequirements(vessel) {
       id: 'gmdss.vhf.portable.police',
       name: 'Additional Portable VHF DSC (Police)',
       category: 'Communications',
-      reference: 'WBC3 Annex 3 13.4.2',
+      reference: 'WBC3 Annex 3 12.4.2',
       mandatory: true,
       description: 'Carry an additional portable VHF DSC - fully charged before departure'
     });

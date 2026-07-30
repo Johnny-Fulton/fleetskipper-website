@@ -32,21 +32,23 @@ export function getEnvironmentalDocumentationRequirements(vessel) {
     });
   }
   
-  // Garbage Record Book - for vessels ≥100GT with international voyages
-  if (tonnage >= 100 && vessel.internationalVoyages) {
+  // Garbage Record Book - WBC3 Table 30.3.3:
+  //   All vessels over 100 GT and engaged on an international voyage; OR
+  //   All vessels certified to carry 15 or more persons.
+  if ((tonnage > 100 && vessel.internationalVoyages) || pob >= 15) {
     requirements.push({
       id: 'environmental.doc.garbage.record',
       name: 'Garbage Record Book',
       category: 'Environmental Documentation',
-      reference: 'MGN 632',
+      reference: 'WBC3 Table 30.3.3 / MGN 632',
       mandatory: true,
-      description: 'Record of all garbage operations - Part I and Part II required',
+      description: 'Required for all vessels over 100 GT on an international voyage, or any vessel certified to carry 15 or more persons - record of all garbage operations',
       retention: '2 years'
     });
   }
-  
-  // Garbage Disposal Placards - for vessels >12m
-  if (length > 12) {
+
+  // Garbage Disposal Placards - for vessels 12m or more LOA
+  if (length >= 12) {
     requirements.push({
       id: 'environmental.doc.garbage.placards',
       name: 'Garbage Disposal Placards',

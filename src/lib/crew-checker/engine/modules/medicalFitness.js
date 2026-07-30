@@ -52,7 +52,7 @@ export function getMedicalFitness(vessel) {
     certificateType: 'ML5',
     appliesTo: 'ALL crew',
     reference: 'WBC3 28.1.5/MGN 640',
-    validity: '5 years (1 year if over 65)',
+    validity: '5 years from issue or 65th birthday, whichever is sooner (1 year if over 65)',
     description: 'Medical certificate for vessels ≤60 miles from shore (domestic voyages only). Can be issued by any UK GMC registered doctor.',
     mandatory: true,
     notes: 'NOT valid for vessels visiting foreign ports. If vessel makes international voyages, ENG1 is required instead.',

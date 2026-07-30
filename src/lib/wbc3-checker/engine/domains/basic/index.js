@@ -135,15 +135,17 @@ export function getBasicEquipmentRequirements(vessel) {
     description: 'Sufficient lifejackets for all persons on board'
   });
   
+  // Lifebuoys - WBC3 Table 14.1.2: minimum 2 (<16 persons), 4 (>=16 persons)
+  const lifebuoyMin = (vessel.maxPersons || 0) >= 16 ? 4 : 2;
   requirements.push({
     id: 'basic_lifebuoy',
     name: 'Lifebuoys',
     category: 'LSA',
-    reference: 'WBC3 14.3',
+    reference: 'WBC3 14.3 / Table 14.1.2',
     mandatory: true,
-    description: 'At least 1 lifebuoy with light and line'
+    description: `At least ${lifebuoyMin} lifebuoys (minimum 2 for under 16 persons, 4 for 16 or more), with light and line`
   });
-  
+
   return requirements;
 }
 

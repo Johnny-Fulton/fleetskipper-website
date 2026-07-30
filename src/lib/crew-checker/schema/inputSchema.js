@@ -163,7 +163,7 @@ export function getInputSchema() {
         default: [],
         options: [
           { value: 'towing_operations', label: 'Towing Operations' },
-          { value: 'high_speed_ops', label: 'High Speed Operations (>25 knots)' },
+          { value: 'high_speed_ops', label: 'High Speed Operations (20 knots or more)' },
           { value: 'dangerous_goods', label: 'Dangerous Goods Carriage' },
           { value: 'mgo_supply', label: 'Marine Gas Oil (MGO) Supply' },
           { value: 'pilot_transfer', label: 'Pilot Transfer' },

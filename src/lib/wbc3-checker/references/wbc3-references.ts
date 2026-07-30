@@ -25,7 +25,7 @@ export const WBC3_REFERENCES: Record<string, RegulationReference> = {
   'WBC3 15.6.2.4': {
     id: 'WBC3 15.6.2.4',
     title: 'WBC3 15.6.2.4 - Fire Detector Machinery Space',
-    fullText: 'A suitable automatic fire detector and alarm system shall be fitted in machinery spaces where the power exceeds 100kW or where the space is unmanned.',
+    fullText: 'Machinery spaces shall be fitted with fire detector(s) which detect smoke and heat, or flame.',
     sourceDocument: 'UK Workboat Code Edition 3',
     url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
   },
@@ -48,16 +48,16 @@ export const WBC3_REFERENCES: Record<string, RegulationReference> = {
 
   'WBC3 16.2.1.2': {
     id: 'WBC3 16.2.1.2',
-    title: 'WBC3 16.2.1.2 - Portable Fire Extinguisher Wheelhouse',
-    fullText: 'At least one portable fire extinguisher of not less than 5A/34B capacity shall be provided in the wheelhouse.',
+    title: 'WBC3 16.2.1.2 - Portable Fire Extinguisher (Accommodation Space)',
+    fullText: 'A minimum of one 5A/34B rated portable fire extinguisher shall be located in each accommodation space, in accordance with the requirements of 16.3.',
     sourceDocument: 'UK Workboat Code Edition 3',
     url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
   },
 
-  'WBC3 16.3.1.3.1': {
-    id: 'WBC3 16.3.1.3.1',
-    title: 'WBC3 16.3.1.3.1 - Fire Extinguisher Control Position',
-    fullText: 'At least one portable multi-purpose fire extinguisher shall be located at each control position.',
+  'WBC3 16.3.1.3': {
+    id: 'WBC3 16.3.1.3',
+    title: 'WBC3 16.3.1.3 - Fire Extinguisher Location (Control Position)',
+    fullText: 'Portable fire extinguishers shall be located within: .1 2 m from the main control position; .2 2 m from any permanently installed open flame, gas or liquid fuel appliances; .3 3 m from fire ports for inboard engines; .4 3 m from outboard engines.',
     sourceDocument: 'UK Workboat Code Edition 3',
     url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
   },
@@ -65,7 +65,7 @@ export const WBC3_REFERENCES: Record<string, RegulationReference> = {
   'WBC3 16.4': {
     id: 'WBC3 16.4',
     title: 'WBC3 16.4 - Fixed Fire Extinguishing Systems',
-    fullText: 'Machinery spaces shall be protected by a fixed fire extinguishing system appropriate to the fire hazards present (CO2, water mist, foam, etc.). The system shall be capable of being activated from outside the protected space.',
+    fullText: 'Where a fixed fire extinguishing system is installed in a machinery space (as listed in Table 16.1.1.1) it shall be of the Administration, or equivalent, approved type appropriate to the space to be protected. (WBC3 16.4.1.1; a visual alarm outside the space is required during discharge per 16.4.1.6.)',
     sourceDocument: 'UK Workboat Code Edition 3',
     url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
   },
@@ -106,7 +106,7 @@ export const WBC3_REFERENCES: Record<string, RegulationReference> = {
   'WBC3 19.7.1.1': {
     id: 'WBC3 19.7.1.1',
     title: 'WBC3 19.7.1.1 - GPS/GNSS',
-    fullText: 'A vessel which is certified to operate in area category of operation 0, 1 or 2 shall be provided with an electronic position fixing system (GPS), unless the requirement of paragraph 19.7.1.1 provides reliable distance measurements in the operating area(s).',
+    fullText: 'A vessel which is certified to operate in area category of operation 0, 1 or 2 shall be equipped with: .1 an electronic position fixing system GPS (global navigation satellite system), or a terrestrial radio-navigation system, or other automatic means suitable for use at all times throughout the intended voyage.',
     sourceDocument: 'UK Workboat Code Edition 3',
     url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
   },
@@ -496,10 +496,18 @@ export const WBC3_REFERENCES: Record<string, RegulationReference> = {
     url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
   },
 
+  'WBC3 9.3.1': {
+    id: 'WBC3 9.3.1',
+    title: 'WBC3 9.3.1 - Battery System Requirements',
+    fullText: 'Battery systems, including any back-up battery system, shall be provided to satisfy the designed electrical requirements of the vessel. Battery terminals shall be protected from contact with metallic objects; all battery charging systems shall be fitted with circuitry to prevent overcharging and over-voltage and shall have a charge indicator; and a battery disconnect switch shall be provided to simultaneously isolate all non-earthed poles.',
+    sourceDocument: 'UK Workboat Code Edition 3',
+    url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
+  },
+
   'WBC3 9.3.2': {
     id: 'WBC3 9.3.2',
-    title: 'WBC3 9.3.2 - Battery Carriage Requirements',
-    fullText: 'Batteries shall be properly secured, ventilated and protected from the elements with appropriate access for maintenance and inspection.',
+    title: 'WBC3 9.3.2 - Battery Stowage',
+    fullText: 'Batteries shall be firmly secured to avoid movement and located in a position that is protected, ventilated and accessible for maintenance and inspection.',
     sourceDocument: 'UK Workboat Code Edition 3',
     url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
   },
@@ -712,7 +720,7 @@ export const WBC3_REFERENCES: Record<string, RegulationReference> = {
   'WBC3 16.4; Table 16.1.1.1': {
     id: 'WBC3 16.4; Table 16.1.1.1',
     title: 'WBC3 16.4 - Fixed Fire Extinguishing Systems',
-    fullText: 'Machinery spaces shall be protected by fixed fire extinguishing systems (CO2, water mist, foam etc.) appropriate to fire hazards present. System shall be capable of activation from outside the protected space per Table 16.1.1.1.',
+    fullText: 'Where a fixed fire extinguishing system is installed in a machinery space (as listed in Table 16.1.1.1) it shall be of the Administration, or equivalent, approved type appropriate to the space to be protected. (WBC3 16.4.1.1; a visual alarm outside the space is required during discharge per 16.4.1.6.)',
     sourceDocument: 'UK Workboat Code Edition 3',
     url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
   },
@@ -729,7 +737,7 @@ export const WBC3_REFERENCES: Record<string, RegulationReference> = {
   'WBC3 17.4.1 / Table 17.2.1': {
     id: 'WBC3 17.4.1 / Table 17.2.1',
     title: 'WBC3 17.4.1 - Portable VHF Radio Requirement',
-    fullText: 'A vessel shall carry at least one portable VHF radio fitted with Digital Selective Calling (DSC) facility, as specified in Table 17.2.1 for all area categories.',
+    fullText: 'A vessel shall carry at least one portable VHF radio fitted with a Digital Selective Calling (DSC) facility. See MIN 698.',
     sourceDocument: 'UK Workboat Code Edition 3',
     url: 'https://www.gov.uk/government/publications/msn-1856-uk-workboat-code'
   },

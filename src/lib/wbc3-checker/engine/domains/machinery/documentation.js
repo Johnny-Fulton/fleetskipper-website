@@ -151,11 +151,11 @@ export function getMachineryDocumentationRequirements(vessel) {
   if (vessel.engineStartMethod === 'electric' || vessel.engineType === 'diesel') {
     requirements.push({
       id: 'machinery.doc.battery.cert',
-      name: 'Battery installation certificate',
+      name: 'Battery installation (appropriate standard)',
       category: 'Machinery Documentation',
-      reference: 'WBC3 9.3.2',
+      reference: 'WBC3 9.3.1',
       mandatory: true,
-      description: 'Battery installations - Installation to appropriate standard'
+      description: 'Battery systems shall be installed to an appropriate standard (terminals protected, charging circuitry to prevent overcharging, disconnect switch fitted) per WBC3 9.3.1'
     });
   }
   

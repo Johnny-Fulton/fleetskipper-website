@@ -77,7 +77,6 @@ export function getSecondPersonRequirements(vessel) {
           'STCW Master (Code <200GT limited 150nm)',
           'STCW Master (Code <200GT unlimited)',
           'STCW Master (Workboat <500GT unlimited)',
-          'MCA Boatmasters Licence',
         ],
       };
 

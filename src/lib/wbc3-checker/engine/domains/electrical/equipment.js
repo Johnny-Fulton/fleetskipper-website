@@ -71,25 +71,28 @@ export function getElectricalEquipmentRequirements(vessel) {
       id: 'electrical.emergency.lighting',
       name: 'Emergency Lighting Backup',
       category: 'Electrical Equipment',
-      reference: 'WBC3 9.7.1.1',
+      reference: 'WBC3 9.7.1.2',
       mandatory: true,
-      description: 'Alternative source of lighting shall be provided - 3 hours minimum'
+      description: 'Where general lighting is provided by a centralised electrical system, an alternative source of lighting shall be provided (emergency power supply or independent light source), sufficient to facilitate continued safe operation, safe mustering and evacuation, and rescue of persons from the water'
     });
   }
   
-  // ===== ACCOMMODATION VENTILATION FOR INTERNATIONAL VOYAGES =====
-  // WBC3 Section 21.1.3 - Mechanical ventilation for accommodation spaces below weather deck
-  // Required for long international voyages (>200 miles from safe haven OR >600 miles voyage length)
-  
-  if (vessel.internationalVoyages && vessel.hasAccommodation && 
-      (category <= 1 || vessel.maxVoyageDistance > 600)) {
+  // ===== ACCOMMODATION VENTILATION =====
+  // WBC3 21.1.3 - Mechanical ventilation for accommodation spaces below the weather deck,
+  // required where: .1 no air conditioning is fitted; .2 nine or more persons are berthed
+  // below the weather deck; or .3 the vessel is engaged on long international voyages or
+  // operating in tropical waters. (Minimum 6 air changes per hour with openings closed.)
+  // The tool cannot collect air-conditioning / below-deck-berthing data, so this is surfaced
+  // for any vessel with accommodation and the operator applies the three conditions.
+
+  if (vessel.hasAccommodation) {
     requirements.push({
       id: 'electrical.accommodation.ventilation',
       name: 'Mechanical Ventilation System (Accommodation)',
       category: 'Accommodation Equipment',
       reference: 'WBC3 21.1.3',
       mandatory: true,
-      description: 'Mechanical ventilation providing minimum 6 air changes per hour for accommodation spaces below weather deck on long international voyages (>200nm from safe haven or >600nm voyage length)',
+      description: 'Mechanical ventilation shall be provided to all accommodation spaces below the weather deck where: (.1) an air conditioning system is not fitted; (.2) 9 or more persons are berthed below the weather deck; or (.3) the vessel is engaged on long international voyages or operating in tropical waters. Minimum 6 changes of air per hour when access openings are closed.',
       qtyRequired: 1
     });
   }
@@ -238,11 +241,11 @@ export function getElectricalEquipmentRequirements(vessel) {
   if (vessel.vesselType === 'police' || vessel.type === 'police') {
     requirements.push({
       id: 'electrical.emergency.power.police',
-      name: 'Emergency Power System (Police Boat)',
+      name: 'Emergency Power - Navigation Lights & Equipment (Police Boat)',
       category: 'Electrical Equipment',
       reference: 'WBC3 Annex 3 13.5.2',
       mandatory: true,
-      description: 'Emergency power source for essential systems during main power failure'
+      description: 'A Police Boat shall have either: emergency power supplies to supply navigation lights and navigation equipment for a minimum of 3 hours; or two independent battery installations; or individual battery-powered navigation lights and hand-held battery-powered equipment'
     });
   }
   

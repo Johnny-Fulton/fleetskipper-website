@@ -401,9 +401,9 @@ export function getLSAEquipmentRequirements(vessel) {
         id: 'lsa.mob.prevention.pilot',
         name: 'MOB Fall Prevention (Pilot)',
         category: 'Life-Saving Appliances',
-        reference: 'WBC3 22.2.3',
+        reference: 'WBC3 22.2.2.3',
         mandatory: true,
-        description: 'Suitable fall prevention equipment to prevent MOB where bulwarks or guardrails are not fitted',
+        description: 'Where guardrails or guard wires are not fitted (or do not meet 22.2.2.2.1–22.2.2.2.4), portable or fixed jackstays secured to strong points shall be provided on each side of the vessel',
         qtyRequired: 'fall prevention equipment'
       });
     }

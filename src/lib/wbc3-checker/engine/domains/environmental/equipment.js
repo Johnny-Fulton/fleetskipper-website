@@ -30,15 +30,18 @@ export function getEnvironmentalEquipmentRequirements(vessel) {
     description: 'Adequate storage for garbage types'
   });
   
-  // Garbage Disposal Placards - for ALL seagoing vessels per WBC3 30.3.1
-  requirements.push({
-    id: 'environmental.garbage.placards',
-    name: 'Garbage Disposal Placards',
-    category: 'Pollution Prevention',
-    reference: 'WBC3 30.3.1/MGN 632',
-    mandatory: true,
-    description: 'Display disposal restrictions - ALL vessels shall comply'
-  });
+  // Garbage Disposal Placards - only for vessels 12m or more LOA
+  // WBC3 Table 30.3.3 / MGN 632 s2.4: "All ships of 12 metres or more in overall length"
+  if (length >= 12) {
+    requirements.push({
+      id: 'environmental.garbage.placards',
+      name: 'Garbage Disposal Placards',
+      category: 'Pollution Prevention',
+      reference: 'WBC3 Table 30.3.3 / MGN 632',
+      mandatory: true,
+      description: 'Vessels of 12 metres or more in overall length shall display placards notifying crew and passengers of garbage disposal requirements'
+    });
+  }
   
   // ===== SEWAGE MANAGEMENT =====
   // From CSV rows 12-13

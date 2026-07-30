@@ -21,18 +21,18 @@ const getWBC3Quote = (reqName: string, reqType: string) => {
     },
     // Medical Fitness
     'ENG1 Medical Certificate': {
-      quote: '"28.1.2 All crew members shall hold a valid medical fitness certificate issued or accepted by the Administration."',
-      section: 'WBC3 Section 28.1.2',
-      description: 'ML5 medical certificates are also acceptable for vessels operating in Categories 5 and 6.'
+      quote: '"28.1.5 Anyone employed or engaged in any capacity onboard a vessel shall hold a valid medical fitness certificate. See MIN 698."',
+      section: 'WBC3 Section 28.1.5',
+      description: 'An ML5 medical certificate is also acceptable for a vessel that goes no more than 60 miles from shore (up to Area Category 2). See MGN 640.'
     },
     'ML5 Medical Certificate': {
-      quote: '"28.1.2 All crew members shall hold a valid medical fitness certificate issued or accepted by the Administration."',
-      section: 'WBC3 Section 28.1.2',
-      description: 'ML5 is the reduced medical standard for limited operations (Categories 5 and 6 only).'
+      quote: '"28.1.5 Anyone employed or engaged in any capacity onboard a vessel shall hold a valid medical fitness certificate. See MIN 698."',
+      section: 'WBC3 Section 28.1.5',
+      description: 'The ML5 is the reduced medical standard, acceptable for a vessel that goes no more than 60 miles from shore (up to Area Category 2). See MGN 640.'
     },
     // Engineering Qualifications
     'Engineering Certificate': {
-      quote: '"Table A5.2 – Minimum Engine Room Manning Requirements. Note 5: In all cases, one of the crew shall be sufficiently familiar with the operation and maintenance of the vessel\'s machinery to ensure safe passage."',
+      quote: '"Table A5.2 – Minimum Engineering Manning Requirements. Note 5: In all cases, one of the crew shall be sufficiently familiar with the operation and maintenance of the vessel\'s machinery to ensure safe passage."',
       section: 'WBC3 Appendix 5, Table A5.2',
       description: 'Engineering requirements are determined by engine power (kW) and vessel type. The table specifies which certificates are acceptable for each power tier.'
     },
@@ -48,7 +48,7 @@ const getWBC3Quote = (reqName: string, reqType: string) => {
       description: 'Acceptable alternative to STCW Personal Survival Techniques for non-STCW Certificate holders.'
     },
     'First Aid': {
-      quote: '"Minimum one person on board shall hold MCA approved Elementary First Aid Certificate (or the First Aid at Sea Certificate or Medical First Aid Certificate), or an RYA First Aid Certificate."',
+      quote: '"Minimum one person on board shall hold MCA approved Elementary First Aid Certificate (or the First Aid at Sea Certificate or Medical First Aid Certificate), or an RYA First Aid Certificate, or a SeaFish Basic First Aid Certificate, provided the use of Category \'C\' medical stores is covered in the course."',
       section: 'WBC3 Appendix 5, Table A5.3',
       description: 'Requirements vary by vessel category and MLC compliance status. Categories 0-1 may require higher medical care qualifications.'
     },
@@ -58,14 +58,14 @@ const getWBC3Quote = (reqName: string, reqType: string) => {
       description: 'Vessels under 15m require minimum one crew member trained. Vessels 15m and over require ALL crew members trained.'
     },
     'Radar Training': {
-      quote: '"All Masters, and crew likely to use radar shall complete an MCA approved Small Ships Navigation and Radar: Radar and Meteorology course."',
+      quote: '"All Masters, and crew likely to use radar shall complete an MCA approved Small Ships Navigation and Radar: Radar and Meteorology course, or alternatively, any course that may be specified as MCA approved or recognised as fulfilling these requirements in MIN 698."',
       section: 'WBC3 Appendix 5, Table A5.3',
       description: 'Only required for vessels equipped with radar.'
     },
     'Stability Training': {
-      quote: '"The Master shall have completed stability awareness training unless the vessel has a full stability book."',
+      quote: '"Stability Training — Vessels required to be provided with a Stability Information Booklet: As a minimum, the Master shall complete an MCA approved 1 day stability course."',
       section: 'WBC3 Appendix 5, Table A5.3',
-      description: 'Not required if vessel has a comprehensive stability booklet prepared by naval architect.'
+      description: 'Required where the vessel must be provided with a Stability Information Booklet. As a minimum, the Master shall complete an MCA approved 1-day stability course.'
     }
   }
 
@@ -96,8 +96,8 @@ const getWBC3Quote = (reqName: string, reqType: string) => {
     }
   } else if (reqType === 'medical') {
     return {
-      quote: '"28.1.2 All crew members shall hold a valid medical fitness certificate issued or accepted by the Administration."',
-      section: 'WBC3 Section 28.1.2',
+      quote: '"28.1.5 Anyone employed or engaged in any capacity onboard a vessel shall hold a valid medical fitness certificate. See MIN 698."',
+      section: 'WBC3 Section 28.1.5',
       description: 'Medical certificates must be in-date and appropriate for the area of operation.'
     }
   }
@@ -138,16 +138,16 @@ export default function CrewResultsPage() {
       'cat1': 'Category 1 - Up to 150nm',
       'cat2': 'Category 2 - Up to 60nm',
       'cat3': 'Category 3 - Up to 20nm',
-      'cat4': 'Category 4 - Up to 3nm',
-      'cat5': 'Category 5 - Up to 1.5nm',
-      'cat6': 'Category 6 - Limited',
+      'cat4': 'Category 4 - Up to 20nm (daylight)',
+      'cat5': 'Category 5 - Within 3nm',
+      'cat6': 'Category 6 - Within 3nm (daylight)',
       '0': 'Category 0 - Unrestricted',
       '1': 'Category 1 - Up to 150nm',
       '2': 'Category 2 - Up to 60nm',
       '3': 'Category 3 - Up to 20nm',
-      '4': 'Category 4 - Up to 3nm',
-      '5': 'Category 5 - Up to 1.5nm',
-      '6': 'Category 6 - Limited'
+      '4': 'Category 4 - Up to 20nm (daylight)',
+      '5': 'Category 5 - Within 3nm',
+      '6': 'Category 6 - Within 3nm (daylight)'
     }
     return categories[category] || category
   }

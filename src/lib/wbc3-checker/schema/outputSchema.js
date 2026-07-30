@@ -11,7 +11,7 @@
  * @property {string} name - Human-readable requirement name
  * @property {string} [id] - Unique identifier (when available)
  * @property {string} category - Domain/classification grouping
- * @property {string} reference - WBC3 or regulatory reference (e.g., 'WBC3 16.3.1.3.1')
+ * @property {string} reference - WBC3 or regulatory reference (e.g., 'WBC3 16.3.1.3')
  * @property {string} [source] - Alternative reference field (some domains use 'source' instead)
  * @property {boolean} mandatory - true = mandatory under WBC3, false = recommended/guidance
  * @property {string} description - What the requirement is and why

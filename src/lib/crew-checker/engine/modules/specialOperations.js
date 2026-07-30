@@ -3,7 +3,7 @@
  *
  * Additional qualifications required for specific operations:
  *   - Towing: Advanced powerboat + towing experience
- *   - High speed (>25 knots): High-speed vessel qualification
+ *   - High speed (20 knots or more): High-speed vessel qualification
  *   - Dangerous goods: IMDG Code training
  *   - MGO supply: 3 specific certifications
  *   - Hours of rest: MLC compliance for multi-crew
@@ -46,7 +46,7 @@ export function getSpecialOperationsRequirements(vessel) {
       mandatory: true,
       appliesTo: 'MASTER',
       validity: '5 years',
-      description: `Master must have suitable qualifications and experience for high-speed operations (>25 knots). Max speed: ${vessel.maxSpeed || '>25'} knots.`,
+      description: `Master must have suitable qualifications and experience for high-speed operations (20 knots or more). Max speed: ${vessel.maxSpeed || '20+'} knots.`,
     });
   }
 

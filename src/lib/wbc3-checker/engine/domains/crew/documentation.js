@@ -278,14 +278,14 @@ export function getCrewDocumentationRequirements(vessel) {
     });
   }
   
-  if (vessel.hasHighSpeedOps || vessel.maxSpeed >= 25) {
+  if (vessel.hasHighSpeedOps || vessel.maxSpeed >= 20) {
     requirements.push({
       id: 'crew.doc.master.high.speed',
       name: 'Master High Speed Ops',
       category: 'Special Operations',
       reference: 'WBC3 25.4',
       mandatory: true,
-      description: 'High speed vessel qualification - >25 knots operations'
+      description: 'High speed vessel qualification - high speed means an operating speed of 20 knots or more (WBC3 Definitions)'
     });
   }
   

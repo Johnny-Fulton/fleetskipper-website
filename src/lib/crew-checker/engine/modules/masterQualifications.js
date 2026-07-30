@@ -71,7 +71,7 @@ const MASTER_CERTIFICATES = [
   {
     id: 'boatmasters_licence',
     name: 'MCA Boatmasters Licence',
-    validForCategories: [2, 3, 4, 5, 6],
+    validForCategories: [3, 4, 5, 6],
     tonnageLimit: null,
     restrictions: null,
     notes: 'Note B — issued under MSN 1853',
@@ -80,7 +80,7 @@ const MASTER_CERTIFICATES = [
   {
     id: 'yachtmaster_coastal',
     name: 'RYA/MCA Yachtmaster Coastal Certificate of Competence or Service',
-    validForCategories: [2, 3, 4, 5, 6],
+    validForCategories: [3, 4, 5, 6],
     tonnageLimit: null,
     restrictions: null,
     notes: 'Note A — CoC or CoS acceptable, commercial endorsement required',

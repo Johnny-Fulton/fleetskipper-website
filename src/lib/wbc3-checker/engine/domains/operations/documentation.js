@@ -180,8 +180,7 @@ export function getOperationsDocumentationRequirements(vessel) {
       category: 'Universal Fuel Safety',
       reference: 'WBC3 29.10.1.4',
       mandatory: true,
-      description: 'Record times, quantities on board and transferred for all fuel and products posing environmental risk',
-      retention: '5 years'
+      description: 'All fuel, and products posing a risk to the environment, shall be documented in a record book or log book'
     });
   }
   
@@ -340,7 +339,7 @@ export function getOperationsDocumentationRequirements(vessel) {
     id: 'operations.doc.ra.cyber',
     name: 'Cyber Security Risk Assessment',
     category: 'Cyber Security',
-    reference: 'WBC3 31.3.1',
+    reference: 'WBC3 31.3.3',
     mandatory: true,
     description: 'Risk assessment for cyber security threats - identify vulnerabilities and establish appropriate safeguards',
     priority: 'critical',
@@ -353,7 +352,7 @@ export function getOperationsDocumentationRequirements(vessel) {
     id: 'operations.doc.cyber.backup',
     name: 'Cyber Security Back-up Plan',
     category: 'Cyber Security',
-    reference: 'WBC3 31.3.2',
+    reference: 'WBC3 31.3.6',
     mandatory: true,
     description: 'Back-up plan for cyber security incidents - measures to be taken in case of cyber failure',
     priority: 'critical',
@@ -366,7 +365,7 @@ export function getOperationsDocumentationRequirements(vessel) {
     id: 'operations.doc.cyber.access.log',
     name: 'Electronic Remote Access Log',
     category: 'Cyber Security',
-    reference: 'WBC3 31.3.3',
+    reference: 'WBC3 31.3.5',
     mandatory: true,
     description: 'Log of all electronic remote access to vessel systems',
     priority: 'critical',
