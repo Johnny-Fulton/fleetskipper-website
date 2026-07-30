@@ -1,10 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
-import { EmailGate } from '@/components/EmailGate'
 import { ClipboardDocumentListIcon, WrenchScrewdriverIcon, UserGroupIcon, AcademicCapIcon } from '@heroicons/react/24/outline'
 
 const tools = [
@@ -53,31 +51,11 @@ const tools = [
 ]
 
 export default function ToolsPage() {
-  const [hasAccess, setHasAccess] = useState(false)
-  const [userEmail, setUserEmail] = useState<string | null>(null)
-
-  const handleEmailSubmitted = (email: string) => {
-    setHasAccess(true)
-    setUserEmail(email)
-  }
-
   return (
     <>
       <Navigation />
 
-      {/* Email Gate - shows BEFORE tools are visible */}
-      {!hasAccess && (
-        <EmailGate
-          onEmailSubmitted={handleEmailSubmitted}
-          title="Access Free Compliance Tools"
-          description="Enter your email to access our free WBC3 and fishing vessel compliance tools. No password required."
-          source="tools-page"
-        />
-      )}
-
-      {/* Only show content after email is submitted */}
-      {hasAccess && (
-        <main className="overflow-hidden">
+      <main className="overflow-hidden">
           {/* Hero Section */}
           <section className="relative mt-28 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-20 pb-20 md:pt-24 md:pb-24 lg:pt-28 lg:pb-28">
             <div className="absolute inset-0 bg-[url('/images/hero-workboat.jpg')] opacity-5 bg-cover bg-center" />
@@ -96,13 +74,6 @@ export default function ToolsPage() {
                 <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
                   For workboats (WBC3) and fishing vessels (MSN 1871/1872/1873). Built by mariners for mariners.
                 </p>
-
-                {/* Show logged in user email */}
-                {userEmail && (
-                  <p className="text-sm text-white/60">
-                    Logged in as: {userEmail}
-                  </p>
-                )}
               </div>
             </div>
           </section>
@@ -200,7 +171,6 @@ export default function ToolsPage() {
             </div>
           </section>
         </main>
-      )}
 
       <Footer />
     </>

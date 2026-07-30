@@ -2,18 +2,13 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import type { Metadata } from 'next'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
-import { EmailGate } from '@/components/EmailGate'
 
 export default function WBC3CheckerPage() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [hasAccess, setHasAccess] = useState(false)
-  const [userEmail, setUserEmail] = useState<string | null>(null)
-
   const [formData, setFormData] = useState({
     // ===================================================================
     // SECTION 1: Vessel Identity (REQUIRED)
@@ -139,24 +134,9 @@ export default function WBC3CheckerPage() {
     }))
   }
 
-  // Handle email submission
-  const handleEmailSubmitted = (email: string) => {
-    setHasAccess(true)
-    setUserEmail(email)
-  }
-
   return (
     <>
       <Navigation />
-
-      {/* Email Gate - shows modal if user hasn't provided email */}
-      {!hasAccess && (
-        <EmailGate
-          onEmailSubmitted={handleEmailSubmitted}
-          title="Access WBC3 Equipment Checker"
-          description="Enter your email to use our free WBC3 compliance tools. No password required."
-        />
-      )}
 
       <main className="overflow-hidden pt-20">
         {/* Hero Section */}
